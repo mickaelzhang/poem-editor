@@ -1,0 +1,17 @@
+
+    {% include 'layout/html-header.twig' %}
+
+	<body class="{% block bodyClass %}defaultClass{% endblock %}" data-template="base.twig">
+        {% block header %}
+    
+        {% endblock %}
+		
+        {% block content %}
+			No content
+		{% endblock %}
+        
+        {% block footer %}
+            {% include 'layout/footer.twig' %}
+        {% endblock %}
+	</body>
+</html>
