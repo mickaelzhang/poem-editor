@@ -3,15 +3,19 @@
 
 	<body class="{% block bodyClass %}defaultClass{% endblock %}" data-template="base.twig">
         {% block header %}
-    
+
         {% endblock %}
-		
+
         {% block content %}
 			No content
 		{% endblock %}
-        
+
         {% block footer %}
             {% include 'layout/footer.twig' %}
         {% endblock %}
+
+		{% block scripts %}
+			<script type="text/javascript" src="dist/js/main.js"></script>
+		{% endblock %}
 	</body>
 </html>
