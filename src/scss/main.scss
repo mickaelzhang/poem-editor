@@ -1,0 +1,19 @@
+// Functions and mixins
+@import 'utils/functions';
+@import 'utils/mixins';
+
+// Contain global styles
+@import 'base/typography';
+@import 'base/color';
+@import 'base/normalize';
+@import 'base/theme';
+
+// Self-contained component
+@import 'components/buttons';
+
+// Layout (eg. header, footer, nav)
+@import 'layout/header';
+@import 'layout/footer';
+
+// For specific pages
+@import 'pages/home';
