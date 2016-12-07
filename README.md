@@ -27,7 +27,8 @@ $ cd dyslexia-website
 $ yarn
 ```
 
-### Configuration
+## Convention
+### General
 To have a unity in code convention a **.editorconfig** is setup.
 You can install one of those plugins for your editor :
 
@@ -38,7 +39,7 @@ You can install one of those plugins for your editor :
 - CSS -> BEM
 - JS  -> camelCase
 
-### Tags used for the project
+### Commit - Tags
 - [X] [ADD] - Used when we add new files or dependencies
 - [X] [UPDATE] - Used when we update important part of the project
 - [X] [FIX] - Used when we fix bugs, codes and other stuff
