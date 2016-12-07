@@ -20,7 +20,7 @@ gulp.task('clean-build', ['build', 'wipe-dist'], function() {
 });
 
 // Copy files from the `build` folder to `dist/[project]`
-gulp.task('copy-theme', ['clean-build'], function() {
+gulp.task('copy-project', ['clean-build'], function() {
   return gulp.src([
     config.path.project + '**/*',
     '!' + config.path.project + '**/*.map',

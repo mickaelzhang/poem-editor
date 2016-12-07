@@ -13,7 +13,7 @@ gulp.task('images', function() {
 });
 
 // Optimize images in the `dist` folder (slow)
-gulp.task('images-optimize', ['copy-theme'], function() {
+gulp.task('images-optimize', ['copy-project'], function() {
   return gulp.src( [
     config.path.dist + '**/*(*.png|*.jpg|*.jpeg|*.gif|*.svg)',
     '!' + config.path.dist + 'screenshot.png'
