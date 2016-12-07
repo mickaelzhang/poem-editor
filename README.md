@@ -33,6 +33,11 @@ You can install one of those plugins for your editor :
 
 [Link to editorconfig.org](http://editorconfig.org/#download)
 
+### Coding convention
+
+- CSS -> BEM
+- JS  -> camelCase
+
 ### Tags used for the project
 - [X] [ADD] - Used when we add new files or dependencies
 - [X] [UPDATE] - Used when we update important part of the project
