@@ -9,5 +9,5 @@ module.exports = {
     composer: './vendor/', // Composer packages
     modules: './node_modules/', // npm packages
   },
-	proxy: 'localhost:8888'
+	proxy: 'localhost/CloudStation/dev/Github/dyslexia-website/public/'
 }

@@ -10,7 +10,7 @@ gulp.task('browsersync', ['build'], function() {
 		],
     notify: true,
     open: true,
-		browser: "google chrome",
+		browser: "chrome",
     port: 3000,
     proxy: config.proxy,
     watchOptions: {

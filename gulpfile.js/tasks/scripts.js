@@ -1,6 +1,7 @@
 // ==== SCRIPTS ==== //
 
 var gulp     = require('gulp'),
+		babel    = require('gulp-babel'),
     jshint   = require('gulp-jshint'),
 		concat   = require('gulp-concat'),
 		uglify   = require('gulp-uglify'),
@@ -28,6 +29,8 @@ gulp.task('scripts-minify', ['scripts-lint'], function(){
     config.path.src + 'js/app/**/*.js',
     config.path.src + 'js/main.js'
   ] )
+	/* Compile in es6 */
+	.pipe(babel())
   /* Name of the js file */
   .pipe( concat( 'main.js' ) )
   /* Where the file should be put */
