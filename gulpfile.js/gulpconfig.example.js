@@ -11,6 +11,6 @@ module.exports = {
   },
 	browsersync: {
 		proxy: 'PROJECT_URL',
-		browser: 'google chrome',
+		browser: 'BROWSER_NAME',
 	}
 }
