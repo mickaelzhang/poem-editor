@@ -9,5 +9,8 @@ module.exports = {
     composer: './vendor/', // Composer packages
     modules: './node_modules/', // npm packages
   },
-	proxy: 'localhost/CloudStation/dev/Github/dyslexia-website/public/'
+	browsersync: {
+		proxy: 'PROJECT_URL',
+		browser: 'BROWSER_NAME',
+	}
 }
