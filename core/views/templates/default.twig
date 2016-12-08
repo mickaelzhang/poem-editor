@@ -3,7 +3,7 @@
 
 	<body class="{% block bodyClass %}defaultClass{% endblock %}" data-template="base.twig">
         {% block header %}
-
+			{% include 'layout/header.twig' %}
         {% endblock %}
 
         {% block content %}
