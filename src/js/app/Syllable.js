@@ -1,5 +1,5 @@
 export default class Syllable {
-	constructor(string) {
+	constructor(string = '') {
 		this.voyelle = "aàâeëéèêiïouùy"
 		this.consonne = "bcçdfghjklmnpqrstvwxyz"
 		this.ponctuation = ",;:!?."
