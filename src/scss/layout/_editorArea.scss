@@ -1,0 +1,52 @@
+.editorArea {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+
+	&__container {
+		width: 800px;
+		margin: 0 auto;
+	}
+
+	&__line {
+		display: flex;
+		flex-direction: row;
+		margin-top: 16px;
+	}
+
+	&__countBorder {
+		display: block;
+		width: 32px;
+		height: 32px;
+		background-color: rgb(68, 181, 109);
+		border-radius: 50%;
+		text-align: center;
+
+		position: relative;
+	}
+
+	&__syllableCount {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		width: 100%;
+	}
+
+	&__lineInput {
+		margin-left: 8px;
+		display: block;
+		white-space: pre;
+		outline: none;
+		border: none;
+		width: 100%;
+		border-bottom: 1px solid rgba($black, 0.2);
+		transition: all 1s;
+
+		font-size: 24px;
+
+		&:focus {
+			border-bottom: 1px solid rgba($black, 0.6);
+		}
+	}
+}
