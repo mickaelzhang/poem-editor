@@ -23,8 +23,6 @@ export default class EditorApp {
 		if (0 <= this.selectedIndex) {
 			const activeInputIndex = this.selectedIndex
 			const string = this.input[activeInputIndex].value
-			console.log('____________________');
-			console.log('Base: '+string);
 
 			const syllableNb = this.getSyllableCount(string)
 			this.updateSyllableCount(activeInputIndex, syllableNb)
@@ -62,11 +60,11 @@ export default class EditorApp {
 	 * function getSyllableCount
 	 */
 	getSyllableCount(string) {
-		var voyelle = "aàâeëéèêiïouùy";
-		var consonne = "bcçdfghjklmnpqrstvwxyz";
-		var ponctuation = ",;:!?.";
-		var texte = string;
-		var tailleInitiale = 0;
+		const voyelle = "aàâeëéèêiïouùy";
+		const consonne = "bcçdfghjklmnpqrstvwxyz";
+		const ponctuation = ",;:!?.";
+		let texte = string;
+		let tailleInitiale = 0;
 
 		//exception  ch, ph, gn et th sont inséparables et  bl, cl, fl, gl, pl, br, cr, dr, fr, gr, pr, tr, vr
 		var reg = new RegExp("([cpg]h|[bcfgp]l|[bcdfgptv]r)", "g");
@@ -118,19 +116,12 @@ export default class EditorApp {
 		//les espace sont remplacé par |
 		reg = new RegExp("[ ]+", "g");
 		texte = texte.replace(reg, "|");
-		console.log('Texte séparé: '+texte);
 
 		// Split pour les sauts de ligne, pas besoin pour nous
 		// var res = texte.split("\n");
-		// console.log('Res:');
-		// console.log(res);
 
-		var res2;
-		var i = 0;
-		for (i = 0; i < res.length; i++) {
-			res2 = res[i].split("|");
-		}
+		const syllableArray = texte.split("|");
 
-		return res2.length;
+		return syllableArray.length;
 	}
 }
