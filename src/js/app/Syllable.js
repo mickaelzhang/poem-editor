@@ -13,23 +13,35 @@ export default class Syllable {
 		return this
 	}
 
+	/**
+	 * function setString
+	 * Used externally to update the string but also all the information
+	 */
 	setString(string) {
 		this.texte = string
 		this.updateData()
 	}
 
+	/**
+	 * function updateData
+	 * Update all data
+	 */
 	updateData() {
 		this.processString(this.texte)
 		this.count = this.syllableArray.length
 		this.setSyllableNumber()
 	}
 
+	/**
+	 * function setSyllableNumber
+	 * Get how many syllable there is in this string
+	 */
 	setSyllableNumber() {
 		let nb = this.syllableArray.length
 
+		// If the table length is 1 but the string contained is empty, do this
 		if (nb === 1 && this.syllableArray[0].trim() === "") {
 			nb = 0
-			console.log('Rien');
 		}
 
 		this.count = nb
