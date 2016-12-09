@@ -126,17 +126,10 @@ export default class EditorApp {
 		// console.log(res);
 
 		var res2;
-		var resultatSomme = "";
 		var i = 0;
 		for (i = 0; i < res.length; i++) {
 			res2 = res[i].split("|");
-
-			if (res2.length > 1)
-				resultatSomme += res2.length + " " + res[i] + "\n";
-			else
-				resultatSomme += "\n";
 		}
-		console.log(res2);
 
 		return res2.length;
 	}
