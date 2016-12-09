@@ -121,7 +121,7 @@ export default class EditorApp {
 		console.log('Texte séparé: '+texte);
 
 		// Split pour les sauts de ligne, pas besoin pour nous
-		var res = texte.split("\n");
+		// var res = texte.split("\n");
 		// console.log('Res:');
 		// console.log(res);
 
