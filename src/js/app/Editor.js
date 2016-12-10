@@ -31,5 +31,24 @@ export default class Editor {
 	addStanzas() {
 		this.stanzasNb++
 		this.stanzasContainer.insertAdjacentHTML('beforeend', this.stanzasHTML)
+		this.updateStanzas()
+	}
+
+	/**
+	 * updateStanzas
+	 * Get all new element
+	 */
+	updateStanzas() {
+		this.stanzas = this.stanzasContainer.querySelectorAll('.editorArea__stanzas')
+		this.addLastStanzasEventListener()
+	}
+
+	/**
+	 * addLastStanzasEventListener
+	 * Add Stanzas object to new .editorArea__stanzas
+	 */
+	addLastStanzasEventListener() {
+		const index = this.stanzasNb - 1
+		new Stanzas(this.stanzas[index])
 	}
 }

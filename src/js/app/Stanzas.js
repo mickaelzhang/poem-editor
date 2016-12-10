@@ -2,7 +2,7 @@ import Syllable from './Syllable.js'
 
 export default class Stanzas {
 	constructor(elem) {
-		console.log(elem);
+		console.log(elem)
 		this.input = elem.querySelectorAll('.editorArea__lineInput')
 		this.syllableCount = elem.querySelectorAll('.editorArea__syllableCount')
 		this.selectedIndex = this.setSelectedIndex()
