@@ -1,12 +1,30 @@
 <section class="editorArea">
 	<div class="editorArea__container">
-		{% for item in 0..3 %}
-			<div class="editorArea__line">
-				<div class="editorArea__countBorder">
-					<span class="editorArea__syllableCount">0</span>
-				</div>
-				<input class="editorArea__lineInput">
+		<div class="editorArea__stanzasList">
+			<div class="editorArea__stanzas">
+				{% for item in 0..3 %}
+					<div class="editorArea__line">
+						<div class="editorArea__countBorder">
+							<span class="editorArea__syllableCount">0</span>
+						</div>
+						<input class="editorArea__lineInput">
+					</div>
+				{% endfor %}
 			</div>
-		{% endfor %}
+
+			<div class="editorArea__stanzas">
+				{% for item in 0..3 %}
+					<div class="editorArea__line">
+						<div class="editorArea__countBorder">
+							<span class="editorArea__syllableCount">0</span>
+						</div>
+						<input class="editorArea__lineInput">
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="editorArea__buttonContainer">
+			<div class="editorArea__moreStanzasButton primaryButton">More</div>
+		</div>
 	</div>
 </section>
