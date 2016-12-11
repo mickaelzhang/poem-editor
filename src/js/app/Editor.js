@@ -4,10 +4,11 @@ export default class Editor {
 	constructor() {
 		console.log('Start Editor.')
 
-		this.editor = document.querySelectorAll('.editorArea')[0]
-		this.stanzasContainer = this.editor.querySelectorAll('.editorArea__stanzasList')[0]
+		this.editor = document.querySelector('.editorArea')
+		this.stanzasContainer = this.editor.querySelector('.editorArea__stanzasList')
 		this.stanzas = this.stanzasContainer.querySelectorAll('.editorArea__stanzas')
-		this.moreButton = this.editor.querySelectorAll('.editorArea__moreStanzasButton')[0]
+		this.moreButton = this.editor.querySelector('.editorArea__moreStanzasButton')
+		this.nextSceneButton = this.editor.querySelector('.editorArea__nextSceneButton')
 
 		this.stanzasHTML = '<div class="editorArea__stanzas"><div class="editorArea__line"><div class="editorArea__countBorder"><span class="editorArea__syllableCount">0</span></div><input class="editorArea__lineInput"></div><div class="editorArea__line"><div class="editorArea__countBorder"><span class="editorArea__syllableCount">0</span></div><input class="editorArea__lineInput"></div><div class="editorArea__line"><div class="editorArea__countBorder"><span class="editorArea__syllableCount">0</span></div><input class="editorArea__lineInput"></div><div class="editorArea__line"><div class="editorArea__countBorder"><span class="editorArea__syllableCount">0</span></div><input class="editorArea__lineInput"></div></div></div>'
 
@@ -22,6 +23,7 @@ export default class Editor {
 
 	initEvents() {
 		this.moreButton.addEventListener('click', evt => this.addStanzas(evt))
+		// this.nextSceneButton.addEventListener('click', evt => this.processDataNextScene(evt))
 	}
 
 	/**
