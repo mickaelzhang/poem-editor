@@ -1,7 +1,6 @@
 .themePage{
 	&__title{
 		padding-left: 50px;
-		padding-top: 20px;
 		h1{
 		font-size: 2.25em;
 		color: #4a4a4a;
@@ -15,6 +14,14 @@
 
 	&__containerCentral{
 		display: flex;
+	}
+
+	&__border{
+		border:1px solid black;
+		height: 400px;
+	    position: absolute;
+	    left: 64px;
+	    top: 180px;
 	}
 
 	&__circle{
@@ -40,8 +47,31 @@
 		}
 	}
 
+	&__circleActive{
+		width: 50px;
+		height: 50px;
+		background: #d4d4d4;
+		-moz-border-radius: 50px;
+		-webkit-border-radius: 50px;
+		border-radius: 50px;
+		position: relative;
+		margin-top: 50px;
+		margin-left: 40px;
+		a{
+			text-decoration: none;
+			left: 89%;
+			transform: translateX(-50%);
+			line-height: 50px;
+			position: absolute;
+			color: #4a4a4a;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
 	&__containerColumns{
-		width: 100%;
+		width: 80%;
 	}
 
 	&__containerThemes{
@@ -53,6 +83,7 @@
 		width: 100%;
 		display: flex;
 		justify-content: center;
+
 	}
 	&__row_2{
 		width: 100%;
@@ -73,12 +104,15 @@
 	&__theme{
 		border: 1px solid #4a4a4a;
 		background-color: #f1f1f1;
-		width: 250px;
+		width: 20%;
 		height: 80px;
 		margin-top: 50px;
 		margin-left: 50px;
-		@media screen and (max-width: 900px) {
+		@media screen and (min-width: 900px) {
 			width: 20%;
+		}
+		:focus{
+			background-color: #d4d4d4;
 		}
 		a{
 			color: #4a4a4a;
@@ -90,13 +124,16 @@
 			@media screen and (max-width: 900px) {
 				font-size: 1em;
 			}
+			@media screen and (max-width: 510px) {
+				font-size: .8em;
+			}
 		}
 	}
 
 	&__button{
 		text-align: center;
 		position: relative;
-		top: 75px; /* poussé de la moitié de hauteur du référent */
+		top: 65px; /* poussé de la moitié de hauteur du référent */
 		left: 90%;
 		transform: translateX(-90%); /* tiré de la moitié de sa propre largeur */
 		border: 1px solid #4a4a4a;
@@ -116,15 +153,19 @@
 	}
 
 	&__buttonSound{
+		text-align: center;
 		position: relative;
-		top: 50px;
-		text-align: right;
+		top: 60px;
+		left: 97%;
+		-webkit-transform: translateX(-90%);
+		transform: translateX(-90%);
+		height: 30px;
+		width: 50px;
+		line-height: 50px;
 		a{
 			display:block;
 			width:100%;
 			height:100%;
 		}
 	}
-
-
 }
