@@ -1,3 +1,10 @@
+$breakpoints: (
+   small: 480px,
+   medium: 768px,
+   large: 1024px,
+   x-large: 1480px
+);
+
 @mixin breakpoint($media) {
     @each $breakpoint-name, $pixel in $breakpoints {
         @if $media == $breakpoint-name {
