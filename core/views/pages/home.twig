@@ -3,5 +3,20 @@
 {% block bodyClass "home" %}
 
 {% block content %}
-    {% include 'layout/homePage.twig'%}
+	<div class="home__container">
+		<div class="home__mainContent">
+			<div class="home__text">
+				<h2>Bonjour  toi ! Savais-tu qu’écrire pouvait être fun ?<br>
+					Prends ta plus belle plume  et lançons nous !</h2>
+				<h3>Ce site à pour but d’éveiller l’enfant à l’écriture au travers de la poésie. Nous pensons que la nouvelle génération peut changer les choses alors en route !</h3>
+			</div>
+			<div class="home__visual">
+				<img class="home__mascot" src="dist/img/fox-mascot.png" alt="Fox Mascot" />
+				<p class="home__visualText">Je suis la pour t'aider !</p>
+			</div>
+		</div>
+		<div class="home__buttonContainer">
+			<a class="home__button primaryButton" href="{{url('game')}}">Commencer</a>
+		</div>
+	</div>
 {% endblock %}

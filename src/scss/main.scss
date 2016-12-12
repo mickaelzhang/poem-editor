@@ -6,6 +6,7 @@
 @import 'base/typography';
 @import 'base/color';
 @import 'base/normalize';
+@import 'base/variable';
 @import 'base/theme';
 
 // Self-contained component
@@ -14,7 +15,6 @@
 // Layout (eg. header, footer, nav)
 @import 'layout/header';
 @import 'layout/footer';
-@import 'layout/homePage';
 @import 'layout/themePage';
 @import 'layout/rimePage';
 @import 'layout/syllabePage';

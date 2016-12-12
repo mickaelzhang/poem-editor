@@ -1,12 +1,14 @@
 <?php
+
 // HOMEPAGE
 $app->get('/', function() use ($app) {
     return $app['twig']->render('pages/home.twig');
 })->bind('home');
 
-$app->get('/theme', function() use ($app) {
+// Jeu
+$app->get('/jeu', function() use ($app) {
     return $app['twig']->render('pages/theme.twig');
-})->bind('theme');
+})->bind('game');
 
 $app->get('/rime', function() use ($app) {
     return $app['twig']->render('pages/rime.twig');
