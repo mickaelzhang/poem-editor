@@ -1,0 +1,107 @@
+.rimePage{
+	&__title{
+		padding-left: 50px;
+		h1{
+		font-size: 2.25em;
+		color: #4a4a4a;
+		font-weight: 100;
+		}
+	}
+
+	&__bold{
+		font-weight: bold;
+	}
+
+	&__containerCentral{
+		display: flex;
+	}
+
+	&__containerRime{
+		width: 100%;
+		display: inline-flex;
+		justify-content: space-around;
+		padding-top: 55px;
+	}
+
+	&__content{
+		border: 1px solid $black;
+		background-color: #f1f1f1;
+		@media screen and (max-width:950px){
+			width: 30%;
+		}
+		h1{
+			text-align: center;
+			font-size: 48px;
+			padding-top: 15px;
+		}
+	}
+
+	&__orange{
+		color:$orange;
+	}
+
+	&__blue{
+		color: $blue;
+	}
+
+	&__rimeType{
+		text-align: center;
+		font-weight: bold;
+		font-size: 20px;
+		padding-top: 35px;
+	}
+
+	&__example{
+		padding-left: 25px;
+		font-style: italic;
+		padding-top: 50px;
+		font-size: 18px;
+	}
+
+	&__rime{
+		font-size: 20px;
+		padding-left: 25px;
+		padding-right: 25px;
+		letter-spacing: 1px;
+	}
+
+	&__button{
+		text-align: center;
+		position: relative;
+		top: 65px; /* poussé de la moitié de hauteur du référent */
+		left: 90%;
+		transform: translateX(-90%); /* tiré de la moitié de sa propre largeur */
+		border: 1px solid #4a4a4a;
+		border-radius: 50px;
+		height: 50px;
+		width: 150px;
+		line-height: 50px;
+		background-color: $white;
+		a{
+			text-decoration: none;
+			font-size: 1.3em;
+			color:$grey;
+			display:block;
+			width:100%;
+			height:100%;
+		}
+	}
+
+	&__buttonSound{
+		text-align: center;
+		position: relative;
+		top: 60px;
+		left: 97%;
+		-webkit-transform: translateX(-90%);
+		transform: translateX(-90%);
+		height: 30px;
+		width: 50px;
+		line-height: 50px;
+		a{
+			display:block;
+			width:100%;
+			height:100%;
+		}
+	}
+
+}
