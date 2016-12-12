@@ -4,25 +4,9 @@
 			<h1>Sur quel <span class="themePage__bold">thème </span>veux-tu écrire ton poème ?</h1>
 		</div>
 		<div class="themePage__containerCentral">
-			<div class="themePage__timeline">
-				<div class="themePage__border">
-				</div>
-				<div class="themePage__circleActive">
-					<a href="#">1</a>
-				</div>
-				<div class="themePage__circle">
-					<a href="#">2</a>
-				</div>
-				<div class="themePage__circle">
-					<a href="#">3</a>
-				</div>
-				<div class="themePage__circle">
-					<a href="#">4</a>
-				</div>
-				<div class="themePage__circle">
-					<a href="#">5</a>
-				</div>
-			</div>
+			{% block content %}
+			    {% include 'layout/lateralBar.twig'%}
+			{% endblock %}
 			<div class="themePage__containerColumns">
 				<div class="themePage__containerThemes">
 					<div class="themePage__row_1">
@@ -73,7 +57,7 @@
 			</div>
 		</div>
 		<div class="themePage__button">
-			<a href="#">continuer</a>
+			<a href="http://localhost:3000/poem-editor/public/rime">continuer</a>
 		</div>
 		<div class="themePage__buttonSound">
 			<a href="#"><img src="../src/img/sound.png" /></a>
