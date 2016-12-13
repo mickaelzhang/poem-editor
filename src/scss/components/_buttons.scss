@@ -1,19 +1,35 @@
+%buttonTemplate {
+	text-decoration: none;
+	transition: background-color 0.2s ease-out;
+	cursor: pointer;
+	display: inline-block;
+}
+
 .primaryButton {
+	@extend %buttonTemplate;
+
 	background-color: $blue-picton-blue;
 	color: $white;
-	text-decoration: none;
 	text-transform: uppercase;
 	font-size: 24px;
 
-	transition: background-color 0.2s ease-out;
-
-	cursor: pointer;
-
-	display: inline-block;
 	padding: 20px 40px;
 	border-radius: 40px;
 
 	&:hover {
 		background-color: lighten($blue-picton-blue, 1.5%);
+	}
+}
+
+.sceneButton {
+	@extend %buttonTemplate;
+
+	background-color: $orange-yellow-orange;
+	padding: 10px 40px;
+	border-radius: 40px;
+
+
+	&:hover {
+		background-color: lighten($orange-yellow-orange, 1.5%);
 	}
 }

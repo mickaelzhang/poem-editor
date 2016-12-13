@@ -1,39 +1,28 @@
 .jeu {
 	background-color: $white-alabaster;
 
-	.wrapper {
-		width: 100%;
-		max-width: 1260px;
-		min-height: 100vh;
-		margin: 0 auto;
-
-		display: flex;
-		flex-direction: column;
-		// align-items: stretch;
-
-		@include breakpoint(medium) {
-			flex-direction: row;
-		};
+	&__content {
+		height: 100vh;
+		width: 100vw;
+		overflow-x: hidden;
 	}
 
-	.progressionBar {
-		margin: 10px auto 0 auto;
-		@include breakpoint(medium) {
-			margin: 0 60px;
-		};
+	&__sceneList {
+		height: 80vh;
+		width: 10000px;
+		display: flex;
+		flex: row;
+
+		transition-property: transform;
+		transition-timing-function: linear;
 	}
 
-	&__mainContent {
-		padding-top: 40px;
-		padding-bottom: 40px;
+	&__sceneItem {
+		width: 100vw;
+	}
 
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-
-		@include breakpoint(medium) {
-			margin-right: 60px;
-		};
+	&__progressionBar {
+		height: 20vh;
 	}
 
 	&__title {

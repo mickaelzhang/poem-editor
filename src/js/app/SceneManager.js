@@ -1,10 +1,12 @@
 import ThemeChoice from './ThemeChoice'
+import Slider from './Slider'
 
 export default class SceneManager {
 	constructor() {
 		this.currentScene = 0
 
 		this.loadSceneObject()
+		this.Slider = new Slider()
 	}
 
 	loadSceneObject() {
