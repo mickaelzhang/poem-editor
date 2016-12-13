@@ -16,12 +16,11 @@
 // Layout (eg. header, footer, nav)
 @import 'layout/header';
 @import 'layout/footer';
-@import 'layout/rimePage';
-@import 'layout/syllabePage';
-@import 'layout/versPage';
 
 @import 'layout/jeu/themeScene';
-@import 'layout/editorArea';
+@import 'layout/jeu/rhymeScene';
+@import 'layout/jeu/verseScene';
+@import 'layout/jeu/editorScene';
 
 // For specific pages
 @import 'pages/home';
