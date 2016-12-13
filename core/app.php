@@ -10,4 +10,6 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
     ),
 ));
 
+$app['debug'] = true;
+
 return $app;
