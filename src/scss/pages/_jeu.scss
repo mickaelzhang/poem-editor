@@ -14,7 +14,7 @@
 		flex: row;
 
 		transition-property: transform;
-		transition-timing-function: linear;
+		transition-timing-function: ease-out;
 	}
 
 	&__sceneItem {

@@ -41,7 +41,7 @@ export default class Slider {
 		let deltaScene = Math.abs(this.currentSceneIndex - index)
 
 		// Unit in MS
-		const durationPerScene = 400
+		const durationPerScene = 350
 		let totalDuration = durationPerScene * deltaScene
 
 		this.currentSceneIndex = index
