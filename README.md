@@ -1,5 +1,4 @@
-# Dyslexia Website
-A school project about dyslexia.
+# Benjamin le Renard poète
 
 ## Team member
 * Alexandre Chichportich
