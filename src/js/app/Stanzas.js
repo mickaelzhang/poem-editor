@@ -2,8 +2,8 @@ import Syllable from './Syllable.js'
 
 export default class Stanzas {
 	constructor(elem) {
-		this.input = elem.querySelectorAll('.editorArea__lineInput')
-		this.syllableCount = elem.querySelectorAll('.editorArea__syllableCount')
+		this.input = elem.querySelectorAll('.editorScene__lineInput')
+		this.syllableCount = elem.querySelectorAll('.editorScene__syllableCount')
 		this.selectedIndex = this.setSelectedIndex()
 
 		this.addSyllableObject()

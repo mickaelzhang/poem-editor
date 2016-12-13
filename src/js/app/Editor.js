@@ -4,13 +4,13 @@ export default class Editor {
 	constructor() {
 		console.log('Start Editor.')
 
-		this.editor = document.querySelector('.editorArea')
-		this.stanzasContainer = this.editor.querySelector('.editorArea__stanzasList')
-		this.stanzas = this.stanzasContainer.querySelectorAll('.editorArea__stanzas')
-		this.moreButton = this.editor.querySelector('.editorArea__moreStanzasButton')
-		this.nextSceneButton = this.editor.querySelector('.editorArea__nextSceneButton')
+		this.editor = document.querySelector('.editorScene')
+		this.stanzasContainer = this.editor.querySelector('.editorScene__stanzasList')
+		this.stanzas = this.stanzasContainer.querySelectorAll('.editorScene__stanzas')
+		this.moreButton = this.editor.querySelector('.editorScene__moreStanzasButton')
+		this.nextSceneButton = this.editor.querySelector('.editorScene__nextSceneButton')
 
-		this.stanzasHTML = '<div class="editorArea__stanzas"><div class="editorArea__line"><div class="editorArea__countBorder"><span class="editorArea__syllableCount">0</span></div><input class="editorArea__lineInput"></div><div class="editorArea__line"><div class="editorArea__countBorder"><span class="editorArea__syllableCount">0</span></div><input class="editorArea__lineInput"></div><div class="editorArea__line"><div class="editorArea__countBorder"><span class="editorArea__syllableCount">0</span></div><input class="editorArea__lineInput"></div><div class="editorArea__line"><div class="editorArea__countBorder"><span class="editorArea__syllableCount">0</span></div><input class="editorArea__lineInput"></div></div></div>'
+		this.stanzasHTML = '<div class="editorScene__stanzas"><div class="editorScene__line"><div class="editorScene__countBorder"><span class="editorScene__syllableCount">0</span></div><input class="editorScene__lineInput"></div><div class="editorScene__line"><div class="editorScene__countBorder"><span class="editorScene__syllableCount">0</span></div><input class="editorScene__lineInput"></div><div class="editorScene__line"><div class="editorScene__countBorder"><span class="editorScene__syllableCount">0</span></div><input class="editorScene__lineInput"></div><div class="editorScene__line"><div class="editorScene__countBorder"><span class="editorScene__syllableCount">0</span></div><input class="editorScene__lineInput"></div></div></div>'
 
 		this.stanzasNb = this.stanzas.length
 
@@ -41,13 +41,13 @@ export default class Editor {
 	 * Get all new element
 	 */
 	updateStanzas() {
-		this.stanzas = this.stanzasContainer.querySelectorAll('.editorArea__stanzas')
+		this.stanzas = this.stanzasContainer.querySelectorAll('.editorScene__stanzas')
 		this.addLastStanzasEventListener()
 	}
 
 	/**
 	 * addLastStanzasEventListener
-	 * Add Stanzas object to new .editorArea__stanzas
+	 * Add Stanzas object to new .editorScene__stanzas
 	 */
 	addLastStanzasEventListener() {
 		const index = this.stanzasNb - 1
