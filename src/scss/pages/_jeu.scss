@@ -30,6 +30,10 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+
+		@include breakpoint(medium) {
+			margin-right: 60px;
+		};
 	}
 
 	&__title {
