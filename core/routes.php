@@ -22,4 +22,8 @@ $app->get('/vers', function() use ($app) {
     return $app['twig']->render('pages/vers.twig');
 })->bind('vers');
 
+$app->get('/editeur', function() use ($app) {
+    return $app['twig']->render('pages/editor.twig');
+})->bind('editor');
+
 return $app;
