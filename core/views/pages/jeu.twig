@@ -1,0 +1,10 @@
+{% extends "templates/default.twig" %}
+
+{% block bodyClass "jeu" %}
+
+{% block content %}
+	<div class="wrapper">
+		{% include 'components/progressionBar.twig'%}
+		{% include 'layout/jeu/themeScene.twig'%}
+	</div>
+{% endblock %}

@@ -11,17 +11,17 @@
 
 // Self-contained component
 @import 'components/buttons';
+@import 'components/progressionBar';
 
 // Layout (eg. header, footer, nav)
 @import 'layout/header';
 @import 'layout/footer';
-@import 'layout/themePage';
 @import 'layout/rimePage';
 @import 'layout/syllabePage';
 @import 'layout/versPage';
-@import 'layout/lateralBar';
 
-
+@import 'layout/jeu/themeScene';
 
 // For specific pages
 @import 'pages/home';
+@import 'pages/jeu';

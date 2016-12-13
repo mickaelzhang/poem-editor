@@ -7,8 +7,8 @@ $app->get('/', function() use ($app) {
 
 // Jeu
 $app->get('/jeu', function() use ($app) {
-    return $app['twig']->render('pages/theme.twig');
-})->bind('game');
+    return $app['twig']->render('pages/jeu.twig');
+})->bind('jeu');
 
 $app->get('/rime', function() use ($app) {
     return $app['twig']->render('pages/rime.twig');
