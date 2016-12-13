@@ -1,7 +1,7 @@
 .themeScene {
 	&__title {
 		font-size: 22px;
-		margin: 20px auto 40px auto;
+		margin: 20px auto 40px;
 		width: 80%;
 	}
 
@@ -9,7 +9,6 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-
 		margin-bottom: 40px;
 	}
 
@@ -17,13 +16,13 @@
 		width: 50%;
 		padding: 0 2%;
 		margin-bottom: 10px;
-
 		@include breakpoint(medium) {
 			width: 33.33%;
 			padding: 0 10px;
 			margin-bottom: 20px;
 		};
 	}
+
 	&__themeCard {
 		background-color: $blue-pattens-blue;
 		cursor: pointer;
@@ -38,5 +37,25 @@
 
 	&__buttonContainer {
 		text-align: right;
+	}
+
+	&__container-cloud {
+		position: absolute;
+		width: 100%;
+		height: 100vh;
+		overflow:hidden;
+	}
+
+	&__cloud1 {
+		@include cloud(5%,5%,moveCloudTheme,70s);
+	}
+	&__cloud2 {
+		@include cloud(10%,10%,moveCloudTheme,70s);
+	}
+	&__cloud3 {
+		@include cloud(25%,12%,moveCloudTheme,70s);
+	}
+	&__cloud4 {
+		@include cloud(15%,20%,moveCloudTheme,70s);
 	}
 }

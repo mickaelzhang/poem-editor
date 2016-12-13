@@ -1,0 +1,16 @@
+@keyframes moveCloudTheme {
+  from{
+    transform:translateX(0px);
+  }
+  to{
+    transform:translateX(50px);
+  }
+}
+@keyframes moveCloudEditor {
+  from{
+    transform:translateX(-1500px);
+  }
+  to{
+    transform:translateX(1500px);
+  }
+}
