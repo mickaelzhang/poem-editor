@@ -12,11 +12,7 @@ export default class SceneManager {
 		this.Slider = new Slider()
 
 		this.sceneObject = [
-			new ThemeScene('.themeScene'),
-			new RhymeScene('.rhymeScene'),
-			new VerseScene('.verseScene'),
-			new EditorScene('.editorScene'),
-		]
+			new ThemeScene('.themeScene'),,,]
 
 		this.initSliderEvents()
 	}
@@ -31,6 +27,39 @@ export default class SceneManager {
 			let ind = _.Slider.currentSceneIndex
 			_.updateNextButtonState(ind)
 		})
+
+		this.nextButton.addEventListener('click', function() {
+			_.initSceneObject()
+		})
+	}
+
+	initSceneObject() {
+		console.log('____________________');
+		console.log('initSceneObject');
+		let nextSlideInd = this.Slider.currentSceneIndex
+		console.log('nextSlideInd: '+nextSlideInd);
+		console.log('nextSlideObject:');
+		console.log(this.sceneObject[nextSlideInd]);
+		if (this.sceneObject[nextSlideInd] === undefined) {
+			console.log("Object Don't exist");
+
+			switch (nextSlideInd) {
+				case 1:
+					this.sceneObject[nextSlideInd] = new RhymeScene('.rhymeScene')
+					console.log('Init RhymeScene');
+					break;
+				case 2:
+					this.sceneObject[nextSlideInd] = new VerseScene('.verseScene')
+					console.log('Init VerseScene');
+					break;
+				case 3:
+					this.sceneObject[nextSlideInd] = new EditorScene('.editorScene')
+					console.log('Init EditorScene');
+					break;
+			}
+		} else {
+			console.log("Object exist");
+		}
 	}
 
 	/**

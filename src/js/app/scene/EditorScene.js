@@ -8,7 +8,6 @@ export default class EditorScene {
 		this.stanzasContainer = this.editor.querySelector('.editorScene__stanzasList')
 		this.stanzas = this.stanzasContainer.querySelectorAll('.editorScene__stanzas')
 		this.moreButton = this.editor.querySelector('.editorScene__moreStanzasButton')
-		this.nextSceneButton = this.editor.querySelector('.editorScene__nextSceneButton')
 
 		this.stanzasHTML = '<div class="editorScene__stanzas"><div class="editorScene__line"><div class="editorScene__countBorder"><span class="editorScene__syllableCount">0</span></div><input class="editorScene__lineInput"></div><div class="editorScene__line"><div class="editorScene__countBorder"><span class="editorScene__syllableCount">0</span></div><input class="editorScene__lineInput"></div><div class="editorScene__line"><div class="editorScene__countBorder"><span class="editorScene__syllableCount">0</span></div><input class="editorScene__lineInput"></div><div class="editorScene__line"><div class="editorScene__countBorder"><span class="editorScene__syllableCount">0</span></div><input class="editorScene__lineInput"></div></div></div>'
 
@@ -23,7 +22,6 @@ export default class EditorScene {
 
 	initEvents() {
 		this.moreButton.addEventListener('click', evt => this.addStanzas(evt))
-		// this.nextSceneButton.addEventListener('click', evt => this.processDataNextScene(evt))
 	}
 
 	/**
