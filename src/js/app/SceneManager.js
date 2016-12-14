@@ -9,14 +9,8 @@ export default class SceneManager {
 		this.currentScene = 0
 		this.nextButton = document.querySelector('.nextButton')
 
-		this.loadSceneObject()
-
-		this.target = document.querySelector('.jeu__content')
-		this.navBar = this.target.querySelector('.jeu__navBar')
-		this.navBar.item = this.navBar.querySelectorAll('.sceneButton')
-		this.nextButton = this.target.querySelector('.nextButton')
-
 		this.Slider = new Slider()
+
 		this.sceneObject = [
 			new ThemeScene('.themeScene'),
 			new RhymeScene('.rhymeScene'),
@@ -26,10 +20,9 @@ export default class SceneManager {
 		this.initSliderEvents()
 	}
 
-	loadSceneObject() {
-
-	}
-
+	/**
+	 * eventListener
+	 */
 	initSliderEvents() {
 		let _ = this
 
@@ -37,22 +30,11 @@ export default class SceneManager {
 			let ind = _.Slider.currentSceneIndex
 			_.updateNextButtonState(ind)
 		})
-
-
-		// this.nextButton.addEventListener('click', function() {
-		// 	let ind = _.Slider.currentSceneIndex + 1
-		// 	_.Slider.goTo(ind)
-		// })
-		//
-		// for (var i = 0; i < this.navBar.item.length; i++) {
-		// 	this.navBar.item[i].addEventListener('click', function() {
-		// 		let ind = _.Slider.getIndexOf(this)
-		// 		_.Slider.goTo(ind)
-		// 		_.updateNextButtonState(ind)
-		// 	})
-		// }
 	}
 
+	/**
+	 * Update button state to visible or invisible
+	 */
 	updateNextButtonState(ind) {
 		if (this.sceneObject[ind].nextStatus) {
 			// Display button
