@@ -28,4 +28,11 @@
 	&__title {
 		align-self: flex-start;
 	}
+
+	.nextButton {
+		position: absolute;
+		right: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 }

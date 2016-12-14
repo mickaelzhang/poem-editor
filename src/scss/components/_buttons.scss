@@ -33,3 +33,25 @@
 		background-color: lighten($orange-yellow-orange, 1.5%);
 	}
 }
+
+.nextButton {
+	@extend %buttonTemplate;
+
+	background-color: $orange-yellow-orange;
+
+	width: 60px;
+	height: 60px;
+
+	border-radius: 50px;
+
+	&__arrow {
+		background-color: $white;
+		width: 50%;
+		padding-top: 50%;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
