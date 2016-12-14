@@ -279,11 +279,9 @@ export default class Rhyme {
 			"(œur|eure)$",
 			"eur")
 
-		// Remplace ait | ais | é par er
-		// reg = new RegExp("(([aei])+(ll|lle)|(!euille))$", "g");
-		// string = string.replace(reg, "$1l");
+		// Remplace
 		// string = this.regEx(string,
-		// 	"([êè][t]+(r))$",
+		// 	"(([aei])+(ll|lle)|(!euille))$",
 		// 	"$1l")
 
 		string = this.regEx(string,
