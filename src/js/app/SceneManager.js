@@ -26,6 +26,7 @@ export default class SceneManager {
 		window.addEventListener('click', function() {
 			let ind = _.Slider.currentSceneIndex
 			_.updateNextButtonState(ind)
+			_.updateEditorSettings()
 		})
 
 		// Event on next scene button
@@ -48,9 +49,21 @@ export default class SceneManager {
 					this.sceneObject[nextSlideInd] = new VerseScene('.verseScene')
 					break;
 				case 3:
-					this.sceneObject[nextSlideInd] = new EditorScene('.editorScene')
+					this.sceneObject[nextSlideInd] = new EditorScene('.editorScene', this.sceneObject[0].themeSlug, this.sceneObject[1].rhymeSlug, this.sceneObject[2].verseSlug)
 					break;
 			}
+		}
+	}
+
+	/**
+	 * Update EditorScene object setting
+	 */
+	updateEditorSettings() {
+		// If EditorScene object exist
+		if (this.sceneObject[3]) {
+			this.sceneObject[3].themeChoice = this.sceneObject[0].themeSlug
+			this.sceneObject[3].rhymeChoice = this.sceneObject[1].rhymeSlug
+			this.sceneObject[3].verseChoice = this.sceneObject[2].verseSlug
 		}
 	}
 

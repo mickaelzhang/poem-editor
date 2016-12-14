@@ -1,7 +1,11 @@
 import Stanzas from '../Stanzas.js'
 
 export default class EditorScene {
-	constructor(target = '.editorScene') {
+	constructor(target = '.editorScene', themeChoice = '', rhymeChoice = 'AABB', verseChoice = 8) {
+		console.log('themeChoice: '+themeChoice);
+		console.log('rhymeChoice: '+rhymeChoice);
+		console.log('verseChoice: '+verseChoice);
+
 		this.editor = document.querySelector(target)
 		this.stanzasContainer = this.editor.querySelector('.editorScene__stanzasList')
 		this.stanzas = this.stanzasContainer.querySelectorAll('.editorScene__stanzas')
@@ -11,8 +15,12 @@ export default class EditorScene {
 
 		this.stanzasNb = this.stanzas.length
 
+		this.themeChoice = themeChoice
+		this.rhymeChoice = rhymeChoice
+		this.verseChoice = verseChoice
+
 		for (var i = 0; i < this.stanzas.length; i++) {
-			new Stanzas(this.stanzas[i])
+			new Stanzas(this.stanzas[i], this.rhymeChoice)
 		}
 
 		this.initEvents()
@@ -47,6 +55,6 @@ export default class EditorScene {
 	 */
 	addLastStanzasEventListener() {
 		const index = this.stanzasNb - 1
-		new Stanzas(this.stanzas[index])
+		new Stanzas(this.stanzas[index], this.rhymeChoice)
 	}
 }

@@ -2,12 +2,13 @@ import Syllable from './Syllable.js'
 import Rhyme from './Rhyme.js'
 
 export default class Stanzas {
-	constructor(elem) {
+	constructor(elem, rhymeChoice) {
 		this.input = elem.querySelectorAll('.editorScene__lineInput')
 		this.syllableCount = elem.querySelectorAll('.editorScene__syllableCount')
 		this.selectedIndex = this.setSelectedIndex()
+		this.rhymeChoice = rhymeChoice
 
-		this.Rhyme = new Rhyme()
+		this.Rhyme = new Rhyme(this.rhymeChoice)
 
 		this.addSyllableObject()
 		this.initEvents()

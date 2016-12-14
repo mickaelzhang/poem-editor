@@ -1,6 +1,6 @@
 export default class Rhyme {
-	constructor(defaultRhyme = 'AABB') {
-		this.defaultRhyme = defaultRhyme
+	constructor(rhymeChoice = 'AABB') {
+		this.rhymeChoice = rhymeChoice
 		this.comparisonArrayModel = this.getRhymeModel()
 		this.rhymeStatus = [false, false]
 
@@ -134,7 +134,7 @@ export default class Rhyme {
 	}
 
 	getRhymeModel() {
-		switch (this.defaultRhyme) {
+		switch (this.rhymeChoice) {
 			default:
 			case 'AABB':
 				return [[1,2],[3,4]]
