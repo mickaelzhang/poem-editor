@@ -7,6 +7,15 @@ export default class Slider {
 		this.navBar.item = this.navBar.querySelectorAll('.sceneButton')
 		this.nextButton = this.target.querySelector('.nextButton')
 
+		this.nextStatus = false
+
+		this.sceneUnlockedStatus = [
+			true,
+			false,
+			false,
+			false
+		]
+
 		this.currentSceneIndex = 0
 		this.initEvents()
 	}
@@ -15,8 +24,11 @@ export default class Slider {
 		let _ = this
 
 		this.nextButton.addEventListener('click', function() {
-			let ind = _.currentSceneIndex + 1
-			_.goTo(ind)
+			// Execute only if nextButton is displayed
+			if (_.nextStatus) {
+				let ind = _.currentSceneIndex + 1
+				_.goTo(ind)
+			}
 		})
 
 		for (var i = 0; i < this.navBar.item.length; i++) {

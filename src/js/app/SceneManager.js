@@ -11,19 +11,13 @@ export default class SceneManager {
 
 		this.Slider = new Slider()
 
-		this.sceneUnlockedStatus = [
-			true,
-			false,
-			false,
-			false
-		]
-
 		this.sceneObject = [
 			new ThemeScene('.themeScene'),
 			new RhymeScene('.rhymeScene'),
 			new VerseScene('.verseScene'),
 			new EditorScene('.editorScene'),
 		]
+
 		this.initSliderEvents()
 	}
 
@@ -51,5 +45,7 @@ export default class SceneManager {
 			this.nextButton.classList.remove('nextButton--displayed')
 		}
 
+		// Update next status in slider
+		this.Slider.nextStatus = this.sceneObject[ind].nextStatus
 	}
 }
