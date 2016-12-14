@@ -1,4 +1,8 @@
 .verseScene {
+
+	&__jeu__sceneItem{
+		background-image: url('dist/img/fond.png');
+	}
 	&__title{
 		padding-left: 50px;
 		h1{
@@ -18,15 +22,17 @@
 
 	&__containervers{
 		width: 100%;
-		display: inline-flex;
-		justify-content: space-around;
-		padding-top: 55px;
+		display: flex;
+		flex-direction: column;
 	}
 
 	&__content{
-		border: 1px solid $black;
-		background-color: $white;
-		width: 23%;
+		border: 1px solid #000;
+	    background-color: #fff;
+	    width: 50%;
+	    margin: auto;
+	    margin-bottom: 30px;
+	    height: 70px;
 		@media screen and (max-width:950px){
 			width: 30%;
 		}

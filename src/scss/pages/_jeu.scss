@@ -19,6 +19,10 @@
 	&__sceneItem {
 		position: relative;
 		width: 100vw;
+		background-image: url(../img/fond.png);
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-size: 100% auto;
 	}
 
 	&__progressionBar {

@@ -47,16 +47,51 @@
 		@include arrowNext;
 	}
 
+
+	img{
+		position: absolute;
+	}
+
+	.jeu__sceneItem{
+		background-image: url(dist/img/fond.png);
+		background-repeat: no-repeat;
+	}
+
+
+	&__word{
+		position: absolute;
+	    top: 50px;
+	    left: 90px;
+		text-decoration: none;
+		color:$blue-picton-blue;
+	}
+
+
 	&__cloud1 {
-		@include cloud(5%,5%,moveCloudTheme,70s);
+		@include cloud(15%,5%,moveCloudTheme,70s);
 	}
 	&__cloud2 {
-		@include cloud(10%,10%,moveCloudTheme,70s);
+		@include cloud(60%,40%,moveCloudTheme,70s);
 	}
 	&__cloud3 {
-		@include cloud(25%,12%,moveCloudTheme,70s);
+		@include cloud(35%,8%,moveCloudTheme,70s);
 	}
 	&__cloud4 {
-		@include cloud(15%,20%,moveCloudTheme,70s);
+		@include cloud(55%,70%,moveCloudTheme,70s);
+	}
+	&__cloud5 {
+		@include cloud(50%,20%,moveCloudTheme,70s);
+	}
+	&__cloud6 {
+		@include cloud(40%,40%,moveCloudTheme,70s);
+	}
+	&__cloud7 {
+		@include cloud(15%,40%,moveCloudTheme,70s);
+	}
+	&__cloud8 {
+		@include cloud(15%,75%,moveCloudTheme,70s);
+	}
+	&__cloud9 {
+		@include cloud(35%,62%,moveCloudTheme,70s);
 	}
 }
