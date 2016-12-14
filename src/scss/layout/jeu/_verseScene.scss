@@ -1,6 +1,5 @@
 .verseScene {
 
-
 	&__jeu__sceneItem{
 		background-image: url('dist/img/fond.png');
 	}
@@ -17,118 +16,55 @@
 		font-weight: bold;
 	}
 
-	&__containerCentral{
+	&__choiceverse {
+		height: 50%;
 		display: flex;
-	}
-
-	&__containervers{
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-	}
-
-	&__content{
-		border: 1px solid #000;
-	    background-color: #fff;
-	    width: 50%;
-	    margin: auto;
-	    margin-bottom: 30px;
-	    height: 70px;
-		@media screen and (max-width:950px){
-			width: 30%;
-		}
-		h1{
-			text-align: center;
-			font-size: 30px;
-			padding-top: 15px;
-			color: $greydark;
-		}
-	}
-
-	&__orange{
-		color:$orange;
-	}
-
-	&__blue{
-		color: $blue;
-	}
-
-	&__bluedark{
-		color: $bluedark;
-	}
-
-	&__red{
-		color: $red;
-	}
-
-	&__yellow{
-		color: $yellow;
-	}
-
-	&__green{
-		color: $green;
-	}
-
-	&__versType{
-		text-align: center;
-		font-weight: bold;
-		font-size: 56px;
-		color:$greylight;
-		padding-top: 35px;
-	}
-
-	&__example{
-		padding-left: 25px;
-		font-style: italic;
-		padding-top: 50px;
-		font-size: 18px;
-	}
-
-	&__vers{
+		flex-flow: column;
+		justify-content: space-around;
+		margin-top: 20vh; /* poussé de la moitié de hauteur de viewport */
+  		transform: translateY(-20%); /* tiré de la moitié de sa propre hauteur */
 		font-size: 20px;
-		padding-left: 25px;
-		padding-right: 25px;
 		letter-spacing: 1px;
+
+		@include breakpoint(small) {
+				flex-direction: row;
+				font-size: 15px;
+
+		};
 	}
 
-	&__button{
-		text-align: center;
-		position: relative;
-		top: 65px; /* poussé de la moitié de hauteur du référent */
-		left: 90%;
-		transform: translateX(-90%); /* tiré de la moitié de sa propre largeur */
-		border: 1px solid #4a4a4a;
+	&__selectType {
+		p {
+			color: white;
+		}
+	}
+
+	&__buttonTypeverse {
+		height: 55px;
+		width: 50%;
 		border-radius: 50px;
-		height: 50px;
-		width: 150px;
-		line-height: 50px;
-		background-color: $white;
-		a{
-			text-decoration: none;
-			font-size: 1.3em;
-			color:$grey;
-			display:block;
-			width:100%;
-			height:100%;
-		}
+		background: #fff;
+		text-align: center;
+		color: $orange;
+		box-shadow: 1px 1px 1px 1.5px #979797;
+		cursor: pointer;
+		z-index: 10;
+		line-height: 55px;
+		margin: auto;
+		margin-bottom: 30px;
+
+		@include breakpoint(small) {
+			width: 25%;
+
+		};
+
+
 	}
 
-	&__buttonSound{
-		text-align: center;
-		position: relative;
-		top: 60px;
-		left: 97%;
-		-webkit-transform: translateX(-90%);
-		transform: translateX(-90%);
-		height: 30px;
-		width: 50px;
-		line-height: 50px;
-		a{
-			display:block;
-			width:100%;
-			height:100%;
-		}
+	&__selectType {
+    	background: #f5a623;
 	}
+
 
 	&__container-animate {
 		@include containerFullscreen;
@@ -136,6 +72,42 @@
 
 	&__arrow-next {
 		@include arrowNext;
+	}
+	&__Text{
+		position: absolute;
+		left: 50%;
+		top:70%;
+  		transform: translateX(-50%); /* tiré de la moitié de sa propre hauteur */
+
+		@include breakpoint(small) {
+				top:50%;
+
+		};
+	}
+
+	&__contentText{
+		text-align: center;
+		display: flex;
+	    flex-direction: column;
+
+
+		p:nth-child(1){
+			color: $blue-picton-blue;
+			font-size: 23px;
+			padding-bottom: 30px;
+		}
+		p:nth-child(2){
+			font-size: 20px;
+			padding-bottom: 30px;
+		}
+		p:nth-child(3){
+			font-size: 25px;
+			padding-bottom: 30px;
+		}
+	}
+
+	&__orange{
+		color:$orange-yellow-orange;
 	}
 
 }
