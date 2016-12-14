@@ -7,6 +7,7 @@ export default class RhymeScene {
 
 		this.focusIndex = -1
 		this.nextStatus = false
+		this.rhymeSlug
 
 		this.initEvents()
 	}
@@ -30,6 +31,9 @@ export default class RhymeScene {
 			if (this.choiceItem[i] == elem) {
 				// Set which element is selected
 				this.focusIndex = i
+
+				// Set slug
+				this.rhymeSlug = elem.getAttribute('data-ref')
 
 				// Set nextButton state for this page
 				this.nextStatus = true
