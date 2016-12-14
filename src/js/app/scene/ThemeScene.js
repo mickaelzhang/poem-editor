@@ -6,6 +6,7 @@ export default class ThemeScene {
 
 		this.focusIndex = -1
 		this.nextStatus = false
+		this.themeSlug
 
 		this.initEvents()
 	}
@@ -40,6 +41,7 @@ export default class ThemeScene {
 		for (var i = 0; i < this.themeCard.length; i++) {
 			if (this.themeCard[i] == elem) {
 				this.focusIndex = i
+				this.themeSlug = elem.getAttribute('data-ref')
 				return
 			}
 		}
