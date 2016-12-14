@@ -23,7 +23,6 @@ export default class Slider {
 			this.navBar.item[i].addEventListener('click', function() {
 				let ind = _.getIndexOf(this)
 				_.goTo(ind)
-				console.log(ind);
 			})
 		}
 
@@ -47,7 +46,7 @@ export default class Slider {
 		let deltaScene = Math.abs(this.currentSceneIndex - index)
 
 		// Unit in MS
-		const durationPerScene = 350
+		const durationPerScene = 300
 		let totalDuration = durationPerScene * deltaScene
 
 		this.currentSceneIndex = index

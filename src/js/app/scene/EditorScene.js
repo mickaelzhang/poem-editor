@@ -1,10 +1,10 @@
-import Stanzas from './Stanzas.js'
+import Stanzas from '../Stanzas.js'
 
-export default class Editor {
-	constructor() {
-		console.log('Start Editor.')
+export default class EditorScene {
+	constructor(target = '.editorScene') {
+		// console.log('Start Editor.')
 
-		this.editor = document.querySelector('.editorScene')
+		this.editor = document.querySelector(target)
 		this.stanzasContainer = this.editor.querySelector('.editorScene__stanzasList')
 		this.stanzas = this.stanzasContainer.querySelectorAll('.editorScene__stanzas')
 		this.moreButton = this.editor.querySelector('.editorScene__moreStanzasButton')

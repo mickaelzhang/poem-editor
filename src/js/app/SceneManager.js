@@ -1,5 +1,8 @@
 import Slider from './Slider'
-import ThemeChoice from './ThemeChoice'
+import ThemeScene from './scene/ThemeScene'
+import RhymeScene from './scene/RhymeScene'
+import VerseScene from './scene/VerseScene'
+import EditorScene from './scene/EditorScene'
 
 export default class SceneManager {
 	constructor() {
@@ -15,7 +18,10 @@ export default class SceneManager {
 
 		this.Slider = new Slider()
 		this.sceneObject = [
-			new ThemeChoice(),
+			new ThemeScene('.themeScene'),
+			new RhymeScene('.rhymeScene'),
+			new VerseScene('.verseScene'),
+			new EditorScene('.editorScene'),
 		]
 		this.initSliderEvents()
 	}

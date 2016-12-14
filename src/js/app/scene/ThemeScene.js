@@ -1,6 +1,9 @@
-export default class ThemeChoice {
-	constructor() {
-		this.themeCard = document.querySelectorAll('.themeScene__themeCard')
+export default class ThemeScene {
+	constructor(target) {
+		// console.log('Start ThemeScene.');
+		this.target = document.querySelector(target)
+		this.themeCard = this.target.querySelectorAll('.themeScene__themeCard')
+
 		this.focusIndex = -1
 		this.nextStatus = false
 
