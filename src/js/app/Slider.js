@@ -29,7 +29,6 @@ export default class Slider {
 				let ind = _.currentSceneIndex + 1
 				_.goTo(ind)
 				_.sceneUnlockedStatus[ind] = true
-				console.log(_.sceneUnlockedStatus);
 			}
 		})
 
