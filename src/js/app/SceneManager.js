@@ -11,7 +11,7 @@ export default class SceneManager {
 
 		this.Slider = new Slider()
 
-		this.unlockedStatus = [
+		this.sceneUnlockedStatus = [
 			true,
 			false,
 			false,
