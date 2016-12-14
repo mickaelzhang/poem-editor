@@ -6,8 +6,8 @@ export default class Slider {
 		this.navBar = this.target.querySelector('.jeu__navBar')
 		this.navBar.item = this.navBar.querySelectorAll('.sceneButton')
 
-		this.currentSceneIndex = 0
-
+		this.currentSceneIndex = 3
+		this.goTo(3)
 		this.initEvents()
 	}
 

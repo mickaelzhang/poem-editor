@@ -7,6 +7,7 @@ export default class Syllable {
 		this.texte = string
 		this.syllableArray
 		this.count
+		this.lastSyllable
 
 		this.updateData()
 
@@ -30,8 +31,18 @@ export default class Syllable {
 		this.processString(this.texte)
 		this.count = this.syllableArray.length
 		this.setSyllableNumber()
+		this.setLastSyllable()
 	}
 
+	/**
+ 	 * setLastSyllable
+ 	 */
+ 	setLastSyllable() {
+ 		const lastIndex = this.syllableArray.length - 1
+
+ 		// Add last syllables
+ 		this.lastSyllable = this.syllableArray[lastIndex]
+ 	}
 	/**
 	 * function setSyllableNumber
 	 * Get how many syllable there is in this string
@@ -56,11 +67,11 @@ export default class Syllable {
 	processString(string) {
 		let tailleInitiale = 0
 		//exception  ch, ph, gn et th sont inséparables et  bl, cl, fl, gl, pl, br, cr, dr, fr, gr, pr, tr, vr
-		var reg = new RegExp("([cpg]h|[bcfgp]l|[bcdfgptv]r)", "g");
-		string = string.replace(reg, "X");
+		// var reg = new RegExp("([cpg]h|[bcfgp]l|[bcdfgptv]r)", "g");
+		// string = string.replace(reg, "X");
 
 		//le tiret sépare 2 mots
-		reg = new RegExp("-", "g");
+		var reg = new RegExp("-", "g");
 		string = string.replace(reg, "|");
 		//la ponctuation est remplacer par des espaces
 		reg = new RegExp("[" + this.ponctuation + "]", "g");
@@ -106,8 +117,13 @@ export default class Syllable {
 		reg = new RegExp("[ ]+", "g");
 		string = string.replace(reg, "|");
 
+		// Enlève le ' en fin de phrase
+		reg = new RegExp("('\n)$", "g");
+		string = string.replace(reg, "e");
+
 		// Split pour les sauts de ligne, pas besoin pour nous
 		// var res = string.split("\n");
+		// console.log(string);
 
 		this.syllableArray = string.split("|");
 	}

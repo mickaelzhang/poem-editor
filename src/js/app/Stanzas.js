@@ -1,4 +1,5 @@
 import Syllable from './Syllable.js'
+import Rhyme from './Rhyme.js'
 
 export default class Stanzas {
 	constructor(elem) {
@@ -6,13 +7,15 @@ export default class Stanzas {
 		this.syllableCount = elem.querySelectorAll('.editorScene__syllableCount')
 		this.selectedIndex = this.setSelectedIndex()
 
+		this.Rhyme = new Rhyme()
+
 		this.addSyllableObject()
 		this.initEvents()
 	}
 
 	addSyllableObject() {
 		for (var i = 0; i < this.input.length; i++) {
-			this.input[i].syllable = new Syllable()
+			this.input[i].Syllable = new Syllable()
 		}
 	}
 
@@ -35,10 +38,15 @@ export default class Stanzas {
 		if (0 <= this.selectedIndex) {
 			const i = this.selectedIndex
 			const inputValue = this.input[i].value
-			this.input[i].syllable.setString(inputValue)
-			const syllableNb = this.input[i].syllable.count
+			this.input[i].Syllable.setString(inputValue)
+			const syllableNb = this.input[i].Syllable.count
 
+			// Update syllable count on the View
 			this.updateSyllableCount(i, syllableNb)
+
+			// Update syllable in Rhyme object to compare if its correct
+			this.Rhyme.setInputSyllable(i, this.input[i].Syllable.lastSyllable)
+			console.log(this.Rhyme.inputLastRhyme);
 		}
 	}
 
