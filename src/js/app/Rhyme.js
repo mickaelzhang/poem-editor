@@ -235,7 +235,7 @@ export default class Rhyme {
 
 		// Rime en un
 		string = this.regEx(string,
-			"(in|oin)$",
+			"(in|oin|aim)$",
 			"un")
 
 		// Rime en i
