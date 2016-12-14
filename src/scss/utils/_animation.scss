@@ -14,3 +14,16 @@
     transform:translateX(1500px);
   }
 }
+
+
+@keyframes moveArrowLeft {
+  from{
+    transform:translateX(0px);
+  }
+  50% {
+    transform:translateX(-10px);
+  }
+  to{
+    transform:translateX(0px);
+  }
+}

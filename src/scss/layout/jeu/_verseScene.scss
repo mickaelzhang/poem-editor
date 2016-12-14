@@ -123,4 +123,12 @@
 		}
 	}
 
+	&__container-animate {
+		@include containerFullscreen;
+	}
+
+	&__arrow-next {
+		@include arrowNext;
+	}
+
 }

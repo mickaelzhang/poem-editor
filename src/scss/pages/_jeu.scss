@@ -12,12 +12,12 @@
 		width: 10000px;
 		display: flex;
 		flex: row;
-
 		transition-property: transform;
 		transition-timing-function: ease-out;
 	}
 
 	&__sceneItem {
+		position: relative;
 		width: 100vw;
 	}
 

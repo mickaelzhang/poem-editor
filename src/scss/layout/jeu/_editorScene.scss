@@ -62,12 +62,8 @@
 		margin-top: 40px;
 	}
 
-	&__container-cloud {
-		position: absolute;
-		width: 100%;
-		height: 100vh;
-		background: #000;
-		overflow: hidden
+	&__container-animate {
+		@include containerFullscreen;
 	}
 
 	&__cloud1 {
