@@ -160,9 +160,14 @@ export default class Rhyme {
 			"((er)[dtbs])$",
 			"ère")
 
+		// EXCEPTION
+		string = this.regEx(string,
+			"(test)$",
+			"teste")
+
 		// Enlève les s|g|p|d|b|t muets
 		string = this.regEx(string,
-			"(["+this.voyelle+"])(["+this.consonne+"]*)[sgpdbt]+$",
+			"(["+this.voyelle+"])(["+this.consonne+"]*)[sgpdbtx]+$",
 			"$1$2")
 
 		// Enlève les s|g|p|d|b|t muets
@@ -180,7 +185,7 @@ export default class Rhyme {
 			"(ê|ai)",
 			"è")
 
-		// Change è
+		// Change ss en c
 		string = this.regEx(string,
 			"ss",
 			"c")
@@ -190,9 +195,15 @@ export default class Rhyme {
 			"mm",
 			"m")
 
+		// Changer lettre m en n quand précéder par voyelle et après, autre syllabe
 		string = this.regEx(string,
-			"m",
-			"n")
+			"(["+this.voyelle+"])m(["+this.consonne+"])",
+			"$1n$2")
+
+		// Rime en a
+		string = this.regEx(string,
+			"([auoei])m$",
+			"$1n")
 
 		// Rime en ke
 		string = this.regEx(string,
@@ -204,6 +215,11 @@ export default class Rhyme {
 			"ette",
 			"ète")
 
+		// Rime en o
+		string = this.regEx(string,
+			"(au|eau)$",
+			"o")
+
 		// Rime en eur
 		string = this.regEx(string,
 			"(aine|eine)[nt]*$",
@@ -213,11 +229,6 @@ export default class Rhyme {
 		string = this.regEx(string,
 			"(iene)[nt]*$",
 			"iène")
-
-		// Rime en a
-		string = this.regEx(string,
-			"([auoei])m(["+this.consonne+"]*)",
-			"$1n$2")
 
 		string = this.regEx(string,
 			"en(["+this.consonne+"])*",
