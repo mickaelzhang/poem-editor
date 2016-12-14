@@ -5,6 +5,7 @@ export default class Slider {
 		this.sliderItem = this.sliderContainer.querySelectorAll('.jeu__sceneItem')
 		this.navBar = this.target.querySelector('.jeu__navBar')
 		this.navBar.item = this.navBar.querySelectorAll('.sceneButton')
+		this.nextButton = this.target.querySelector('.nextButton')
 
 		this.currentSceneIndex = 0
 		this.initEvents()
@@ -13,10 +14,16 @@ export default class Slider {
 	initEvents() {
 		let _ = this
 
+		this.nextButton.addEventListener('click', function() {
+			let ind = _.currentSceneIndex + 1
+			_.goTo(ind)
+		})
+
 		for (var i = 0; i < this.navBar.item.length; i++) {
 			this.navBar.item[i].addEventListener('click', function() {
 				let ind = _.getIndexOf(this)
 				_.goTo(ind)
+				console.log(ind);
 			})
 		}
 

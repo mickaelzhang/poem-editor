@@ -1,8 +1,8 @@
 export default class ThemeChoice {
 	constructor() {
-		console.log('ThemeChoice');
 		this.themeCard = document.querySelectorAll('.themeScene__themeCard')
 		this.focusIndex = -1
+		this.nextStatus = false
 
 		this.initEvents()
 	}
@@ -13,8 +13,18 @@ export default class ThemeChoice {
 		for (var i = 0; i < this.themeCard.length; i++) {
 			this.themeCard[i].addEventListener('click', function() {
 				_.setFocusedTheme(this)
-			}, false)
+			})
 		}
+	}
+
+	getNextStatus() {
+		return this.nextStatus
+	}
+
+	setNextStatus(bool) {
+		this.nextStatus = true
+
+		return this
 	}
 
 	setFocusedTheme(elem) {
@@ -34,13 +44,12 @@ export default class ThemeChoice {
 
 	removeFocusState() {
 		for (var i = 0; i < this.themeCard.length; i++) {
-			console.log();
 			this.themeCard[i].classList.remove('themeScene__themeCard--focus')
 		}
 	}
 
 	addFocusState(i) {
-		console.log(i);
-		this.themeCard[i].className += ' themeScene__themeCard--focus'
+		this.themeCard[i].classList.add('themeScene__themeCard--focus')
+		this.setNextStatus(true)
 	}
 }

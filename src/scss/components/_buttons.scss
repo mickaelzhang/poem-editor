@@ -39,6 +39,10 @@
 
 	background-color: $orange-yellow-orange;
 
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.4s ease-out;
+
 	width: 60px;
 	height: 60px;
 
@@ -53,5 +57,10 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+	}
+
+	&--displayed {
+		opacity: 1;
+		pointer-events: auto;
 	}
 }
