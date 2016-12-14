@@ -2,6 +2,8 @@ export default class Rhyme {
 	constructor(defaultRhyme = 'AABB') {
 		console.log('Rhyme');
 		this.defaultRhyme = defaultRhyme
+		this.comparisonArrayModel = this.getRhymeModel()
+		this.rhymeStatus = [false, false]
 
 		this.voyelle = "aàâeëéèêiïouùy"
 		this.consonne = "bcçdfghjklmnpqrstvwxyz"
@@ -58,25 +60,71 @@ export default class Rhyme {
 	setInputSyllable(index, string) {
 		let processedString = this.processRhyme(string.toLowerCase().trim())
 		console.log('OG: '+processedString);
-		// this.inputLastRhyme[index] = processedString
-		// Get only last 5 char
-		// processedString = processedString.substr(processedString.length - 5)
-		//
 
 		const limit = 6 < processedString.length ? 6 : (processedString.length)
 
+		this.inputLastRhyme[index] =  processedString
+
+
+		console.log(this.inputLastRhyme);
+		this.checkRhyme()
+
+		// for (var i = 1; i <= limit; i++) {
+		// 	this.inputLastRhyme[index] =  this.compareToRhyme( processedString.substr(i - 1) )
+		//
+		// 	if (this.inputLastRhyme[index] != false) {
+		// 		return
+		// 	}
+		// }
+	}
+
+	checkRhyme() {
+		// Loop on both rhyme (eg. A and B)
+		for (var i = 0; i < this.comparisonArrayModel.length; i++) {
+				let firstLine = this.comparisonArrayModel[i][0] - 1
+				let secondLine = this.comparisonArrayModel[i][1] - 1
+
+				if (this.inputLastRhyme[firstLine] && this.inputLastRhyme[secondLine]) {
+					this.rhymeStatus[i] = this.compareLineInput(this.inputLastRhyme[firstLine], this.inputLastRhyme[secondLine])
+					console.log(this.rhymeStatus);
+				}
+		}
+	}
+
+	compareLineInput(input1, input2) {
+		console.log('compareLineInput');
+		let trimInput1
+		let trimInput2
+
+		const limit = input1.length < input2.length ? input1.length : input2.length
 
 		for (var i = 1; i <= limit; i++) {
-			this.inputLastRhyme[index] =  this.compareToRhyme( processedString.substr(i - 1) )
+			trimInput1 = input1.substr(input1.length - i)
+			trimInput2 = input2.substr(input2.length - i)
 
-			if (this.inputLastRhyme[index] != false) {
-				return
+			if (trimInput1 !== trimInput2) {
+				// If no character are equal
+				if (i == 1) {
+					return false
+				} else {
+					// console.log('Les 2 inputs sont différents à partir de '+i+' caractères');
+					// console.log(trimInput1);
+					// console.log(trimInput2);
+					// console.log('FIN: compareLineInput');
+					// Permet d'avoir la rime
+					// trimInput1 = input1.substr(input1.length - i + 1)
+
+					return true
+				}
 			}
+
+			// Same rhyme
+			return true
 		}
 	}
 
 	compareToRhyme(string) {
-		console.log(string);
+		// console.log(string);
 		for (var i = 0; i < this.rhyme.length; i++) {
 			if (this.rhyme[i] === string) {
 				return this.rhyme[i]
@@ -84,6 +132,21 @@ export default class Rhyme {
 		}
 
 		return false
+	}
+
+	getRhymeModel() {
+		switch (this.defaultRhyme) {
+			default:
+			case 'AABB':
+				return [[1,2],[3,4]]
+				break;
+			case 'ABAB':
+				return [[1,3],[2,4]]
+				break;
+			case 'ABBA':
+				return [[1,4],[2,3]]
+				break;
+		}
 	}
 
 	processRhyme(string) {
@@ -143,8 +206,13 @@ export default class Rhyme {
 
 		// Rime en eur
 		string = this.regEx(string,
-			"(aine|eine|iene)[nt]*$",
+			"(aine|eine)[nt]*$",
 			"ène")
+
+		// Rime en eur
+		string = this.regEx(string,
+			"(iene)[nt]*$",
+			"iène")
 
 		// Rime en a
 		string = this.regEx(string,
