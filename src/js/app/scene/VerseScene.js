@@ -6,6 +6,7 @@ export default class VerseScene {
 
 		this.focusIndex = -1
 		this.nextStatus = false
+		this.verseSlug
 
 		this.initEvents()
 	}
@@ -29,6 +30,9 @@ export default class VerseScene {
 			if (this.choiceItem[i] == elem) {
 				// Set which element is selected
 				this.focusIndex = i
+
+				// Set choice slug
+				this.verseSlug = elem.getAttribute('data-ref')
 
 				return this
 			}
