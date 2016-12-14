@@ -11,6 +11,13 @@ export default class SceneManager {
 
 		this.Slider = new Slider()
 
+		this.unlockedStatus = [
+			true,
+			false,
+			false,
+			false
+		]
+
 		this.sceneObject = [
 			new ThemeScene('.themeScene'),
 			new RhymeScene('.rhymeScene'),
