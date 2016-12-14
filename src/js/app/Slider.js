@@ -28,13 +28,19 @@ export default class Slider {
 			if (_.nextStatus) {
 				let ind = _.currentSceneIndex + 1
 				_.goTo(ind)
+				_.sceneUnlockedStatus[ind] = true
+				console.log(_.sceneUnlockedStatus);
 			}
 		})
 
 		for (var i = 0; i < this.navBar.item.length; i++) {
 			this.navBar.item[i].addEventListener('click', function() {
 				let ind = _.getIndexOf(this)
-				_.goTo(ind)
+
+				// If scene is unlocked, go there
+				if (_.sceneUnlockedStatus[ind]) {
+					_.goTo(ind)
+				}
 			})
 		}
 
