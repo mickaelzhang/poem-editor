@@ -12,11 +12,7 @@ export default class SceneManager {
 		this.Slider = new Slider()
 
 		this.sceneObject = [
-			new ThemeScene('.themeScene'),
-			new RhymeScene('.rhymeScene'),
-			new VerseScene('.verseScene'),
-			new EditorScene('.editorScene'),
-		]
+			new ThemeScene('.themeScene'),,,]
 
 		this.initSliderEvents()
 	}
@@ -31,6 +27,31 @@ export default class SceneManager {
 			let ind = _.Slider.currentSceneIndex
 			_.updateNextButtonState(ind)
 		})
+
+		// Event on next scene button
+		this.nextButton.addEventListener('click', function() {
+			_.initSceneObject()
+		})
+	}
+
+	initSceneObject() {
+		let nextSlideInd = this.Slider.currentSceneIndex
+
+		// If the object is not already initialized
+		if (this.sceneObject[nextSlideInd] === undefined) {
+			// Choose which object to use depending on index
+			switch (nextSlideInd) {
+				case 1:
+					this.sceneObject[nextSlideInd] = new RhymeScene('.rhymeScene')
+					break;
+				case 2:
+					this.sceneObject[nextSlideInd] = new VerseScene('.verseScene')
+					break;
+				case 3:
+					this.sceneObject[nextSlideInd] = new EditorScene('.editorScene')
+					break;
+			}
+		}
 	}
 
 	/**

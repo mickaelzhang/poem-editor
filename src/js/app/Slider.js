@@ -28,7 +28,7 @@ export default class Slider {
 			if (_.nextStatus) {
 				let ind = _.currentSceneIndex + 1
 				_.goTo(ind)
-				_.sceneUnlockedStatus[ind] = true
+				_.unlockScene(ind)
 			}
 		})
 
@@ -46,6 +46,11 @@ export default class Slider {
 		window.addEventListener('resize', function() {
 			_.goTo(_.currentSceneIndex)
 		})
+	}
+
+	unlockScene(ind) {
+		this.sceneUnlockedStatus[ind] = true
+		return this
 	}
 
 	goTo(ind) {

@@ -1,6 +1,5 @@
 export default class Rhyme {
 	constructor(defaultRhyme = 'AABB') {
-		console.log('Rhyme');
 		this.defaultRhyme = defaultRhyme
 		this.comparisonArrayModel = this.getRhymeModel()
 		this.rhymeStatus = [false, false]
