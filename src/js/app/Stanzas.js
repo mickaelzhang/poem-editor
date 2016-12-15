@@ -91,6 +91,7 @@ export default class Stanzas {
 		this.rhymeChoice = rhymeChoice
 		this.syllableNb = syllableNb
 
+		this.Rhyme.updateRhymeChoice(rhymeChoice)
 
 		for (var i = 0; i < this.input.length; i++) {
 			this.updateSyllable(i)

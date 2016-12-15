@@ -58,14 +58,13 @@ export default class Rhyme {
 
 	setInputSyllable(index, string) {
 		let processedString = this.processRhyme(string.toLowerCase().trim())
-		// console.log('OG: '+processedString);
+		console.log('OG: '+processedString);
 
 		const limit = 6 < processedString.length ? 6 : (processedString.length)
 
 		this.inputLastRhyme[index] =  processedString
 
-
-		// console.log(this.inputLastRhyme);
+		console.log(this.inputLastRhyme);
 		this.checkRhyme()
 
 		// for (var i = 1; i <= limit; i++) {
@@ -85,7 +84,7 @@ export default class Rhyme {
 
 				if (this.inputLastRhyme[firstLine] && this.inputLastRhyme[secondLine]) {
 					this.rhymeStatus[i] = this.compareLineInput(this.inputLastRhyme[firstLine], this.inputLastRhyme[secondLine])
-					// console.log(this.rhymeStatus);
+					console.log(this.rhymeStatus);
 				}
 		}
 	}
@@ -130,6 +129,10 @@ export default class Rhyme {
 		}
 
 		return false
+	}
+
+	updateRhymeChoice(rhymeChoice) {
+		this.rhymeChoice = rhymeChoice
 	}
 
 	getRhymeModel() {
