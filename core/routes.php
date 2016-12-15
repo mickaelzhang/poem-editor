@@ -15,4 +15,10 @@ $app->get('/poesie', function() use ($app) {
     return $app['twig']->render('pages/poesie.twig');
 })->bind('poesie');
 
+// End
+// Poésie
+$app->get('/end', function() use ($app) {
+    return $app['twig']->render('pages/end.twig');
+})->bind('end');
+
 return $app;

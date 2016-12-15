@@ -1,0 +1,22 @@
+{% extends "templates/default.twig" %}
+
+{% block bodyClass "end" %}
+
+{% block content %}
+	<div class="end__container">
+		<div class="end__mainContent">
+			<div class="end__text">
+				<h2>Bravo ! Tu as écrit ton poème,<br>
+					Tu peux maintenant l'écrire sur une feuille de papier pour en garder une trace</h2>
+				<h3>Ou bien continuer à exercer ta créativité</h3>
+			</div>
+			<div class="end__visual">
+				<img class="end__mascot" src="dist/img/fox-mascot.png" alt="Fox Mascot" />
+			</div>
+		</div>
+		<div class="end__buttonContainer">
+			<a class="end__button primaryButton" href="{{url('jeu')}}">Sauvegarder</a>
+			<a class="end__button primaryButton" href="{{url('jeu')}}">Recommencer</a>
+		</div>
+	</div>
+{% endblock %}

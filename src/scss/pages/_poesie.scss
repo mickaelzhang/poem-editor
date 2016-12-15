@@ -1,0 +1,25 @@
+.poesie {
+	&__img{
+		padding:50px;
+	}
+
+	&__content{
+		width: 100%;
+		display: block;
+		line-height: 40px;
+		font-size: 32px;
+		margin-top: 30vh;
+		transform: translateY(-50%);
+		display: flex;
+		justify-content: center;
+	}
+
+	&__contentButton{
+		text-align: center;
+		margin-left: 300px;
+	}
+
+	.primaryButton{
+		text-align: center;
+	}
+}
