@@ -24,7 +24,7 @@ export default class EditorScene {
 
 		this.initStanzasObject()
 		this.addEventOnNewElem()
-
+		this.applyTransformOnEditor(0)
 	}
 
 	addEventOnNewElem() {
