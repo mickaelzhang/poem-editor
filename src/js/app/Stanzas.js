@@ -59,8 +59,6 @@ export default class Stanzas {
 
 		// Update syllable in Rhyme object to compare if its correct
 		this.Rhyme.setInputSyllable(i, this.input[i].Syllable.lastSyllable)
-
-		console.log(this.input[i].Syllable);
 	}
 
 	updateSyllableCount(index, syllableCount) {
@@ -69,6 +67,8 @@ export default class Stanzas {
 
 	updateData() {
 		this.input = this.stanzas.querySelectorAll('.editorScene__lineInput')
+		this.syllableCount = this.stanzas.querySelectorAll('.editorScene__syllableCount')
+
 		this.lineCount = this.input.length
 		this.addSyllableObject()
 		this.addEvents()
@@ -84,19 +84,6 @@ export default class Stanzas {
 		for (var i = 0; i < this.input.length; i++) {
 			if (this.input[i] == document.activeElement) {
 				return i
-			}
-		}
-	}
-
-	/**
-	 * function setInputIndex
-	 * Set which input is selected
-	 */
-	setSelectedIndex() {
-		for (var i = 0; i < this.input.length; i++) {
-			if (this.input[i] == document.activeElement) {
-				this.selectedIndex = i
-				return
 			}
 		}
 	}
