@@ -1,29 +1,46 @@
 @keyframes moveCloudTheme {
-  from{
-    transform:translateX(0px);
-  }
-  to{
-    transform:translateX(50px);
-  }
+	from {
+		transform: translateX(0px);
+	}
+
+	to {
+		transform: translateX(50px);
+	}
 }
 @keyframes moveCloudEditor {
-  from{
-    transform:translateX(-1500px);
-  }
-  to{
-    transform:translateX(1500px);
-  }
+	from {
+		transform: translateX(-1500px);
+	}
+
+	to {
+		transform: translateX(1500px);
+	}
 }
-
-
 @keyframes moveArrowLeft {
-  from{
-    transform:translateX(0px);
-  }
-  50% {
-    transform:translateX(-10px);
-  }
-  to{
-    transform:translateX(0px);
-  }
+	from {
+		transform: translateX(0px);
+	}
+
+	50% {
+		transform: translateX(-10px);
+	}
+
+	to {
+		transform: translateX(0px);
+	}
+}
+@keyframes pulsate {
+	0% {
+		transform: scale(0.1, 0.1);
+		opacity: 0.0;
+	}
+
+	50% {
+		opacity: 1.0;
+	}
+
+	100% {
+		transform: scale(1.2, 1.2);
+		opacity: 0.0;
+	}
 }

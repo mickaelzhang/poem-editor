@@ -7,30 +7,26 @@
 
 .primaryButton {
 	@extend %buttonTemplate;
-
 	color: $white;
 	font-size: 24px;
 	text-transform: uppercase;
 	font-weight: bold;
-
 	background-color: $orange-yellow-orange;
 	padding: 16px 36px;
 	border-radius: 60px;
-	box-shadow: 0px 0px 16px 0px rgba($black, 0.15);
+	box-shadow: 0 0 16px 0 rgba($black, 0.15);
 }
 
 .secondaryButton {
 	@extend %buttonTemplate;
-
 	color: $orange-yellow-orange;
 	font-size: 24px;
 	text-transform: uppercase;
 	font-weight: bold;
-
 	background-color: $white;
 	padding: 16px 36px;
 	border-radius: 60px;
-	box-shadow: 0px 0px 16px 0px rgba($black, 0.15);
+	box-shadow: 0 0 16px 0 rgba($black, 0.15);
 
 	&--selected {
 		color: $white;
@@ -40,11 +36,9 @@
 
 .sceneButton {
 	@extend %buttonTemplate;
-
 	background-color: $orange-yellow-orange;
 	padding: 10px 40px;
 	border-radius: 40px;
-
 
 	&:hover {
 		background-color: lighten($orange-yellow-orange, 1.5%);
@@ -53,23 +47,18 @@
 
 .nextButton {
 	@extend %buttonTemplate;
-
 	background-color: $orange-yellow-orange;
-
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity 0.4s ease-out;
-
 	width: 60px;
 	height: 60px;
-
 	border-radius: 50px;
 
 	&__arrow {
 		background-color: $white;
 		width: 50%;
 		padding-top: 50%;
-
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -79,5 +68,34 @@
 	&--displayed {
 		opacity: 1;
 		pointer-events: auto;
+	}
+
+	&__pulsate {
+		border: 5px solid $orange-yellow-orange;
+		border-radius: 50%;
+		height: 70px;
+		width: 70px;
+		position: absolute;
+		top: -5px;
+		left: -5px;
+		animation: pulsate 1s ease-out;
+		animation-iteration-count: infinite;
+		opacity: 0.0;
+	}
+
+	&__pulsate:before {
+		content: "";
+		display: block;
+		border: 2px solid $orange-yellow-orange;
+		border-radius: 50%;
+		height: 65px;
+		width: 65px;
+		position: absolute;
+		left: -8px;
+		top: -8px;
+		animation: pulsate 1s ease-out;
+		animation-iteration-count: infinite;
+		animation-delay: 0.1s;
+		opacity: 0.0;
 	}
 }
