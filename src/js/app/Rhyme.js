@@ -82,6 +82,11 @@ export default class Rhyme {
 				let firstLine = this.comparisonArrayModel[i][0] - 1
 				let secondLine = this.comparisonArrayModel[i][1] - 1
 
+				console.log('Rhyme n°'+i+':');
+				console.log('firstLine '+firstLine);
+				console.log('secondLine '+secondLine);
+
+
 				if (this.inputLastRhyme[firstLine] && this.inputLastRhyme[secondLine]) {
 					this.rhymeStatus[i] = this.compareLineInput(this.inputLastRhyme[firstLine], this.inputLastRhyme[secondLine])
 					console.log(this.rhymeStatus);
@@ -133,6 +138,7 @@ export default class Rhyme {
 
 	updateRhymeChoice(rhymeChoice) {
 		this.rhymeChoice = rhymeChoice
+		this.comparisonArrayModel = this.getRhymeModel()
 	}
 
 	getRhymeModel() {

@@ -19,7 +19,7 @@ export default class Syllable {
 	 * Used externally to update the string but also all the information
 	 */
 	setString(string) {
-		this.texte = string
+		this.texte = string.toLowerCase()
 		this.updateData()
 	}
 
