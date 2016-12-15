@@ -21,31 +21,6 @@
 		};
 	}
 
-	&__verseItem {
-		height: 55px;
-		width: 50%;
-		border-radius: 50px;
-		background: #fff;
-		text-align: center;
-		color: $orange;
-		box-shadow: 1px 1px 1px 1.5px #979797;
-		cursor: pointer;
-		z-index: 10;
-		line-height: 55px;
-		margin: auto;
-		margin-bottom: 30px;
-
-		@include breakpoint(small) {
-			width: 25%;
-
-		};
-
-		&--selected {
-			background: #f5a623;
-			color: $white;
-		}
-	}
-
 	&__content {
 		text-align: center;
 		display: flex;
