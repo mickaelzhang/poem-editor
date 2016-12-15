@@ -10,4 +10,9 @@ $app->get('/jeu', function() use ($app) {
     return $app['twig']->render('pages/jeu.twig');
 })->bind('jeu');
 
+// Poésie
+$app->get('/poesie', function() use ($app) {
+    return $app['twig']->render('pages/poesie.twig');
+})->bind('poesie');
+
 return $app;
