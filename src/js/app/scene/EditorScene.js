@@ -35,6 +35,7 @@ export default class EditorScene {
 		})
 		this.input[ind].addEventListener('blur', function() {
 			_.isFocused = false
+			_.unsetFocusState()
 		})
 
 		this.input[ind].addEventListener('keydown', function(evt) {
@@ -74,14 +75,12 @@ export default class EditorScene {
 		}
 
 		line.classList.add('editorScene__line--selected')
+	}
 
-		// console.log(this.input[ind]);
-		//
-		// for (var i = 0; i < this.input.length; i++) {
-		// 	this.input[i].classList.remove('.editorScene__lineInput--selected')
-		// }
-		//
-		// this.input[ind].classList.add('.editorScene__lineInput--selected')
+	unsetFocusState() {
+		for (var i = 0; i < this.line.length; i++) {
+			this.line[i].classList.remove('editorScene__line--selected')
+		}
 	}
 
 	updateData() {

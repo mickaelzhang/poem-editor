@@ -17,6 +17,8 @@ export default class Stanzas {
 
 		this.addSyllableObject()
 		this.addEvents()
+
+		this.setDefaultSyllableNb()
 	}
 
 	addSyllableObject() {
@@ -80,6 +82,12 @@ export default class Stanzas {
 
 	getLineCount() {
 		return this.lineCount
+	}
+
+	setDefaultSyllableNb() {
+		for (var i = 0; i < this.syllableCount.length; i++) {
+			this.syllableCount[i].innerHTML = this.syllableNb
+		}
 	}
 
 	getIndexOf(node) {
