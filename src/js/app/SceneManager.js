@@ -11,7 +11,7 @@ export default class SceneManager {
 
 		this.Slider = new Slider()
 
-		this.sceneObject = [new ThemeScene('.themeScene'),,,]
+		this.sceneObject = [new ThemeScene('.themeScene'),,,new EditorScene('.editorScene')]
 
 		this.initSliderEvents()
 	}

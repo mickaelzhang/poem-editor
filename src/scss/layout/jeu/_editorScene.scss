@@ -3,10 +3,25 @@
 	flex-direction: column;
 
 	&__container {
-		width: 800px;
-		margin: 0 auto;
-		position: relative;
+		position: absolute;
 		z-index: 4;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 100vh;
+		overflow-y: hidden;
+	}
+
+	&__stanzasList {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 500vh;
+		width: 100%;
+		max-width: 960px;
+		margin: 0 auto;
+
 	}
 
 	&__stanzas {
@@ -16,19 +31,8 @@
 	}
 
 	&__line {
-		display: flex;
-		flex-direction: row;
-		margin-top: 16px;
-	}
-
-	&__countBorder {
-		display: block;
-		width: 32px;
-		height: 32px;
-		background-color: rgb(68, 181, 109);
-		border-radius: 50%;
-		text-align: center;
 		position: relative;
+		margin-top: 16px;
 	}
 
 	&__syllableCount {
@@ -36,24 +40,35 @@
 		top: 50%;
 		left: 0;
 		transform: translateY(-50%);
-		width: 100%;
+		width: 60px;
+
+		text-align: center;
+		font-size: 24px;
+		color: $grey-dusty-grey;
+	}
+
+	&__rhymeType {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		width: 60px;
+
+		text-align: center;
+		font-size: 20px;
+		font-weight: lighter;
 	}
 
 	&__lineInput {
-		margin-left: 8px;
 		display: block;
-		white-space: pre;
+		// white-space: pre;
 		outline: none;
 		border: none;
 		width: 100%;
-		border-bottom: 1px solid rgba($black, 0.2);
-		transition: all 1s;
 
 		font-size: 24px;
-
-		&:focus {
-			border-bottom: 1px solid rgba($black, 0.6);
-		}
+		padding: 20px 60px;
+		box-shadow: 0px 0px 16px 0px rgba($black, 0.15);
 	}
 
 	&__buttonContainer {

@@ -53,7 +53,6 @@ export default class VerseScene {
 
 		this.verseItem[this.focusIndex].classList.add('secondaryButton--selected')
 		this.example[this.focusIndex].classList.add('verseScene__example--selected')
-		console.log(this.numberText);
 		this.numberText.innerHTML = this.verseSlug
 	}
 

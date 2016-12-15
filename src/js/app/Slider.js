@@ -21,7 +21,8 @@ export default class Slider {
 			false,
 			false
 		]
-		this.currentSceneIndex = 0
+		this.currentSceneIndex = 3
+		this.goTo(3)
 		this.initEvents()
 	}
 
