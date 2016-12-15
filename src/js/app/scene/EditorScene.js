@@ -71,8 +71,7 @@ export default class EditorScene {
 			}
 		}
 
-		console.log('rhymeIsValid: '+this.stanzas[0].custom.Rhyme.rhymeIsValid);
-		// this.nextStatus = this.stanzas[0].custom.Rhyme.rhymeIsValid
+		this.nextStatus = this.stanzas[0].custom.Rhyme.rhymeIsValid
 	}
 
 	applyTransformOnEditor(index) {

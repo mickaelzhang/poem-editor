@@ -32,7 +32,6 @@ export default class Rhyme {
 			}
 		}
 
-		// TODO TODO
 		return this.rhymeStatus[0] && this.rhymeStatus[1]
 	}
 
