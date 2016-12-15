@@ -32,7 +32,7 @@ export default class Stanzas {
 		this.input[ind].addEventListener("blur", function() {
 			_.selectedInput = -1
 		})
-		this.input[ind].addEventListener("keydown", function() {
+		this.input[ind].addEventListener("keyup", function() {
 			_.updateSyllable()
 		})
 	}

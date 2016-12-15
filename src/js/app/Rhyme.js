@@ -91,7 +91,6 @@ export default class Rhyme {
 	}
 
 	compareLineInput(input1, input2) {
-		console.log('compareLineInput');
 		let trimInput1
 		let trimInput2
 
