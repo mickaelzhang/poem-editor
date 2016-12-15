@@ -9,8 +9,32 @@ export default class Stanzas {
 		this.syllableCount = this.stanzas.querySelectorAll('.editorScene__syllableCount')
 
 		this.lineCount = this.input.length
+		this.selectedInput = -1
 
 		this.Rhyme = new Rhyme(this.rhymeChoice)
+
+		this.addSyllableObject()
+		this.addEvents()
+	}
+
+	addSyllableObject() {
+		var ind = this.lineCount - 1
+		this.input[ind].Syllable = new Syllable()
+	}
+
+	addEvents() {
+		var _ = this
+		var ind = this.lineCount - 1
+
+		this.input[ind].addEventListener("focus", function() {
+			_.selectedInput = _.getIndexOf(this)
+		})
+		this.input[ind].addEventListener("blur", function() {
+			_.selectedInput = -1
+		})
+		this.input[ind].addEventListener("keydown", function() {
+			_.updateSyllable()
+		})
 	}
 
 	createLine() {
@@ -24,14 +48,56 @@ export default class Stanzas {
 		return false
 	}
 
+	updateSyllable() {
+		const i = this.selectedInput
+		const inputValue = this.input[i].value
+		this.input[i].Syllable.setString(inputValue)
+		const syllableNb = this.input[i].Syllable.count
+
+		// Update syllable count on the View
+		this.updateSyllableCount(i, syllableNb)
+
+		// Update syllable in Rhyme object to compare if its correct
+		this.Rhyme.setInputSyllable(i, this.input[i].Syllable.lastSyllable)
+
+		console.log(this.input[i].Syllable);
+	}
+
+	updateSyllableCount(index, syllableCount) {
+		this.syllableCount[index].innerHTML = syllableCount;
+	}
+
 	updateData() {
 		this.input = this.stanzas.querySelectorAll('.editorScene__lineInput')
 		this.lineCount = this.input.length
+		this.addSyllableObject()
+		this.addEvents()
 
 		return this
 	}
 
 	getLineCount() {
 		return this.lineCount
+	}
+
+	getIndexOf(node) {
+		for (var i = 0; i < this.input.length; i++) {
+			if (this.input[i] == document.activeElement) {
+				return i
+			}
+		}
+	}
+
+	/**
+	 * function setInputIndex
+	 * Set which input is selected
+	 */
+	setSelectedIndex() {
+		for (var i = 0; i < this.input.length; i++) {
+			if (this.input[i] == document.activeElement) {
+				this.selectedIndex = i
+				return
+			}
+		}
 	}
 }

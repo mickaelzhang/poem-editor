@@ -54,8 +54,6 @@ export default class EditorScene {
 		if (key.IS_ENTER) {
 			evt.preventDefault()
 
-			console.log(this.lineCount % 4);
-
 			if (this.lineCount % 4 !== 0) {
 				this.stanzas[this.lastStanzasIndex].custom.createLine()
 				this.updateData()
