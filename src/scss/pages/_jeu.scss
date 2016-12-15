@@ -1,8 +1,5 @@
 .jeu {
-	background-image: url(../img/fond.png);
-	background-repeat: no-repeat;
-	background-position: center top;
-	background-size: 100% auto;
+	background-color: $blue-jagged-ice;
 
 	&__content {
 		height: 100vh;
