@@ -116,7 +116,7 @@ export default class Animation {
 									setTimeout(() => {
 										rhyme3.classList.remove('rhymeScene__translateBottomY2');
 										rhyme4.classList.remove('rhymeScene__translateBottomY2');
-										rhyme3.classList.add('rhymeScene__translateTo');
+										rhyme3.classList.add('rhymeScene__translateTopX');
 										rhyme4.classList.add('rhymeScene__translateTopX');
 									},500);
 								}, 500);
@@ -131,7 +131,7 @@ export default class Animation {
 								rhyme3.classList.add('rhymeScene__translateBottomY2');
 								rhyme4.classList.add('rhymeScene__translateBottomY2');
 								setTimeout(() => {
-									// rhyme2.classList.remove('rhymeScene__translateBottomY3');
+									rhyme2.classList.remove('rhymeScene__translateBottomY3');
 									rhyme3.classList.remove('rhymeScene__translateBottomY2');
 									rhyme4.classList.remove('rhymeScene__translateBottomY2');
 									rhyme3.classList.add('rhymeScene__translateTopX');
