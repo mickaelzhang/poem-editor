@@ -4,7 +4,8 @@ export default class ThemeScene {
 		this.target = document.querySelector(target)
 		this.themeList = this.target.querySelector('.themeScene__themeList')
 		this.themeCloud = this.target.querySelectorAll('.themeScene__themeCloud')
-
+		this.themeSign = document.querySelectorAll('.st34')
+		console.log(this.themeList);
 		this.focusIndex = -1
 		this.nextStatus = false
 		this.themeSlug
@@ -51,11 +52,13 @@ export default class ThemeScene {
 	removeFocusState() {
 		for (var i = 0; i < this.themeCloud.length; i++) {
 			this.themeCloud[i].classList.remove('themeCloud--selected')
+			this.themeSign[i].classList.add('st34')
 		}
 	}
 
 	addFocusState(i) {
 		this.themeCloud[i].classList.add('themeCloud--selected')
+		this.themeSign[i].classList.remove('st34')
 		this.setNextStatus(true)
 	}
 }

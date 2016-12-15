@@ -1,26 +1,57 @@
 .progressionBar {
 	position: absolute;
-	bottom: 0;
+	bottom: -15px;
 	left: 0;
 	right: 0;
-	padding-top: 18%;
-
-	background-image: url('../img/background_forest.png');
-	background-size: contain;
-	background-position: bottom left;
-	background-repeat: no-repeat;
+	// padding-top: 18%;
+	// background-image: url('../img/background_forest.png');
+	// background-size: contain;
+	// background-position: bottom left;
+	// background-repeat: no-repeat;
 
 	&__container {
-		padding: 0 40px 60px 40px;
+		padding: 0 40px 60px;
 		position: absolute;
 		bottom: 0;
 		left: 0;
 		right: 0;
 	}
 
+	&__clickable {
+		height: 100px;
+		width: 100px;
+	}
+
+	&__position:first-child {
+		position: absolute;
+		left:11%;
+		bottom:10px;
+		cursor: pointer;
+	}
+
+	&__position:nth-child(2) {
+		position: absolute;
+		left:39%;
+		bottom:-10px;
+		cursor: pointer;
+	}
+	&__position:nth-child(3) {
+		position: absolute;
+		left:63%;
+		bottom:-10px;
+		cursor: pointer;
+	}
+	&__position:nth-child(4) {
+		position: absolute;
+		left:91%;
+		bottom:-20px;
+		cursor: pointer;
+		// background: #000;
+	}
+
 	&__sceneList {
+		position: relative;
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between;
 	}
 }
