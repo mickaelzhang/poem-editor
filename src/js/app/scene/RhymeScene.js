@@ -3,7 +3,8 @@ export default class RhymeScene {
 		// console.log('Start RhymeScene.');
 
 		this.target = document.querySelector(target)
-		this.choiceItem = this.target.querySelectorAll('.rhymeScene__content')
+		this.rhymeList = this.target.querySelector('.rhymeScene__rhymeList')
+		this.rhymeItem = this.rhymeList.querySelectorAll('.rhymeScene__rhymeItem')
 
 		this.focusIndex = -1
 		this.nextStatus = false
@@ -15,8 +16,8 @@ export default class RhymeScene {
 	initEvents() {
 		let _ = this
 
-		for (var i = 0; i < this.choiceItem.length; i++) {
-			this.choiceItem[i].addEventListener('click', function() {
+		for (var i = 0; i < this.rhymeItem.length; i++) {
+			this.rhymeItem[i].addEventListener('click', function() {
 				_.setSelectedRhyme(this)
 			})
 		}
@@ -27,8 +28,8 @@ export default class RhymeScene {
 	}
 
 	setRhymeIndex(elem) {
-		for (var i = 0; i < this.choiceItem.length; i++) {
-			if (this.choiceItem[i] == elem) {
+		for (var i = 0; i < this.rhymeItem.length; i++) {
+			if (this.rhymeItem[i] == elem) {
 				// Set which element is selected
 				this.focusIndex = i
 

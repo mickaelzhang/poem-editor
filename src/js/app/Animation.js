@@ -1,11 +1,11 @@
 export default class Animation {
 	constructor() {
-		let choiceTypeOfRhyme = document.querySelectorAll('.rhymeScene__buttonTypeRhyme ');
+		let choiceTypeOfRhyme = document.querySelectorAll('.rhymeScene__rhymeItem ');
 		let rhyme1 = document.querySelector('.rhymeScene__rhyme1');
 		let rhyme2 = document.querySelector('.rhymeScene__rhyme2');
 		let rhyme3 = document.querySelector('.rhymeScene__rhyme3');
 		let rhyme4 = document.querySelector('.rhymeScene__rhyme4');
-		let defaultClass = 'rhymeScene__buttonTypeRhyme rhymeScene__selectType';
+		let defaultClass = 'rhymeScene__rhymeItem rhymeScene__rhymeItem--selected';
 		window.i = 0;
 
 		Array.from(choiceTypeOfRhyme).forEach((rhyme, index) => {
@@ -15,9 +15,9 @@ export default class Animation {
 				switch (true) {
 					case index == 0:
 						console.log(window.i);
-						this.classList.add('rhymeScene__selectType');
-						choiceTypeOfRhyme[1].classList.remove('rhymeScene__selectType');
-						choiceTypeOfRhyme[2].classList.remove('rhymeScene__selectType');
+						this.classList.add('rhymeScene__rhymeItem--selected');
+						choiceTypeOfRhyme[1].classList.remove('rhymeScene__rhymeItem--selected');
+						choiceTypeOfRhyme[2].classList.remove('rhymeScene__rhymeItem--selected');
 						if (this.className == defaultClass && window.i == 1) {
 							rhyme1.classList.remove('rhymeScene__translateLeftX');
 							rhyme2.classList.remove('rhymeScene__translateLeftX');
@@ -56,10 +56,10 @@ export default class Animation {
 						break;
 					case index == 1:
 						console.log(window.i);
-						this.classList.add('rhymeScene__selectType');
-						choiceTypeOfRhyme[0].classList.remove('rhymeScene__selectType');
-						choiceTypeOfRhyme[2].classList.remove('rhymeScene__selectType');
-						if (this.className == 'rhymeScene__buttonTypeRhyme rhymeScene__selectType' && window.i == 0) {
+						this.classList.add('rhymeScene__rhymeItem--selected');
+						choiceTypeOfRhyme[0].classList.remove('rhymeScene__rhymeItem--selected');
+						choiceTypeOfRhyme[2].classList.remove('rhymeScene__rhymeItem--selected');
+						if (this.className == 'rhymeScene__rhymeItem rhymeScene__rhymeItem--selected' && window.i == 0) {
 							rhyme1.classList.add('rhymeScene__translateRightX');
 							rhyme2.classList.add('rhymeScene__translateRightX');
 							setTimeout(() => {
@@ -94,9 +94,9 @@ export default class Animation {
 						break;
 					case index == 2:
 						console.log(window.i);
-						this.classList.add('rhymeScene__selectType');
-						choiceTypeOfRhyme[0].classList.remove('rhymeScene__selectType');
-						choiceTypeOfRhyme[1].classList.remove('rhymeScene__selectType');
+						this.classList.add('rhymeScene__rhymeItem--selected');
+						choiceTypeOfRhyme[0].classList.remove('rhymeScene__rhymeItem--selected');
+						choiceTypeOfRhyme[1].classList.remove('rhymeScene__rhymeItem--selected');
 						if (this.className == defaultClass && window.i == 1) {
 							rhyme3.classList.remove('rhymeScene__translateTopY');
 							rhyme4.classList.remove('rhymeScene__translateTopY');

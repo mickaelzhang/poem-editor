@@ -1,11 +1,10 @@
-.rhymeScene__choiceRhyme {
+.rhymeScene__rhymeList {
 	.rhymeScene__selectType {
 		background: $orange;
 	}
 }
 
 .rhymeScene {
-	background: radial-gradient(at left 40%,#FEF6DE,#BBE1E6);
 	&__title {
 		padding-left: 50px;
 
@@ -16,16 +15,17 @@
 		}
 	}
 
-	&__bold {
-		font-weight: bold;
-	}
+	&__container {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
 
-	&__containerCentral {
-		width: 100%;
-		height: 100vh;
 		display: flex;
-		align-items: center;
+		flex-direction: row;
 		justify-content: space-around;
+		align-items: center;
 	}
 
 	&__rhymeContainer {
@@ -105,7 +105,7 @@
 		color: $orange;
 	}
 
-	&__choiceRhyme {
+	&__rhymeList {
 		height: 50%;
 		display: flex;
 		flex-flow: column;
@@ -117,10 +117,8 @@
 			color: white;
 		}
 	}
-<<<<<<< HEAD
-=======
 
-	&__buttonTypeRhyme {
+	&__rhymeItem {
 		height: 75px;
 		width: 150px;
 		border-radius: 50px;
@@ -135,71 +133,4 @@
 			padding-top: calc(75px-46px);
 		}
 	}
-
-	&__content {
-		border: 1px solid $black;
-		background-color: #f1f1f1;
-		@media screen and (max-width:950px) {
-			width: 30%;
-		}
-
-		h1 {
-			text-align: center;
-			font-size: 48px;
-			padding-top: 15px;
-		}
-	}
-
-
-	&__button {
-		text-align: center;
-		position: relative;
-		top: 65px;
-		/* poussé de la moitié de hauteur du référent */
-		left: 90%;
-		transform: translateX(-90%);
-		/* tiré de la moitié de sa propre largeur */
-		border: 1px solid #4a4a4a;
-		border-radius: 50px;
-		height: 50px;
-		width: 150px;
-		line-height: 50px;
-		background-color: $white;
-
-		a {
-			text-decoration: none;
-			font-size: 1.3em;
-			color: $grey;
-			display: block;
-			width: 100%;
-			height: 100%;
-		}
-	}
-
-	&__buttonSound {
-		text-align: center;
-		position: relative;
-		top: 60px;
-		left: 97%;
-		-webkit-transform: translateX(-90%);
-		transform: translateX(-90%);
-		height: 30px;
-		width: 50px;
-		line-height: 50px;
-
-		a {
-			display: block;
-			width: 100%;
-			height: 100%;
-		}
-	}
-
-	&__container-animate {
-		@include containerFullscreen;
-	}
-
-	&__arrow-next {
-		@include arrowNext;
-	}
->>>>>>> 8e67e6739d62316334511d7c202852c796f73a29
 }
