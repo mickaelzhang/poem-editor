@@ -8,89 +8,27 @@ export default class Rhyme {
 		this.consonne = "bcçdfghjklmnpqrstvwxyz"
 		this.ponctuation = ",;:!?."
 
-		this.rhyme = [
-			"a", "i", "o", "u", "eu",
-			"ou", "ia", "oi", "ui",
-			"en", "on", "un",
-			"ar", "er", "ir", "or",
-			"al", "el", "il", "ol",
-
-			"ba", "bi", "bo", "be", "bu",
-			"da", "di", "do", "de", "du",
-			"fa", "fi", "fo", "f", "fu",
-			"ga", "gi", "go", "gu",
-			"ja", "ji", "jo", "je", "ju",
-			"la", "li", "lo", "le", "lu",
-			"ma", "mi", "mo", "mu",
-			"na", "ni", "no", "nu",
-			"pa", "pi", "po", "pu",
-			"ka", "ki", "ko", "ke", "ku",
-			"sa", "si", "so", "su",
-			"ta", "ti", "to", "tu",
-			"va", "vi", "vo", "ve", "vu",
-
-			"ape", "ope", "ipe", "upe",
-
-			"eur", "our", "oir",
-			"age", "ige", "oge", "ege",
-			"ace", "ice", "oce", "èce", "uce",
-			"ème", "ame", "ime", "ome", "ume",
-			"ène", "ane", "ine", "one", "une",
-			"ète", "ate", "ite", "ote", "ute",
-			"ceu",
-			"erde", "arde",
-			"enbe", "onbe", "unbe", "oube",
-			"ante", "onte", "unte",
-			"iège",
-
-			"atre", "itre", "otre", "ètre", "ère",
-			"alte", "ilte", "olte", "elte", "ulte",
-			"adre", "idre", "odre",
-			"onde", "ende",
-			"outre", "untre", "oitre", "uitre",
-			"ondre", "oudre", "oidre", "uidre",
-			"ordre",
-			"euille"
-		]
-
 		this.inputLastRhyme = ["","","",""]
 	}
 
 	setInputSyllable(index, string) {
 		let processedString = this.processRhyme(string.toLowerCase().trim())
-		console.log('OG: '+processedString);
-
 		const limit = 6 < processedString.length ? 6 : (processedString.length)
 
 		this.inputLastRhyme[index] =  processedString
 
-		console.log(this.inputLastRhyme);
 		this.checkRhyme()
-
-		// for (var i = 1; i <= limit; i++) {
-		// 	this.inputLastRhyme[index] =  this.compareToRhyme( processedString.substr(i - 1) )
-		//
-		// 	if (this.inputLastRhyme[index] != false) {
-		// 		return
-		// 	}
-		// }
 	}
 
 	checkRhyme() {
 		// Loop on both rhyme (eg. A and B)
 		for (var i = 0; i < this.comparisonArrayModel.length; i++) {
-				let firstLine = this.comparisonArrayModel[i][0] - 1
-				let secondLine = this.comparisonArrayModel[i][1] - 1
+			let firstLine = this.comparisonArrayModel[i][0] - 1
+			let secondLine = this.comparisonArrayModel[i][1] - 1
 
-				console.log('Rhyme n°'+i+':');
-				console.log('firstLine '+firstLine);
-				console.log('secondLine '+secondLine);
-
-
-				if (this.inputLastRhyme[firstLine] && this.inputLastRhyme[secondLine]) {
-					this.rhymeStatus[i] = this.compareLineInput(this.inputLastRhyme[firstLine], this.inputLastRhyme[secondLine])
-					console.log(this.rhymeStatus);
-				}
+			if (this.inputLastRhyme[firstLine] && this.inputLastRhyme[secondLine]) {
+				this.rhymeStatus[i] = this.compareLineInput(this.inputLastRhyme[firstLine], this.inputLastRhyme[secondLine])
+			}
 		}
 	}
 
@@ -109,13 +47,6 @@ export default class Rhyme {
 				if (i == 1) {
 					return false
 				} else {
-					// console.log('Les 2 inputs sont différents à partir de '+i+' caractères');
-					// console.log(trimInput1);
-					// console.log(trimInput2);
-					// console.log('FIN: compareLineInput');
-					// Permet d'avoir la rime
-					// trimInput1 = input1.substr(input1.length - i + 1)
-
 					return true
 				}
 			}
@@ -123,17 +54,6 @@ export default class Rhyme {
 			// Same rhyme
 			return true
 		}
-	}
-
-	compareToRhyme(string) {
-		// console.log(string);
-		for (var i = 0; i < this.rhyme.length; i++) {
-			if (this.rhyme[i] === string) {
-				return this.rhyme[i]
-			}
-		}
-
-		return false
 	}
 
 	updateRhymeChoice(rhymeChoice) {
