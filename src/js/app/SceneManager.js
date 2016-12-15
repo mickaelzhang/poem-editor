@@ -74,6 +74,8 @@ export default class SceneManager {
 	 * Update button state to visible or invisible
 	 */
 	updateNextButtonState(ind) {
+		console.log(ind);
+		console.log('nextStatus: '+this.sceneObject[ind].nextStatus);
 		if (this.sceneObject[ind].nextStatus) {
 			// Display button
 			this.nextButton.classList.add('nextButton--unblocked')

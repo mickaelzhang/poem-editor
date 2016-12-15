@@ -19,6 +19,7 @@ export default class EditorScene {
 		// State //
 		this.focusLineIndex = -1
 		this.isFocused = false
+		this.nextStatus = false
 
 		this.lastStanzasIndex = this.stanzas.length - 1
 
@@ -69,6 +70,9 @@ export default class EditorScene {
 				.focusOnNewElem()
 			}
 		}
+
+		console.log('rhymeIsValid: '+this.stanzas[0].custom.Rhyme.rhymeIsValid);
+		// this.nextStatus = this.stanzas[0].custom.Rhyme.rhymeIsValid
 	}
 
 	applyTransformOnEditor(index) {

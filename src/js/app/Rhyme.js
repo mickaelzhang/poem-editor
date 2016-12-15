@@ -9,6 +9,7 @@ export default class Rhyme {
 		this.ponctuation = ",;:!?."
 
 		this.inputLastRhyme = ["","","",""]
+		this.rhymeIsValid = false
 	}
 
 	setInputSyllable(index, string) {
@@ -17,7 +18,7 @@ export default class Rhyme {
 
 		this.inputLastRhyme[index] =  processedString
 
-		this.checkRhyme()
+		this.rhymeIsValid = this.checkRhyme()
 	}
 
 	checkRhyme() {
@@ -30,6 +31,9 @@ export default class Rhyme {
 				this.rhymeStatus[i] = this.compareLineInput(this.inputLastRhyme[firstLine], this.inputLastRhyme[secondLine])
 			}
 		}
+
+		// TODO TODO
+		return this.rhymeStatus[0] && this.rhymeStatus[1]
 	}
 
 	compareLineInput(input1, input2) {
