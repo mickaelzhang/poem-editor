@@ -5,7 +5,7 @@ export default class ThemeScene {
 		this.themeList = this.target.querySelector('.themeScene__themeList')
 		this.themeCloud = this.target.querySelectorAll('.themeScene__themeCloud')
 		this.themeSign = document.querySelectorAll('.st34')
-		console.log(this.themeList);
+		this.theme = document.querySelector('.theme_sign')
 		this.focusIndex = -1
 		this.nextStatus = false
 		this.themeSlug
@@ -59,6 +59,7 @@ export default class ThemeScene {
 	addFocusState(i) {
 		this.themeCloud[i].classList.add('themeCloud--selected')
 		this.themeSign[i].classList.remove('st34')
+		this.theme.style = "display:none"
 		this.setNextStatus(true)
 	}
 }
