@@ -2,8 +2,10 @@ import Syllable from './Syllable.js'
 import Rhyme from './Rhyme.js'
 
 export default class Stanzas {
-	constructor(elem, rhymeChoice) {
+	constructor(elem, rhymeChoice, syllableNb) {
 		this.rhymeChoice = rhymeChoice
+		this.syllableNb = syllableNb
+
 		this.stanzas = elem
 		this.input = this.stanzas.querySelectorAll('.editorScene__lineInput')
 		this.syllableCount = this.stanzas.querySelectorAll('.editorScene__syllableCount')
@@ -15,6 +17,8 @@ export default class Stanzas {
 
 		this.addSyllableObject()
 		this.addEvents()
+
+		this.setDefaultSyllableNb()
 	}
 
 	addSyllableObject() {
@@ -38,7 +42,7 @@ export default class Stanzas {
 	}
 
 	createLine() {
-		const line = '<div class="editorScene__line"><div class="editorScene__syllableCount">0</div><input class="editorScene__lineInput"><div class="editorScene__rhymeType">'+this.rhymeChoice[this.lineCount]+'</div></div>'
+		const line = '<div class="editorScene__line"><div class="editorScene__syllableCount">'+this.syllableNb+'</div><input class="editorScene__lineInput"><div class="editorScene__rhymeType">'+this.rhymeChoice[this.lineCount]+'</div></div>'
 
 		if (this.lineCount <= 4) {
 			// Create new line
@@ -62,7 +66,7 @@ export default class Stanzas {
 	}
 
 	updateSyllableCount(index, syllableCount) {
-		this.syllableCount[index].innerHTML = syllableCount;
+		this.syllableCount[index].innerHTML = this.syllableNb - syllableCount;
 	}
 
 	updateData() {
@@ -78,6 +82,12 @@ export default class Stanzas {
 
 	getLineCount() {
 		return this.lineCount
+	}
+
+	setDefaultSyllableNb() {
+		for (var i = 0; i < this.syllableCount.length; i++) {
+			this.syllableCount[i].innerHTML = this.syllableNb
+		}
 	}
 
 	getIndexOf(node) {

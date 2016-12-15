@@ -7,7 +7,7 @@ export default class Animation {
 		let rhyme4 = document.querySelector('.rhymeScene__rhyme4');
 		let defaultClass = 'rhymeScene__rhymeItem secondaryButton secondaryButton--selected';
 		let titleRhyme = document.querySelectorAll('.rhymeTitle');
-		console.log(titleRhyme);
+		// console.log(titleRhyme);
 		window.i = 0;
 
 		Array.from(choiceTypeOfRhyme).forEach((rhyme, index) => {

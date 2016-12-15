@@ -1,5 +1,6 @@
 .jeu {
 	background-color: $blue-jagged-ice;
+	display: relative;
 
 	&__content {
 		height: 100vh;
@@ -18,10 +19,13 @@
 		flex: row;
 		transition-property: transform;
 		transition-timing-function: ease-out;
+
+		position: relative;
+		z-index: 20;
 	}
 
-	&__progressionBar {
-		height: 20vh;
+	.progressionBar {
+		z-index: 100;
 	}
 
 	&__sceneItem {
@@ -48,6 +52,7 @@
 
 	.nextButton {
 		position: absolute;
+		z-index: 100;
 		right: 20px;
 		top: 50%;
 		transform: translateY(-50%);

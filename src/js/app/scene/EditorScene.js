@@ -2,6 +2,7 @@ import Stanzas from '../Stanzas.js'
 
 export default class EditorScene {
 	constructor(target = '.editorScene', themeChoice = '', rhymeChoice = 'AABB', verseChoice = 8) {
+		console.log('START: EditorScene');
 		this.themeChoice = themeChoice
 		this.rhymeChoice = rhymeChoice
 		this.verseChoice = verseChoice
@@ -16,12 +17,14 @@ export default class EditorScene {
 
 		this.lineCount = this.input.length
 		// State //
+		this.focusLineIndex = -1
 		this.isFocused = false
 
 		this.lastStanzasIndex = this.stanzas.length - 1
 
 		this.initStanzasObject()
 		this.addEventOnNewElem()
+		this.applyTransformOnEditor(0)
 	}
 
 	addEventOnNewElem() {
@@ -31,9 +34,12 @@ export default class EditorScene {
 		this.input[ind].addEventListener('focus', function() {
 			_.isFocused = true
 			_.setFocusState(this)
+			const ind = _.getIndexOf(this)
+			_.applyTransformOnEditor(ind)
 		})
 		this.input[ind].addEventListener('blur', function() {
 			_.isFocused = false
+			_.unsetFocusState()
 		})
 
 		this.input[ind].addEventListener('keydown', function(evt) {
@@ -45,7 +51,7 @@ export default class EditorScene {
 
 	initStanzasObject() {
 		for (var i = 0; i < this.stanzas.length; i++) {
-			this.stanzas[i].custom = new Stanzas(this.stanzas[i], this.rhymeChoice)
+			this.stanzas[i].custom = new Stanzas(this.stanzas[i], this.rhymeChoice, this.verseChoice)
 		}
 	}
 
@@ -65,6 +71,21 @@ export default class EditorScene {
 		}
 	}
 
+	applyTransformOnEditor(index) {
+		const windowPosY = window.innerHeight / 2
+		const elem = this.line[index].getBoundingClientRect()
+		const elemPosY = elem.top + (elem.height / 2)
+		const delta = windowPosY - elemPosY
+
+		let currentTransform = this.stanzasList.style.transform
+		currentTransform = currentTransform.replace('translateY(', '')
+		currentTransform = currentTransform.replace('px)', '')
+		currentTransform = Number(currentTransform)
+
+		const offset = currentTransform + delta
+		this.stanzasList.style.transform = 'translateY('+offset+'px)'
+	}
+
 	setFocusState(elem) {
 		const line = elem.parentNode
 
@@ -73,14 +94,12 @@ export default class EditorScene {
 		}
 
 		line.classList.add('editorScene__line--selected')
+	}
 
-		// console.log(this.input[ind]);
-		//
-		// for (var i = 0; i < this.input.length; i++) {
-		// 	this.input[i].classList.remove('.editorScene__lineInput--selected')
-		// }
-		//
-		// this.input[ind].classList.add('.editorScene__lineInput--selected')
+	unsetFocusState() {
+		for (var i = 0; i < this.line.length; i++) {
+			this.line[i].classList.remove('editorScene__line--selected')
+		}
 	}
 
 	updateData() {
@@ -94,5 +113,13 @@ export default class EditorScene {
 		const ind = this.lineCount - 1
 
 		this.input[ind].focus()
+	}
+
+	getIndexOf(node) {
+		for (var i = 0; i < this.input.length; i++) {
+			if (this.input[i] == document.activeElement) {
+				return i
+			}
+		}
 	}
 }

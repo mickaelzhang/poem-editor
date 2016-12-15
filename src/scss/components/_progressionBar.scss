@@ -3,14 +3,19 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background-image: url('../img/background_forest.png');
-	background-size: cover;
-	background-position: bottom left;
+	padding-top: 18%;
 
-	padding-top: 150px;
+	background-image: url('../img/background_forest.png');
+	background-size: contain;
+	background-position: bottom left;
+	background-repeat: no-repeat;
 
 	&__container {
 		padding: 0 40px 60px 40px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
 	}
 
 	&__sceneList {
