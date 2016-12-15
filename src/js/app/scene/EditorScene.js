@@ -28,11 +28,9 @@ export default class EditorScene {
 		const ind = this.lineCount - 1
 
 		this.input[ind].addEventListener('focus', function() {
-			console.log('focus');
 			_.isFocused = true
 		})
 		this.input[ind].addEventListener('blur', function() {
-			console.log('blur');
 			_.isFocused = false
 		})
 
