@@ -72,7 +72,17 @@ export default class Stanzas {
 	}
 
 	updateSyllableCount(index, syllableCount) {
-		this.syllableCount[index].innerHTML = this.syllableNb - syllableCount;
+		let viewNb = this.syllableNb - syllableCount
+		this.syllableCount[index].innerHTML = viewNb
+
+		this.syllableCount[index].classList.remove('editorScene__syllableCount--checkmark')
+		this.syllableCount[index].classList.remove('editorScene__syllableCount--wrong')
+
+		if (viewNb === 0) {
+			this.syllableCount[index].classList.add('editorScene__syllableCount--checkmark')
+		} else if (viewNb < 0) {
+			this.syllableCount[index].classList.add('editorScene__syllableCount--wrong')
+		}
 	}
 
 	updateData() {
