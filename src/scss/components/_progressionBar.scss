@@ -4,11 +4,14 @@
 	left: 0;
 	right: 0;
 	// background-color: $green;
+	background-image: url('../img/background_forest.png');
+	background-size: cover;
+	background-position: bottom left;
 
-	padding-top: 60px;
+	padding-top: 150px;
 
 	&__container {
-		padding: 0 40px 40px 40px;
+		padding: 0 40px 60px 40px;
 	}
 
 	&__sceneList {
