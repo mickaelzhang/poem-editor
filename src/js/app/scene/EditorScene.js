@@ -17,12 +17,14 @@ export default class EditorScene {
 
 		this.lineCount = this.input.length
 		// State //
+		this.focusLineIndex = -1
 		this.isFocused = false
 
 		this.lastStanzasIndex = this.stanzas.length - 1
 
 		this.initStanzasObject()
 		this.addEventOnNewElem()
+
 	}
 
 	addEventOnNewElem() {
@@ -32,6 +34,8 @@ export default class EditorScene {
 		this.input[ind].addEventListener('focus', function() {
 			_.isFocused = true
 			_.setFocusState(this)
+			const ind = _.getIndexOf(this)
+			_.applyTransformOnEditor(ind)
 		})
 		this.input[ind].addEventListener('blur', function() {
 			_.isFocused = false
@@ -67,6 +71,21 @@ export default class EditorScene {
 		}
 	}
 
+	applyTransformOnEditor(index) {
+		const windowPosY = window.innerHeight / 2
+		const elem = this.line[index].getBoundingClientRect()
+		const elemPosY = elem.top + (elem.height / 2)
+		const delta = windowPosY - elemPosY
+
+		let currentTransform = this.stanzasList.style.transform
+		currentTransform = currentTransform.replace('translateY(', '')
+		currentTransform = currentTransform.replace('px)', '')
+		currentTransform = Number(currentTransform)
+
+		const offset = currentTransform + delta
+		this.stanzasList.style.transform = 'translateY('+offset+'px)'
+	}
+
 	setFocusState(elem) {
 		const line = elem.parentNode
 
@@ -94,5 +113,13 @@ export default class EditorScene {
 		const ind = this.lineCount - 1
 
 		this.input[ind].focus()
+	}
+
+	getIndexOf(node) {
+		for (var i = 0; i < this.input.length; i++) {
+			if (this.input[i] == document.activeElement) {
+				return i
+			}
+		}
 	}
 }
