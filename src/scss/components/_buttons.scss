@@ -45,8 +45,7 @@
 
 .nextButton {
 	@extend %buttonTemplate;
-	background-color: $orange-yellow-orange;
-	opacity: 0;
+	background-color: $orange-yellow-orange-minopa;
 	pointer-events: none;
 	transition: opacity 0.4s ease-out;
 	width: 60px;
@@ -64,9 +63,13 @@
 		transform: translate(-50%, -50%);
 	}
 
-	&--displayed {
-		opacity: 1;
+	&--unblocked {
+		background-color: $orange-yellow-orange;
 		pointer-events: auto;
+	}
+
+	&__hide {
+		display: none;
 	}
 
 	&__pulsate {

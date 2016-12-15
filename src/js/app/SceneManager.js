@@ -8,6 +8,8 @@ export default class SceneManager {
 	constructor() {
 		this.currentScene = 0
 		this.nextButton = document.querySelector('.nextButton')
+		this.pulsateHide = document.querySelector('.nextButton__hide')
+		this.pulsate = document.querySelector('.nextButton__pulsate')
 
 		this.Slider = new Slider()
 
@@ -72,10 +74,14 @@ export default class SceneManager {
 	updateNextButtonState(ind) {
 		if (this.sceneObject[ind].nextStatus) {
 			// Display button
-			this.nextButton.classList.add('nextButton--displayed')
+			this.nextButton.classList.add('nextButton--unblocked')
+			// Display animation
+			this.pulsateHide.classList.remove('nextButton__hide')
 		} else {
 			// Hide button
-			this.nextButton.classList.remove('nextButton--displayed')
+			this.nextButton.classList.remove('nextButton--unblocked')
+			// Hide animation
+			this.pulsate.classList.add('nextButton__hide')
 		}
 
 		// Update next status in slider

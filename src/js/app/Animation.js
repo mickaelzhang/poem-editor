@@ -131,7 +131,7 @@ export default class Animation {
 								rhyme3.classList.add('rhymeScene__translateBottomY2');
 								rhyme4.classList.add('rhymeScene__translateBottomY2');
 								setTimeout(() => {
-									rhyme2.classList.remove('rhymeScene__translateBottomY3');
+									// rhyme2.classList.remove('rhymeScene__translateBottomY3');
 									rhyme3.classList.remove('rhymeScene__translateBottomY2');
 									rhyme4.classList.remove('rhymeScene__translateBottomY2');
 									rhyme3.classList.add('rhymeScene__translateTopX');
