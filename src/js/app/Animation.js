@@ -6,6 +6,8 @@ export default class Animation {
 		let rhyme3 = document.querySelector('.rhymeScene__rhyme3');
 		let rhyme4 = document.querySelector('.rhymeScene__rhyme4');
 		let defaultClass = 'rhymeScene__rhymeItem secondaryButton secondaryButton--selected';
+		let titleRhyme = document.querySelectorAll('.rhymeTitle');
+		console.log(titleRhyme);
 		window.i = 0;
 
 		Array.from(choiceTypeOfRhyme).forEach((rhyme, index) => {
@@ -18,6 +20,9 @@ export default class Animation {
 						this.classList.add('secondaryButton--selected');
 						choiceTypeOfRhyme[1].classList.remove('secondaryButton--selected');
 						choiceTypeOfRhyme[2].classList.remove('secondaryButton--selected');
+						titleRhyme[0].classList.add('rhymeTitle--selected');
+						titleRhyme[1].classList.remove('rhymeTitle--selected');
+						titleRhyme[2].classList.remove('rhymeTitle--selected');
 						if (this.className == defaultClass && window.i == 1) {
 							rhyme2.classList.remove('rhymeScene__translateBottomY3');
 							rhyme2.classList.remove('rhymeScene__translateLeftX');
@@ -56,6 +61,9 @@ export default class Animation {
 						this.classList.add('secondaryButton--selected');
 						choiceTypeOfRhyme[0].classList.remove('secondaryButton--selected');
 						choiceTypeOfRhyme[2].classList.remove('secondaryButton--selected');
+						titleRhyme[0].classList.remove('rhymeTitle--selected');
+						titleRhyme[1].classList.add('rhymeTitle--selected');
+						titleRhyme[2].classList.remove('rhymeTitle--selected');
 						if (this.className == 'rhymeScene__rhymeItem secondaryButton secondaryButton--selected' && window.i == 0) {
 							rhyme1.classList.add('rhymeScene__translateRightX');
 							rhyme2.classList.add('rhymeScene__translateRightX');
@@ -90,6 +98,9 @@ export default class Animation {
 						this.classList.add('secondaryButton--selected');
 						choiceTypeOfRhyme[0].classList.remove('secondaryButton--selected');
 						choiceTypeOfRhyme[1].classList.remove('secondaryButton--selected');
+						titleRhyme[0].classList.remove('rhymeTitle--selected');
+						titleRhyme[1].classList.remove('rhymeTitle--selected');
+						titleRhyme[2].classList.add('rhymeTitle--selected');
 						if (this.className == defaultClass && window.i == 1) {
 							rhyme3.classList.remove('rhymeScene__translateTopY');
 							rhyme3.classList.remove('rhymeScene__translateTopX');

@@ -56,8 +56,9 @@
 	border-radius: 50px;
 
 	&__arrow {
-		background-color: $white;
+		background: url('../img/arrow.png') no-repeat;
 		width: 50%;
+		// height:100%;
 		padding-top: 50%;
 		position: absolute;
 		top: 50%;
@@ -91,8 +92,8 @@
 		height: 65px;
 		width: 65px;
 		position: absolute;
-		left: -8px;
-		top: -8px;
+		left: -5px;
+		top: -5px;
 		animation: pulsate 1s ease-out;
 		animation-iteration-count: infinite;
 		animation-delay: 0.1s;
