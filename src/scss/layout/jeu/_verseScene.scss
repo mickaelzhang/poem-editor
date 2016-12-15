@@ -1,8 +1,19 @@
 .verseScene {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	&__container {
+		width: 100%;
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
 	&__verseList {
 		display: flex;
 		flex-flow: column;
-		justify-content: space-around;
+		justify-content: space-between;
 		font-size: 20px;
 		letter-spacing: 1px;
 

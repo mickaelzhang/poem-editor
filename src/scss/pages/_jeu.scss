@@ -5,6 +5,10 @@
 		height: 100vh;
 		width: 100vw;
 		overflow-x: hidden;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	&__sceneList {
@@ -16,6 +20,10 @@
 		transition-timing-function: ease-out;
 	}
 
+	&__progressionBar {
+		height: 20vh;
+	}
+
 	&__sceneItem {
 		position: relative;
 		width: 100vw;
@@ -24,13 +32,18 @@
 		padding-right: 60px;
 	}
 
-	&__progressionBar {
-		height: 20vh;
-	}
-
 	&__title {
 		font-size: 36px;
 		color: $blue-blue-dianne;
+
+		position: absolute;
+		top: 40px;
+		left: 0;
+		right: 0;
+		display: block;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 40px;
 	}
 
 	.nextButton {

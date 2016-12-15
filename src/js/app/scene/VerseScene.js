@@ -8,7 +8,7 @@ export default class VerseScene {
 		this.numberText = this.target.querySelector('.verseScene__number')
 		this.example = this.target.querySelectorAll('.verseScene__example')
 
-		this.focusIndex = -1
+		this.focusIndex = 1
 		this.nextStatus = false
 		this.verseSlug
 
