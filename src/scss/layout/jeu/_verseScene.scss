@@ -1,45 +1,27 @@
 .verseScene {
-
-	&__jeu__sceneItem{
-		background-image: url('dist/img/fond.png');
-	}
 	&__title{
 		padding-left: 50px;
 		h1{
-		font-size: 2.25em;
-		color: #4a4a4a;
-		font-weight: 100;
+			font-size: 2.25em;
+			color: #4a4a4a;
+			font-weight: 100;
 		}
 	}
 
-	&__bold{
-		font-weight: bold;
-	}
-
-	&__choiceverse {
-		height: 50%;
+	&__verseList {
 		display: flex;
 		flex-flow: column;
 		justify-content: space-around;
-		margin-top: 20vh; /* poussé de la moitié de hauteur de viewport */
-  		transform: translateY(-20%); /* tiré de la moitié de sa propre hauteur */
 		font-size: 20px;
 		letter-spacing: 1px;
 
 		@include breakpoint(small) {
-				flex-direction: row;
-				font-size: 15px;
-
+			flex-direction: row;
+			font-size: 15px;
 		};
 	}
 
-	&__selectType {
-		p {
-			color: white;
-		}
-	}
-
-	&__buttonTypeverse {
+	&__verseItem {
 		height: 55px;
 		width: 50%;
 		border-radius: 50px;
@@ -58,59 +40,36 @@
 
 		};
 
-
+		&--selected {
+			background: #f5a623;
+			color: $white;
+		}
 	}
 
-	&__selectType {
-    	background: #f5a623;
-	}
-
-
-	&__container-animate {
-		@include containerFullscreen;
-	}
-
-	&__arrow-next {
-		@include arrowNext;
-	}
-	&__Text{
-		position: absolute;
-		left: 50%;
-		top:70%;
-  		transform: translateX(-50%); /* tiré de la moitié de sa propre hauteur */
-
-		@include breakpoint(small) {
-				top:50%;
-
-		};
-	}
-<<<<<<< HEAD
-=======
-
-	&__contentText{
+	&__content {
 		text-align: center;
 		display: flex;
 	    flex-direction: column;
-
-
-		p:nth-child(1){
-			color: $blue-picton-blue;
-			font-size: 23px;
-			padding-bottom: 30px;
-		}
-		p:nth-child(2){
-			font-size: 20px;
-			padding-bottom: 30px;
-		}
-		p:nth-child(3){
-			font-size: 25px;
-			padding-bottom: 30px;
-		}
 	}
 
-	&__orange{
-		color:$orange-yellow-orange;
+	&__contentTitle {
+		color: $blue-picton-blue;
+		font-size: 23px;
+		padding-bottom: 30px;
 	}
 
->>>>>>> 8e67e6739d62316334511d7c202852c796f73a29
+	&__contentDetail {
+		font-size: 20px;
+		padding-bottom: 30px;
+	}
+
+	&__example {
+		font-size: 25px;
+		padding-bottom: 30px;
+
+		span::before {
+			content: '|';
+			color: $orange-buttercup;
+		}
+	}
 }

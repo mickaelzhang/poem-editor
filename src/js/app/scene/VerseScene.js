@@ -2,7 +2,8 @@ export default class VerseScene {
 	constructor(target) {
 		// console.log('Start VerseScene.');
 		this.target = document.querySelector(target)
-		this.choiceItem = this.target.querySelectorAll('.verseScene__content')
+		this.verseList = this.target.querySelector('.verseScene__verseList')
+		this.verseItem = this.target.querySelectorAll('.verseScene__verseItem')
 
 		this.focusIndex = -1
 		this.nextStatus = false
@@ -14,8 +15,8 @@ export default class VerseScene {
 	initEvents() {
 		let _ = this
 
-		for (var i = 0; i < this.choiceItem.length; i++) {
-			this.choiceItem[i].addEventListener('click', function() {
+		for (var i = 0; i < this.verseItem.length; i++) {
+			this.verseItem[i].addEventListener('click', function() {
 				_.setSelectedRhyme(this)
 			})
 		}
@@ -26,8 +27,8 @@ export default class VerseScene {
 	}
 
 	setRhymeIndex(elem) {
-		for (var i = 0; i < this.choiceItem.length; i++) {
-			if (this.choiceItem[i] == elem) {
+		for (var i = 0; i < this.verseItem.length; i++) {
+			if (this.verseItem[i] == elem) {
 				// Set which element is selected
 				this.focusIndex = i
 
