@@ -2,7 +2,7 @@ import Stanzas from '../Stanzas.js'
 
 export default class EditorScene {
 	constructor(target = '.editorScene', themeChoice = '', rhymeChoice = 'AABB', verseChoice = 8) {
-		console.log('START: EditorScene');
+		// console.log('START: EditorScene');
 		this.themeChoice = themeChoice
 		this.rhymeChoice = rhymeChoice
 		this.verseChoice = verseChoice

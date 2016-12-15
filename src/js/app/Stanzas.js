@@ -9,7 +9,7 @@ export default class Stanzas {
 		this.stanzas = elem
 		this.input = this.stanzas.querySelectorAll('.editorScene__lineInput')
 		this.syllableCount = this.stanzas.querySelectorAll('.editorScene__syllableCount')
-
+		this.rhymeType = this.stanzas.querySelectorAll('.editorScene__rhymeType')
 		this.lineCount = this.input.length
 		this.selectedInput = -1
 
@@ -78,6 +78,7 @@ export default class Stanzas {
 	updateData() {
 		this.input = this.stanzas.querySelectorAll('.editorScene__lineInput')
 		this.syllableCount = this.stanzas.querySelectorAll('.editorScene__syllableCount')
+		this.rhymeType = this.stanzas.querySelectorAll('.editorScene__rhymeType')
 
 		this.lineCount = this.input.length
 		this.addSyllableObject()
@@ -93,6 +94,13 @@ export default class Stanzas {
 
 		for (var i = 0; i < this.input.length; i++) {
 			this.updateSyllable(i)
+			this.updateRhymeType(i)
+		}
+	}
+
+	updateRhymeType() {
+		for (var i = 0; i < this.rhymeType.length; i++) {
+			this.rhymeType[i].innerHTML = this.rhymeChoice[i]
 		}
 	}
 
