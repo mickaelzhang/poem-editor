@@ -36,13 +36,11 @@
 
 .sceneButton {
 	@extend %buttonTemplate;
-	background-color: $orange-yellow-orange;
-	padding: 10px 40px;
-	border-radius: 40px;
+	background: url('../img/renard1.png') no-repeat;
+	// padding: 10px 40px;
+	width: 65px;
+	height: 90px;
 
-	&:hover {
-		background-color: lighten($orange-yellow-orange, 1.5%);
-	}
 }
 
 .nextButton {
@@ -56,9 +54,9 @@
 	border-radius: 50px;
 
 	&__arrow {
-		background: url('../img/arrow.png') no-repeat;
-		width: 50%;
-		// height:100%;
+		background: url('../img/arrow_white.png') no-repeat;
+		width: 30px;
+		height:30px;
 		padding-top: 50%;
 		position: absolute;
 		top: 50%;
