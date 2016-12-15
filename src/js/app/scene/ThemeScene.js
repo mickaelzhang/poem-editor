@@ -2,7 +2,8 @@ export default class ThemeScene {
 	constructor(target) {
 		// console.log('Start ThemeScene.');
 		this.target = document.querySelector(target)
-		this.themeCard = this.target.querySelectorAll('.themeScene__themeCard')
+		this.themeList = this.target.querySelector('.themeScene__themeList')
+		this.themeCloud = this.target.querySelectorAll('.themeScene__themeCloud')
 
 		this.focusIndex = -1
 		this.nextStatus = false
@@ -14,8 +15,8 @@ export default class ThemeScene {
 	initEvents() {
 		const _ = this
 
-		for (var i = 0; i < this.themeCard.length; i++) {
-			this.themeCard[i].addEventListener('click', function() {
+		for (var i = 0; i < this.themeCloud.length; i++) {
+			this.themeCloud[i].addEventListener('click', function() {
 				_.setFocusedTheme(this)
 			})
 		}
@@ -38,8 +39,8 @@ export default class ThemeScene {
 	}
 
 	getFocusedTheme(elem) {
-		for (var i = 0; i < this.themeCard.length; i++) {
-			if (this.themeCard[i] == elem) {
+		for (var i = 0; i < this.themeCloud.length; i++) {
+			if (this.themeCloud[i] == elem) {
 				this.focusIndex = i
 				this.themeSlug = elem.getAttribute('data-ref')
 				return
@@ -48,13 +49,13 @@ export default class ThemeScene {
 	}
 
 	removeFocusState() {
-		for (var i = 0; i < this.themeCard.length; i++) {
-			this.themeCard[i].classList.remove('themeScene__themeCard--focus')
+		for (var i = 0; i < this.themeCloud.length; i++) {
+			this.themeCloud[i].classList.remove('themeCloud--selected')
 		}
 	}
 
 	addFocusState(i) {
-		this.themeCard[i].classList.add('themeScene__themeCard--focus')
+		this.themeCloud[i].classList.add('themeCloud--selected')
 		this.setNextStatus(true)
 	}
 }

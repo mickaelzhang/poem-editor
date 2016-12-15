@@ -9,13 +9,18 @@ export default class Slider {
 
 		this.nextStatus = false
 
+		// this.sceneUnlockedStatus = [
+		// 	true,
+		// 	false,
+		// 	false,
+		// 	false
+		// ]
 		this.sceneUnlockedStatus = [
 			true,
-			false,
-			false,
-			false
+			true,
+			true,
+			true
 		]
-
 		this.currentSceneIndex = 0
 		this.initEvents()
 	}

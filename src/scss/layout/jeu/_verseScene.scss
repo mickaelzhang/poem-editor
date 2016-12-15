@@ -1,4 +1,8 @@
 .verseScene {
+
+	&__jeu__sceneItem{
+		background-image: url('dist/img/fond.png');
+	}
 	&__title{
 		padding-left: 50px;
 		h1{
@@ -12,75 +16,101 @@
 		font-weight: bold;
 	}
 
-	&__containerCentral{
+	&__choiceverse {
+		height: 50%;
 		display: flex;
-	}
-
-	&__containervers{
-		width: 100%;
-		display: inline-flex;
+		flex-flow: column;
 		justify-content: space-around;
-		padding-top: 55px;
+		margin-top: 20vh; /* poussé de la moitié de hauteur de viewport */
+  		transform: translateY(-20%); /* tiré de la moitié de sa propre hauteur */
+		font-size: 20px;
+		letter-spacing: 1px;
+
+		@include breakpoint(small) {
+				flex-direction: row;
+				font-size: 15px;
+
+		};
 	}
 
-	&__content{
-		border: 1px solid $black;
-		background-color: $white;
-		width: 23%;
-		@media screen and (max-width:950px){
-			width: 30%;
+	&__selectType {
+		p {
+			color: white;
 		}
-		h1{
-			text-align: center;
-			font-size: 30px;
-			padding-top: 15px;
-			color: $greydark;
+	}
+
+	&__buttonTypeverse {
+		height: 55px;
+		width: 50%;
+		border-radius: 50px;
+		background: #fff;
+		text-align: center;
+		color: $orange;
+		box-shadow: 1px 1px 1px 1.5px #979797;
+		cursor: pointer;
+		z-index: 10;
+		line-height: 55px;
+		margin: auto;
+		margin-bottom: 30px;
+
+		@include breakpoint(small) {
+			width: 25%;
+
+		};
+
+
+	}
+
+	&__selectType {
+    	background: #f5a623;
+	}
+
+
+	&__container-animate {
+		@include containerFullscreen;
+	}
+
+	&__arrow-next {
+		@include arrowNext;
+	}
+	&__Text{
+		position: absolute;
+		left: 50%;
+		top:70%;
+  		transform: translateX(-50%); /* tiré de la moitié de sa propre hauteur */
+
+		@include breakpoint(small) {
+				top:50%;
+
+		};
+	}
+<<<<<<< HEAD
+=======
+
+	&__contentText{
+		text-align: center;
+		display: flex;
+	    flex-direction: column;
+
+
+		p:nth-child(1){
+			color: $blue-picton-blue;
+			font-size: 23px;
+			padding-bottom: 30px;
+		}
+		p:nth-child(2){
+			font-size: 20px;
+			padding-bottom: 30px;
+		}
+		p:nth-child(3){
+			font-size: 25px;
+			padding-bottom: 30px;
 		}
 	}
 
 	&__orange{
-		color:$orange;
+		color:$orange-yellow-orange;
 	}
 
-	&__blue{
-		color: $blue;
-	}
-
-	&__bluedark{
-		color: $bluedark;
-	}
-
-	&__red{
-		color: $red;
-	}
-
-	&__yellow{
-		color: $yellow;
-	}
-
-	&__green{
-		color: $green;
-	}
-
-	&__versType{
-		text-align: center;
-		font-weight: bold;
-		font-size: 56px;
-		color:$greylight;
-		padding-top: 35px;
-	}
-
-	&__example{
-		padding-left: 25px;
-		font-style: italic;
-		padding-top: 50px;
-		font-size: 18px;
-	}
-
-	&__vers{
-		font-size: 20px;
-		padding-left: 25px;
-		padding-right: 25px;
-		letter-spacing: 1px;
-	}
+>>>>>>> 8e67e6739d62316334511d7c202852c796f73a29
 }

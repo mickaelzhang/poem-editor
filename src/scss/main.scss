@@ -1,6 +1,7 @@
 // Functions and mixins
 @import 'utils/functions';
 @import 'utils/mixins';
+@import 'utils/animation';
 
 // Contain global styles
 @import 'base/typography';
@@ -18,9 +19,9 @@
 @import 'layout/footer';
 
 @import 'layout/jeu/themeScene';
-@import 'layout/jeu/rhymeScene';
-@import 'layout/jeu/verseScene';
-@import 'layout/jeu/editorScene';
+// @import 'layout/jeu/rhymeScene';
+// @import 'layout/jeu/verseScene';
+// @import 'layout/jeu/editorScene';
 
 // For specific pages
 @import 'pages/home';
