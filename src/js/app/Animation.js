@@ -19,17 +19,14 @@ export default class Animation {
 						choiceTypeOfRhyme[1].classList.remove('secondaryButton--selected');
 						choiceTypeOfRhyme[2].classList.remove('secondaryButton--selected');
 						if (this.className == defaultClass && window.i == 1) {
-							rhyme1.classList.remove('rhymeScene__translateLeftX');
+							rhyme2.classList.remove('rhymeScene__translateBottomY3');
 							rhyme2.classList.remove('rhymeScene__translateLeftX');
-							rhyme1.classList.add('rhymeScene__translateBottomY');
+							rhyme1.classList.add('rhymeScene__translateRightX');
 							rhyme2.classList.add('rhymeScene__translateBottomY');
 							setTimeout(() => {
-								rhyme1.classList.remove('rhymeScene__translateBottomY');
 								rhyme2.classList.remove('rhymeScene__translateBottomY');
-								rhyme1.classList.add('rhymeScene__translateRightX');
 								rhyme2.classList.add('rhymeScene__translateRightX');
-								rhyme3.classList.remove('rhymeScene__translateTopY');
-								rhyme4.classList.remove('rhymeScene__translateTopY');
+								rhyme3.classList.remove('rhymeScene__translateTopX');
 								setTimeout(() => {
 									rhyme1.classList.remove('rhymeScene__translateRightX');
 									rhyme2.classList.remove('rhymeScene__translateRightX');
@@ -63,17 +60,13 @@ export default class Animation {
 							rhyme1.classList.add('rhymeScene__translateRightX');
 							rhyme2.classList.add('rhymeScene__translateRightX');
 							setTimeout(() => {
-								rhyme1.classList.add('rhymeScene__translateBottomY');
+								rhyme2.classList.remove('rhymeScene__translateRightX');
 								rhyme2.classList.add('rhymeScene__translateBottomY');
-								rhyme3.classList.add('rhymeScene__translateTopY');
-								rhyme4.classList.add('rhymeScene__translateTopY');
+								rhyme3.classList.add('rhymeScene__translateTopX');
 								setTimeout(() => {
-									rhyme1.classList.add('rhymeScene__translateLeftX');
-									rhyme2.classList.add('rhymeScene__translateLeftX');
-									rhyme1.classList.remove('rhymeScene__translateBottomY');
 									rhyme1.classList.remove('rhymeScene__translateRightX');
 									rhyme2.classList.remove('rhymeScene__translateBottomY');
-									rhyme2.classList.remove('rhymeScene__translateRightX');
+									rhyme2.classList.add('rhymeScene__translateLeftX');
 								}, 500);
 							}, 500);
 						} else if(this.className == defaultClass && window.i == 2) {
@@ -99,22 +92,20 @@ export default class Animation {
 						choiceTypeOfRhyme[1].classList.remove('secondaryButton--selected');
 						if (this.className == defaultClass && window.i == 1) {
 							rhyme3.classList.remove('rhymeScene__translateTopY');
-							rhyme4.classList.remove('rhymeScene__translateTopY');
-							rhyme3.classList.add('rhymeScene__translateBottomTopY3');
-							rhyme4.classList.add('rhymeScene__translateBottomTopY3');
+							rhyme3.classList.remove('rhymeScene__translateTopX');
+							rhyme3.classList.add('rhymeScene__translateBottomY2');
+							rhyme4.classList.add('rhymeScene__translateRightX');
 							setTimeout(() => {
-								rhyme1.classList.remove('rhymeScene__translateLeftX');
 								rhyme2.classList.remove('rhymeScene__translateLeftX');
 								rhyme2.classList.add('rhymeScene__translateBottomY3');
 								setTimeout(() => {
-									rhyme3.classList.remove('rhymeScene__translateBottomTopY3');
 									rhyme4.classList.remove('rhymeScene__translateBottomTopY3');
-									rhyme3.classList.add('rhymeScene__translateBottomY2');
+									rhyme4.classList.remove('rhymeScene__translateRightX');
 									rhyme4.classList.add('rhymeScene__translateBottomY2');
 									setTimeout(() => {
 										rhyme3.classList.remove('rhymeScene__translateBottomY2');
 										rhyme4.classList.remove('rhymeScene__translateBottomY2');
-										rhyme3.classList.add('rhymeScene__translateTopX');
+										rhyme3.classList.add('rhymeScene__translateTo');
 										rhyme4.classList.add('rhymeScene__translateTopX');
 									},500);
 								}, 500);
@@ -129,6 +120,7 @@ export default class Animation {
 								rhyme3.classList.add('rhymeScene__translateBottomY2');
 								rhyme4.classList.add('rhymeScene__translateBottomY2');
 								setTimeout(() => {
+									// rhyme2.classList.remove('rhymeScene__translateBottomY3');
 									rhyme3.classList.remove('rhymeScene__translateBottomY2');
 									rhyme4.classList.remove('rhymeScene__translateBottomY2');
 									rhyme3.classList.add('rhymeScene__translateTopX');
