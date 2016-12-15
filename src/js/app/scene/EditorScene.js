@@ -109,6 +109,10 @@ export default class EditorScene {
 		return this
 	}
 
+	updateParam(themeChoice, rhymeChoice, verseChoice) {
+		console.log('updateParam');
+	}
+
 	focusOnNewElem() {
 		const ind = this.lineCount - 1
 
