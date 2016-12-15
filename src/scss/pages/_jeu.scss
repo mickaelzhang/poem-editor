@@ -21,12 +21,11 @@
 		transition-timing-function: ease-out;
 
 		position: relative;
-		z-index: 60;
+		z-index: 20;
 	}
 
-	&__progressionBar {
-		height: 20vh;
-		z-index: 10;
+	.progressionBar {
+		z-index: 100;
 	}
 
 	&__sceneItem {
