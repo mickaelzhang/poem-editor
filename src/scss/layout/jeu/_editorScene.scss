@@ -33,6 +33,13 @@
 	&__line {
 		position: relative;
 		margin-top: 16px;
+
+		transform: scale(0.8);
+		transition: all 0.3s ease-out;
+
+		&--selected {
+			transform: scale(1);
+		}
 	}
 
 	&__syllableCount {
@@ -61,14 +68,20 @@
 
 	&__lineInput {
 		display: block;
-		// white-space: pre;
 		outline: none;
 		border: none;
-		width: 100%;
 
+		box-shadow: 0px 0px 16px 0px rgba($black, 0.15);
+
+		width: 100%;
 		font-size: 24px;
 		padding: 20px 60px;
-		box-shadow: 0px 0px 16px 0px rgba($black, 0.15);
+
+		transition: all 0.2s ease-out;
+
+		&--selected {
+
+		}
 	}
 
 	&__buttonContainer {

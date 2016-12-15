@@ -9,6 +9,7 @@ export default class EditorScene {
 		this.editor = document.querySelector(target)
 		this.stanzasList = this.editor.querySelector('.editorScene__stanzasList')
 		this.stanzas = this.stanzasList.querySelectorAll('.editorScene__stanzas')
+		this.line = this.stanzasList.querySelectorAll('.editorScene__line')
 		this.input = this.stanzasList.querySelectorAll('.editorScene__lineInput')
 
 		this.moreButton = this.editor.querySelector('.editorScene__moreStanzasButton')
@@ -29,6 +30,7 @@ export default class EditorScene {
 
 		this.input[ind].addEventListener('focus', function() {
 			_.isFocused = true
+			_.setFocusState(this)
 		})
 		this.input[ind].addEventListener('blur', function() {
 			_.isFocused = false
@@ -63,8 +65,27 @@ export default class EditorScene {
 		}
 	}
 
+	setFocusState(elem) {
+		const line = elem.parentNode
+
+		for (var i = 0; i < this.line.length; i++) {
+			this.line[i].classList.remove('editorScene__line--selected')
+		}
+
+		line.classList.add('editorScene__line--selected')
+
+		// console.log(this.input[ind]);
+		//
+		// for (var i = 0; i < this.input.length; i++) {
+		// 	this.input[i].classList.remove('.editorScene__lineInput--selected')
+		// }
+		//
+		// this.input[ind].classList.add('.editorScene__lineInput--selected')
+	}
+
 	updateData() {
 		this.input = this.stanzasList.querySelectorAll('.editorScene__lineInput')
+		this.line = this.stanzasList.querySelectorAll('.editorScene__line')
 		this.lineCount = this.input.length
 		return this
 	}
