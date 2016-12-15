@@ -1,14 +1,4 @@
 .rhymeScene {
-	&__title {
-		padding-left: 50px;
-
-		h1 {
-			font-size: 2.25em;
-			color: #4a4a4a;
-			font-weight: 100;
-		}
-	}
-
 	&__container {
 		position: absolute;
 		top: 0;
@@ -96,7 +86,7 @@
 	}
 
 	&__rhymeB {
-		color: $orange;
+		color: $orange-buttercup;
 	}
 
 	&__rhymeList {

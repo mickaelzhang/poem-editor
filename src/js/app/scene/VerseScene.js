@@ -5,6 +5,9 @@ export default class VerseScene {
 		this.verseList = this.target.querySelector('.verseScene__verseList')
 		this.verseItem = this.target.querySelectorAll('.verseScene__verseItem')
 
+		this.numberText = this.target.querySelector('.verseScene__number')
+		this.example = this.target.querySelectorAll('.verseScene__example')
+
 		this.focusIndex = -1
 		this.nextStatus = false
 		this.verseSlug
@@ -23,7 +26,9 @@ export default class VerseScene {
 	}
 
 	setSelectedRhyme(elem) {
-		this.setRhymeIndex(elem).setNextStatus(true)
+		this.setRhymeIndex(elem)
+		.setNextStatus(true)
+		.applyStyle(elem)
 	}
 
 	setRhymeIndex(elem) {
@@ -38,6 +43,18 @@ export default class VerseScene {
 				return this
 			}
 		}
+	}
+
+	applyStyle(elem) {
+		for (var i = 0; i < this.verseItem.length; i++) {
+			this.verseItem[i].classList.remove('secondaryButton--selected')
+			this.example[i].classList.remove('verseScene__example--selected')
+		}
+
+		this.verseItem[this.focusIndex].classList.add('secondaryButton--selected')
+		this.example[this.focusIndex].classList.add('verseScene__example--selected')
+		console.log(this.numberText);
+		this.numberText.innerHTML = this.verseSlug
 	}
 
 	setNextStatus(bool) {

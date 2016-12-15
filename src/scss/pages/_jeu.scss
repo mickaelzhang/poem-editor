@@ -19,6 +19,9 @@
 	&__sceneItem {
 		position: relative;
 		width: 100vw;
+
+		padding-left: 60px;
+		padding-right: 60px;
 	}
 
 	&__progressionBar {
@@ -26,7 +29,8 @@
 	}
 
 	&__title {
-		align-self: flex-start;
+		font-size: 36px;
+		color: $blue-blue-dianne;
 	}
 
 	.nextButton {

@@ -1,19 +1,12 @@
 .verseScene {
-	&__title{
-		padding-left: 50px;
-		h1{
-			font-size: 2.25em;
-			color: #4a4a4a;
-			font-weight: 100;
-		}
-	}
-
 	&__verseList {
 		display: flex;
 		flex-flow: column;
 		justify-content: space-around;
 		font-size: 20px;
 		letter-spacing: 1px;
+
+		margin-bottom: 100px;
 
 		@include breakpoint(small) {
 			flex-direction: row;
@@ -25,26 +18,35 @@
 		text-align: center;
 		display: flex;
 	    flex-direction: column;
+		color: $blue-spectra;
 	}
 
 	&__contentTitle {
-		color: $blue-picton-blue;
-		font-size: 23px;
-		padding-bottom: 30px;
+		font-weight: bold;
+		font-size: 30px;
+		margin-bottom: 40px;
 	}
 
 	&__contentDetail {
 		font-size: 20px;
-		padding-bottom: 30px;
+		font-weight: lighter;
+		font-style: italic;
+
+		margin-bottom: 16px;
 	}
 
 	&__example {
-		font-size: 25px;
+		font-size: 22px;
 		padding-bottom: 30px;
+		display: none;
 
 		span::before {
 			content: '|';
 			color: $orange-buttercup;
+		}
+
+		&--selected {
+			display: block;
 		}
 	}
 }

@@ -4,6 +4,7 @@
 
 {% block content %}
 	<div class="jeu__content">
+		{% include 'layout/jeu/title.twig' %}
 		<div class="jeu__sceneList">
 			{% include 'layout/jeu/themeScene.twig' with {'class':'jeu__sceneItem'} %}
 			{% include 'layout/jeu/rhymeScene.twig' with {'class':'jeu__sceneItem'} %}
