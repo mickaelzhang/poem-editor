@@ -52,8 +52,14 @@ export default class Stanzas {
 		return false
 	}
 
-	updateSyllable() {
-		const i = this.selectedInput
+	updateSyllable(ind = -1) {
+		let i
+		if (ind == -1) {
+			i = this.selectedInput
+		} else {
+			i = ind
+		}
+
 		const inputValue = this.input[i].value
 		this.input[i].Syllable.setString(inputValue)
 		const syllableNb = this.input[i].Syllable.count
@@ -78,6 +84,16 @@ export default class Stanzas {
 		this.addEvents()
 
 		return this
+	}
+
+	updateParam(rhymeChoice, syllableNb) {
+		this.rhymeChoice = rhymeChoice
+		this.syllableNb = syllableNb
+
+
+		for (var i = 0; i < this.input.length; i++) {
+			this.updateSyllable(i)
+		}
 	}
 
 	getLineCount() {

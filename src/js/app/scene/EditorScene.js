@@ -110,7 +110,16 @@ export default class EditorScene {
 	}
 
 	updateParam(themeChoice, rhymeChoice, verseChoice) {
-		console.log('updateParam');
+		this.themeChoice = themeChoice
+		this.rhymeChoice = rhymeChoice
+		this.verseChoice = verseChoice
+
+		for (var i = 0; i < this.stanzas.length; i++) {
+			this.stanzas[i].custom.updateParam(
+				rhymeChoice,
+				verseChoice
+			)
+		}
 	}
 
 	focusOnNewElem() {

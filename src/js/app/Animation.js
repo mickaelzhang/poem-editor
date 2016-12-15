@@ -57,7 +57,7 @@ export default class Animation {
 							window.i = 0;
 						break;
 					case index == 1:
-						console.log(window.i);
+						// console.log(window.i);
 						this.classList.add('secondaryButton--selected');
 						choiceTypeOfRhyme[0].classList.remove('secondaryButton--selected');
 						choiceTypeOfRhyme[2].classList.remove('secondaryButton--selected');
