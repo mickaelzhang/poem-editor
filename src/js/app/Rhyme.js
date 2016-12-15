@@ -179,6 +179,11 @@ export default class Rhyme {
 			"(à|â|ä)$",
 			"a")
 
+		// Rime en er
+		string = this.regEx(string,
+			"(ai[st]*|e[szt]|é)$",
+			"er")
+
 		// Change è
 		string = this.regEx(string,
 			"(ê|ai)",
@@ -257,11 +262,6 @@ export default class Rhyme {
 		string = this.regEx(string,
 			"(c|k)$",
 			"ke")
-
-		// Rime en er
-		string = this.regEx(string,
-			"(ai[st]|e[szt]|é)$",
-			"er")
 
 		// Rime en er
 		string = this.regEx(string,

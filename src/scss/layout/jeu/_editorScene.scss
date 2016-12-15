@@ -1,5 +1,4 @@
 .editorScene {
-	background: radial-gradient(at left 40%,#FEF6DE,#BBE1E6);
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -7,6 +6,8 @@
 	&__container {
 		width: 800px;
 		margin: 0 auto;
+		position: relative;
+		z-index: 4;
 	}
 
 	&__stanzas {
@@ -55,8 +56,6 @@
 			border-bottom: 1px solid rgba($black, 0.6);
 		}
 	}
-<<<<<<< HEAD
-=======
 
 	&__buttonContainer {
 		text-align: center;
@@ -66,6 +65,7 @@
 
 	&__container-animate {
 		@include containerFullscreen;
+		z-index: 1;
 	}
 
 	&__cloud1 {
@@ -80,5 +80,4 @@
 	&__cloud4 {
 		@include cloud(15%,15%,moveCloudEditor,40s);
 	}
->>>>>>> 8e67e6739d62316334511d7c202852c796f73a29
 }
