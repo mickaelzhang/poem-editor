@@ -1,12 +1,13 @@
 import Stanzas from '../Stanzas.js'
 
 export default class EditorScene {
-	constructor(target = '.editorScene', themeChoice = '', rhymeChoice = 'AABB', verseChoice = 8) {
+	constructor(themeChoice = currentThemeSign,target = '.editorScene', rhymeChoice = 'AABB', verseChoice = 8) {
 		// console.log('START: EditorScene');
 		this.themeChoice = themeChoice
 		this.rhymeChoice = rhymeChoice
 		this.verseChoice = verseChoice
 
+// console.log(this.themeChoice);
 		this.editor = document.querySelector(target)
 		this.stanzasList = this.editor.querySelector('.editorScene__stanzasList')
 		this.stanzas = this.stanzasList.querySelectorAll('.editorScene__stanzas')
@@ -22,10 +23,36 @@ export default class EditorScene {
 		this.nextStatus = false
 
 		this.lastStanzasIndex = this.stanzas.length - 1
-
+		this.animationTextCloud()
 		this.initStanzasObject()
 		this.addEventOnNewElem()
 		this.applyTransformOnEditor(0)
+
+	}
+
+	animationTextCloud() {
+		let themeChoice = this.themeChoice;
+		console.log(themeChoice);
+
+		if (themeChoice == "NATURE") {
+
+		} else if (themeChoice == "ÉCOLE") {
+
+		} else if (themeChoice == "CIEL") {
+
+		} else if (themeChoice == "TERRE") {
+
+		} else if (themeChoice == "FAMILLE") {
+
+		} else if (themeChoice == "NOËL") {
+
+		} else if (themeChoice == "AUTOMNE") {
+
+		} else if (themeChoice == "VACANCES") {
+
+		} else if (themeChoice == "ANIMAUX") {
+
+		}
 	}
 
 	addEventOnNewElem() {

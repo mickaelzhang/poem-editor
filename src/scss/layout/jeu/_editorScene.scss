@@ -126,6 +126,6 @@
 		@include cloud(25%,12%,moveCloudEditor,60s);
 	}
 	&__cloud4 {
-		@include cloud(10%,25%,moveCloudEditor,60s);
+		@include cloud(10%,5%,moveCloudEditor,60s);
 	}
 }

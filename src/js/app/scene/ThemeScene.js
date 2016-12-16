@@ -1,6 +1,6 @@
+import EditorScene from './EditorScene'
 export default class ThemeScene {
 	constructor(target) {
-		// console.log('Start ThemeScene.');
 		this.target = document.querySelector(target)
 		this.themeList = this.target.querySelector('.themeScene__themeList')
 		this.themeCloud = this.target.querySelectorAll('.themeScene__themeCloud')
@@ -61,5 +61,7 @@ export default class ThemeScene {
 		this.themeSign[i].classList.remove('st34')
 		this.theme.style = "display:none"
 		this.setNextStatus(true)
+		let currentThemeSign = this.themeSign[i].innerHTML;
+		let themeChoice = new EditorScene(currentThemeSign)
 	}
 }

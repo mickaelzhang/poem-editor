@@ -1,6 +1,5 @@
 export default class VerseScene {
 	constructor(target) {
-		// console.log('Start VerseScene.');
 		this.target = document.querySelector(target)
 		this.verseList = this.target.querySelector('.verseScene__verseList')
 		this.verseItem = this.target.querySelectorAll('.verseScene__verseItem')
