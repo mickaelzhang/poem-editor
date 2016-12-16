@@ -83,23 +83,11 @@ export default class SceneManager {
 	updateEditorSettings() {
 		// If EditorScene object exist
 		if (this.sceneObject[3]) {
-			// this.sceneObject[3].themeChoice = this.sceneObject[0].themeSlug
-			// this.sceneObject[3].rhymeChoice = this.sceneObject[1].rhymeSlug
-			// this.sceneObject[3].verseChoice = this.sceneObject[2].verseSlug
-			console.log('SceneManager:');
-			console.log(this.sceneObject[0].themeSlug);
 			this.sceneObject[3].updateParam(
 				this.sceneObject[0].themeSlug,
 				this.sceneObject[1].rhymeSlug,
 				this.sceneObject[2].verseSlug
 			)
-
-			console.log('________updateEditorSettings________');
-			console.log(this.sceneObject[3]);
-			//
-			// for (var i = 0; i < this.sceneObject[3].stanzas.length; i++) {
-			// 	console.log(this.sceneObject[3].stanzas[i].custom);
-			// }
 		}
 	}
 
@@ -107,6 +95,8 @@ export default class SceneManager {
 	 * Update button state to visible or invisible
 	 */
 	updateNextButtonState(ind) {
+		console.log(ind);
+		console.log('nextStatus: '+this.sceneObject[ind].nextStatus);
 		if (this.sceneObject[ind].nextStatus) {
 			// Display button
 			this.nextButton.classList.add('nextButton--unblocked')

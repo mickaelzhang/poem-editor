@@ -2,7 +2,7 @@ import Stanzas from '../Stanzas.js'
 
 export default class EditorScene {
 	constructor(target = '.editorScene', themeChoice = '', rhymeChoice = 'AABB', verseChoice = 8) {
-		console.log('START: EditorScene');
+		// console.log('START: EditorScene');
 		this.themeChoice = themeChoice
 		this.rhymeChoice = rhymeChoice
 		this.verseChoice = verseChoice
@@ -19,6 +19,7 @@ export default class EditorScene {
 		// State //
 		this.focusLineIndex = -1
 		this.isFocused = false
+		this.nextStatus = false
 
 		this.lastStanzasIndex = this.stanzas.length - 1
 
@@ -69,6 +70,9 @@ export default class EditorScene {
 				.focusOnNewElem()
 			}
 		}
+
+		console.log('rhymeIsValid: '+this.stanzas[0].custom.Rhyme.rhymeIsValid);
+		// this.nextStatus = this.stanzas[0].custom.Rhyme.rhymeIsValid
 	}
 
 	applyTransformOnEditor(index) {
@@ -110,7 +114,16 @@ export default class EditorScene {
 	}
 
 	updateParam(themeChoice, rhymeChoice, verseChoice) {
-		console.log('updateParam');
+		this.themeChoice = themeChoice
+		this.rhymeChoice = rhymeChoice
+		this.verseChoice = verseChoice
+
+		for (var i = 0; i < this.stanzas.length; i++) {
+			this.stanzas[i].custom.updateParam(
+				rhymeChoice,
+				verseChoice
+			)
+		}
 	}
 
 	focusOnNewElem() {

@@ -46,12 +46,33 @@
 		position: absolute;
 		top: 50%;
 		left: 0;
-		transform: translateY(-50%);
+		top: 0;
+		bottom: 0;
 		width: 60px;
 
 		text-align: center;
 		font-size: 24px;
+		vertical-align: middle;
+		line-height: 68px;
 		color: $grey-dusty-grey;
+
+		&--checkmark {
+			background-image: url('../img/check.png');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			color: transparent;
+		}
+
+		&--wrong {
+			background-image: url('../img/cross.png');
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			color: transparent;
+		}
 	}
 
 	&__rhymeType {

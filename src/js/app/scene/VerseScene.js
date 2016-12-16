@@ -21,6 +21,7 @@ export default class VerseScene {
 		for (var i = 0; i < this.verseItem.length; i++) {
 			this.verseItem[i].addEventListener('click', function() {
 				_.setSelectedRhyme(this)
+				console.log(_.setSelectedRhyme(this));
 			})
 		}
 	}

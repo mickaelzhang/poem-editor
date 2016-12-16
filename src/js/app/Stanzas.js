@@ -9,7 +9,7 @@ export default class Stanzas {
 		this.stanzas = elem
 		this.input = this.stanzas.querySelectorAll('.editorScene__lineInput')
 		this.syllableCount = this.stanzas.querySelectorAll('.editorScene__syllableCount')
-
+		this.rhymeType = this.stanzas.querySelectorAll('.editorScene__rhymeType')
 		this.lineCount = this.input.length
 		this.selectedInput = -1
 
@@ -52,8 +52,14 @@ export default class Stanzas {
 		return false
 	}
 
-	updateSyllable() {
-		const i = this.selectedInput
+	updateSyllable(ind = -1) {
+		let i
+		if (ind == -1) {
+			i = this.selectedInput
+		} else {
+			i = ind
+		}
+
 		const inputValue = this.input[i].value
 		this.input[i].Syllable.setString(inputValue)
 		const syllableNb = this.input[i].Syllable.count
@@ -66,18 +72,47 @@ export default class Stanzas {
 	}
 
 	updateSyllableCount(index, syllableCount) {
-		this.syllableCount[index].innerHTML = this.syllableNb - syllableCount;
+		let viewNb = this.syllableNb - syllableCount
+		this.syllableCount[index].innerHTML = viewNb
+
+		this.syllableCount[index].classList.remove('editorScene__syllableCount--checkmark')
+		this.syllableCount[index].classList.remove('editorScene__syllableCount--wrong')
+
+		if (viewNb === 0) {
+			this.syllableCount[index].classList.add('editorScene__syllableCount--checkmark')
+		} else if (viewNb < 0) {
+			this.syllableCount[index].classList.add('editorScene__syllableCount--wrong')
+		}
 	}
 
 	updateData() {
 		this.input = this.stanzas.querySelectorAll('.editorScene__lineInput')
 		this.syllableCount = this.stanzas.querySelectorAll('.editorScene__syllableCount')
+		this.rhymeType = this.stanzas.querySelectorAll('.editorScene__rhymeType')
 
 		this.lineCount = this.input.length
 		this.addSyllableObject()
 		this.addEvents()
 
 		return this
+	}
+
+	updateParam(rhymeChoice, syllableNb) {
+		this.rhymeChoice = rhymeChoice
+		this.syllableNb = syllableNb
+
+		this.Rhyme.updateRhymeChoice(rhymeChoice)
+
+		for (var i = 0; i < this.input.length; i++) {
+			this.updateSyllable(i)
+			this.updateRhymeType(i)
+		}
+	}
+
+	updateRhymeType() {
+		for (var i = 0; i < this.rhymeType.length; i++) {
+			this.rhymeType[i].innerHTML = this.rhymeChoice[i]
+		}
 	}
 
 	getLineCount() {
