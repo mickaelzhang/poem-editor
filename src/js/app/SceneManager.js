@@ -62,15 +62,25 @@ export default class SceneManager {
 		this.nextButton.addEventListener('click', function() {
 			_.initSceneObject()
 
+			// If on editorScene and nextButton is unlocked
 			if (_.Slider.currentSceneIndex == 3) {
-				console.log('Go tO NEXT PAGE');
-
 				if (_.sceneObject[3].nextStatus) {
-					console.log(_.nextPageLink);
+					_.storePoemInLocalStorage()
 					window.location.href = _.nextPageLink
 				}
 			}
 		})
+	}
+
+	storePoemInLocalStorage() {
+		let line = document.querySelectorAll('.editorScene__lineInput')
+		let poem = []
+
+		for (var i = 0; i < line.length; i++) {
+			poem.push(line[i].value)
+		}
+
+		localStorage.setItem("poem", JSON.stringify(poem));
 	}
 
 	initSceneObject() {
