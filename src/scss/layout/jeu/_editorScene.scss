@@ -117,15 +117,15 @@
 	}
 
 	&__cloud1 {
-		@include cloud(5%,5%,moveCloudEditor,60s);
+		@include cloud(5%,5%,moveCloudEditor,80s);
 	}
 	&__cloud2 {
-		@include cloud(10%,10%,moveCloudEditor,60s);
+		@include cloud(20%,20%,moveCloudEditor,80s);
 	}
 	&__cloud3 {
-		@include cloud(25%,12%,moveCloudEditor,40s);
+		@include cloud(25%,12%,moveCloudEditor,60s);
 	}
 	&__cloud4 {
-		@include cloud(15%,15%,moveCloudEditor,40s);
+		@include cloud(10%,25%,moveCloudEditor,60s);
 	}
 }

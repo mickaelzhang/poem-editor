@@ -16,9 +16,9 @@ export default class Animation {
 			rhyme.addEventListener('click', function(event) {
 				switch (true) {
 					case index == 0:
-						rhymeSign[0].classList.remove('st34')
-						rhymeSign[1].classList.add('st34')
-						rhymeSign[2].classList.add('st34')
+						rhymeSign[0].classList.remove('st35')
+						rhymeSign[1].classList.add('st35')
+						rhymeSign[2].classList.add('st35')
 						// hide rhyme sign
 						rhymeSvg.style = "display:none";
 						this.classList.add('secondaryButton--selected');
@@ -61,9 +61,9 @@ export default class Animation {
 							window.i = 0;
 						break;
 					case index == 1:
-						rhymeSign[0].classList.add('st34')
-						rhymeSign[1].classList.remove('st34')
-						rhymeSign[2].classList.add('st34')
+						rhymeSign[0].classList.add('st35')
+						rhymeSign[1].classList.remove('st35')
+						rhymeSign[2].classList.add('st35')
 						// hide rhyme sign
 						rhymeSvg.style = "display:none";
 						this.classList.add('secondaryButton--selected');
@@ -101,9 +101,9 @@ export default class Animation {
 						window.i = 1;
 						break;
 					case index == 2:
-						rhymeSign[0].classList.add('st34')
-						rhymeSign[1].classList.add('st34')
-						rhymeSign[2].classList.remove('st34')
+						rhymeSign[0].classList.add('st35')
+						rhymeSign[1].classList.add('st35')
+						rhymeSign[2].classList.remove('st35')
 						// hide rhyme sign
 						rhymeSvg.style = "display:none";
 						this.classList.add('secondaryButton--selected');
