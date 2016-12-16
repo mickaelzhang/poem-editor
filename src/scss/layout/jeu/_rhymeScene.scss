@@ -18,10 +18,12 @@
 	}
 
 	&__rhymeTitle {
-		padding-bottom:40px;
+		margin-top:-10px;
+		padding-bottom:50px;
 		margin-left:10px;
 		font-weight: bold;
-		font-size:20px;
+		font-size:30px;
+		color:#2d535c;
 	}
 
 	.rhymeTitle {
@@ -37,64 +39,71 @@
 
 
 	&__rhymeSubtitle {
-		padding-bottom: 10px;
+		padding-bottom: 20px;
 		margin-left:10px;
-	}
-
-	&__rhyme1 {
-		margin: 10px;
-		transition: 0.5s ease;
+		font-size: 20px;
+		font-weight:lighter;
+		font-style: italic;
 	}
 
 	/*
 	* Animation type of rhyme
 	*/
 	&__translateRightX {
-		transform:translateX(165px) translateY(0px);;
+		transform:translateX(210px) translateY(0px);;
 	}
 
 	&__translateBottomY {
-		transform: translateX(165px) translateY(35px);
+		transform: translateX(210px) translateY(44px);
 	}
 	&__translateBottomY2 {
-		transform: translateX(165px) translateY(-35px);
+		transform: translateX(210px) translateY(-44px);
 	}
 
 	&__translateBottomTopY3 {
-		transform: translateX(165px) translateY(-54px);
+		transform: translateX(210px) translateY(-54px);
 	}
 	&__translateTopY {
 		transform: translateY(-54px);
 	}
 	&__translateTopY2 {
-		transform: translateY(-70px);
+		transform: translateY(-88px);
 	}
 	&__translateBottomY3 {
-		transform: translateY(70px);
+		transform: translateY(88px);
 	}
 	&__translateTopX {
-		transform: translateX(0) translateY(-35px);
+		transform: translateX(0) translateY(-44px);
 	}
 	&__translateLeftX {
-		transform: translateX(0) translateY(35px);
+		transform: translateX(0) translateY(44px);
 	}
 	&__translateLeftX2 {
 		transform: translateX(0) translateY(54px);
 	}
 
+	&__rhyme1 {
+		margin: 10px;
+		transition: 0.5s ease;
+		font-size: 22px;
+	}
+
 	&__rhyme2 {
 		margin: 10px;
 		transition: 0.5s ease;
+		font-size: 22px;
 	}
 
 	&__rhyme3 {
 		margin: 10px;
 		transition: 0.5s ease;
+		font-size: 22px;
 	}
 
 	&__rhyme4 {
 		margin: 10px;
 		transition: 0.5s ease;
+		font-size: 22px;
 	}
 
 	&__rhymeA {
