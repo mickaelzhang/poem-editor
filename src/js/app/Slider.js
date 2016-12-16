@@ -4,7 +4,7 @@ export default class Slider {
 		this.sliderContainer = this.target.querySelector('.jeu__sceneList')
 		this.sliderItem = this.sliderContainer.querySelectorAll('.jeu__sceneItem')
 		this.navBar = this.target.querySelector('.jeu__navBar')
-		this.navBar.item = this.navBar.querySelectorAll('.sceneButton')
+		this.navBar.item = this.navBar.querySelectorAll('.progressionBar__clickable')
 		this.nextButton = this.target.querySelector('.nextButton')
 		this.nextStatus = false
 

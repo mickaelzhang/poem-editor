@@ -3,8 +3,11 @@
 		transform: translateX(0px);
 	}
 
-	to {
+	50% {
 		transform: translateX(50px);
+	}
+	to {
+		transform: translateX(0px);
 	}
 }
 @keyframes moveCloudEditor {
@@ -12,8 +15,12 @@
 		transform: translateX(-1500px);
 	}
 
-	to {
+	50% {
 		transform: translateX(1500px);
+	}
+
+	to {
+		transform: translateX(-1500px);
 	}
 }
 @keyframes moveArrowLeft {

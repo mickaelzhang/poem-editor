@@ -36,10 +36,13 @@
 
 .sceneButton {
 	@extend %buttonTemplate;
+	position: absolute;
 	background: url('../img/renard1.png') no-repeat;
-	// padding: 10px 40px;
 	width: 65px;
 	height: 90px;
+	transition: 0.7s ease;
+	left:7%;
+	bottom:10%;
 
 }
 

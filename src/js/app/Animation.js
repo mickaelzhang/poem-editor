@@ -7,16 +7,20 @@ export default class Animation {
 		let rhyme4 = document.querySelector('.rhymeScene__rhyme4');
 		let defaultClass = 'rhymeScene__rhymeItem secondaryButton secondaryButton--selected';
 		let titleRhyme = document.querySelectorAll('.rhymeTitle');
-		// console.log(titleRhyme);
+		let rhymeSvg = document.querySelector('.rime_sign');
+		let rhymeSign = document.querySelectorAll('.rhyme');
 		window.i = 0;
 
 		Array.from(choiceTypeOfRhyme).forEach((rhyme, index) => {
 
 			rhyme.addEventListener('click', function(event) {
-
 				switch (true) {
 					case index == 0:
-						console.log(window.i);
+						rhymeSign[0].classList.remove('st34')
+						rhymeSign[1].classList.add('st34')
+						rhymeSign[2].classList.add('st34')
+						// hide rhyme sign
+						rhymeSvg.style = "display:none";
 						this.classList.add('secondaryButton--selected');
 						choiceTypeOfRhyme[1].classList.remove('secondaryButton--selected');
 						choiceTypeOfRhyme[2].classList.remove('secondaryButton--selected');
@@ -57,7 +61,11 @@ export default class Animation {
 							window.i = 0;
 						break;
 					case index == 1:
-						// console.log(window.i);
+						rhymeSign[0].classList.add('st34')
+						rhymeSign[1].classList.remove('st34')
+						rhymeSign[2].classList.add('st34')
+						// hide rhyme sign
+						rhymeSvg.style = "display:none";
 						this.classList.add('secondaryButton--selected');
 						choiceTypeOfRhyme[0].classList.remove('secondaryButton--selected');
 						choiceTypeOfRhyme[2].classList.remove('secondaryButton--selected');
@@ -89,12 +97,15 @@ export default class Animation {
 									},500);
 
 							},500);
-
 						}
 						window.i = 1;
 						break;
 					case index == 2:
-						console.log(window.i);
+						rhymeSign[0].classList.add('st34')
+						rhymeSign[1].classList.add('st34')
+						rhymeSign[2].classList.remove('st34')
+						// hide rhyme sign
+						rhymeSvg.style = "display:none";
 						this.classList.add('secondaryButton--selected');
 						choiceTypeOfRhyme[0].classList.remove('secondaryButton--selected');
 						choiceTypeOfRhyme[1].classList.remove('secondaryButton--selected');

@@ -10,6 +10,7 @@ export default class SceneManager {
 		this.nextButton = document.querySelector('.nextButton')
 		this.pulsateHide = document.querySelector('.nextButton__hide')
 		this.pulsate = document.querySelector('.nextButton__pulsate')
+		this.fox = document.querySelector('.sceneButton')
 
 		this.Slider = new Slider()
 
@@ -28,6 +29,26 @@ export default class SceneManager {
 			let ind = _.Slider.currentSceneIndex
 			_.updateNextButtonState(ind)
 			_.updateEditorSettings()
+
+			let positionFoxRhyme = window.innerWidth / 4;
+			let positionFoxSyllable = window.innerWidth / 2.05;
+			let positionFoxEditor = window.innerWidth / 1.35;
+
+
+			switch (true) {
+				case ind == 0:
+					_.fox.style.transform  = "translateX(0px)";
+					break;
+				case ind == 1:
+				_.fox.style.transform  = "translateX(" + positionFoxRhyme + "px) translateY(40px)";
+					break;
+				case ind == 2:
+				_.fox.style.transform  = "translateX(" + positionFoxSyllable + "px) translateY(0px)";
+					break;
+				case ind == 3:
+					_.fox.style.transform  = "translateX(" + positionFoxEditor + "px) translateY(0px)";
+					break;
+			}
 		})
 
 		window.addEventListener('keyup', function() {
