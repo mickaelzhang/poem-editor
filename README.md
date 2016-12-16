@@ -21,8 +21,8 @@ In order to recompile the sources, you will need :
 In order to start the project, you must clone and install all dependencies first.
 
 ```
-$ git clone https://github.com/mickaelzhang/dyslexia-website.git
-$ cd dyslexia-website
+$ git clone https://github.com/mickaelzhang/poem-editor.git
+$ cd poem-editor
 $ yarn
 ```
 
