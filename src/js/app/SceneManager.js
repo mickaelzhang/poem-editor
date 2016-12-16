@@ -6,12 +6,12 @@ import EditorScene from './scene/EditorScene'
 
 export default class SceneManager {
 	constructor() {
-		this.currentScene = 0
 		this.nextButton = document.querySelector('.nextButton')
 		this.pulsateHide = document.querySelector('.nextButton__hide')
 		this.pulsate = document.querySelector('.nextButton__pulsate')
 		this.fox = document.querySelector('.sceneButton')
 
+		this.nextPageLink = this.nextButton.getAttribute('data-link')
 		this.Slider = new Slider()
 
 		this.sceneObject = [new ThemeScene('.themeScene'),,,]
@@ -61,6 +61,15 @@ export default class SceneManager {
 		// Event on next scene button
 		this.nextButton.addEventListener('click', function() {
 			_.initSceneObject()
+
+			if (_.Slider.currentSceneIndex == 3) {
+				console.log('Go tO NEXT PAGE');
+
+				if (_.sceneObject[3].nextStatus) {
+					console.log(_.nextPageLink);
+					window.location.href = _.nextPageLink
+				}
+			}
 		})
 	}
 

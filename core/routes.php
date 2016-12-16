@@ -17,7 +17,7 @@ $app->get('/poesie', function() use ($app) {
 
 // End
 // Poésie
-$app->get('/end', function() use ($app) {
+$app->get('/fin', function() use ($app) {
     return $app['twig']->render('pages/end.twig');
 })->bind('end');
 
