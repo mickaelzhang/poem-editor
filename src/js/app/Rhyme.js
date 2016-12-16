@@ -9,7 +9,7 @@ export default class Rhyme {
 		this.ponctuation = ",;:!?."
 
 		this.syllableCount = document.querySelectorAll('.editorScene__syllableCount')
-
+		this.inputState = [false,false,false,false]
 		this.inputLastRhyme = ["","","",""]
 		this.rhymeIsValid = false
 	}
@@ -21,7 +21,6 @@ export default class Rhyme {
 		this.inputLastRhyme[index] =  processedString
 
 		this.rhymeIsValid = this.checkRhyme()
-
 	}
 
 	checkRhyme() {
@@ -33,7 +32,13 @@ export default class Rhyme {
 			if (this.inputLastRhyme[firstLine] && this.inputLastRhyme[secondLine]) {
 				this.rhymeStatus[i] = this.compareLineInput(this.inputLastRhyme[firstLine], this.inputLastRhyme[secondLine])
 			}
+
+			this.inputState[firstLine] = this.rhymeStatus[i]
+			this.inputState[secondLine] = this.rhymeStatus[i]
+
 		}
+		console.log('Rhyme Object:');
+		console.log(this.inputState);
 
 		return this.rhymeStatus[0] && this.rhymeStatus[1]
 	}

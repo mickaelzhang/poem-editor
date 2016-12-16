@@ -10,6 +10,8 @@ export default class Stanzas {
 		this.input = this.stanzas.querySelectorAll('.editorScene__lineInput')
 		this.syllableCount = this.stanzas.querySelectorAll('.editorScene__syllableCount')
 		this.rhymeType = this.stanzas.querySelectorAll('.editorScene__rhymeType')
+		this.rhymeCheck = this.stanzas.querySelectorAll('.editorScene__rhymeCheck')
+
 		this.lineCount = this.input.length
 		this.selectedInput = -1
 
@@ -38,11 +40,12 @@ export default class Stanzas {
 		})
 		this.input[ind].addEventListener("keyup", function() {
 			_.updateSyllable()
+			_.updateRhymeCheck()
 		})
 	}
 
 	createLine() {
-		const line = '<div class="editorScene__line"><div class="editorScene__syllableCount">'+this.syllableNb+'</div><input class="editorScene__lineInput"><div class="editorScene__rhymeType">'+this.rhymeChoice[this.lineCount]+'</div></div>'
+		const line = '<div class="editorScene__line"><div class="editorScene__syllableCount">'+this.syllableNb+'</div><input class="editorScene__lineInput"><div class="editorScene__rhymeCheck"></div><div class="editorScene__rhymeType">'+this.rhymeChoice[this.lineCount]+'</div></div>'
 
 		if (this.lineCount <= 4) {
 			// Create new line
@@ -89,7 +92,9 @@ export default class Stanzas {
 		this.input = this.stanzas.querySelectorAll('.editorScene__lineInput')
 		this.syllableCount = this.stanzas.querySelectorAll('.editorScene__syllableCount')
 		this.rhymeType = this.stanzas.querySelectorAll('.editorScene__rhymeType')
+		this.rhymeCheck = this.stanzas.querySelectorAll('.editorScene__rhymeCheck')
 
+ // editorScene__rhymeCheck--checkmark
 		this.lineCount = this.input.length
 		this.addSyllableObject()
 		this.addEvents()
@@ -105,7 +110,7 @@ export default class Stanzas {
 
 		for (var i = 0; i < this.input.length; i++) {
 			this.updateSyllable(i)
-			this.updateRhymeType(i)
+			this.updateRhymeType()
 		}
 	}
 
@@ -113,6 +118,23 @@ export default class Stanzas {
 		for (var i = 0; i < this.rhymeType.length; i++) {
 			this.rhymeType[i].innerHTML = this.rhymeChoice[i]
 		}
+	}
+
+	updateRhymeCheck() {
+		console.log('updateRhymeCheck:');
+
+		for (var i = 0; i < this.input.length; i++) {
+			console.log(i+': '+this.Rhyme.inputState[i])
+			if (this.Rhyme.inputState[i]) {
+				this.rhymeCheck[i].classList.remove('editorScene__rhymeCheck--wrong')
+				this.rhymeCheck[i].classList.add('editorScene__rhymeCheck--checkmark')
+			} else {
+				this.rhymeCheck[i].classList.remove('editorScene__rhymeCheck--checkmark')
+				this.rhymeCheck[i].classList.add('editorScene__rhymeCheck--wrong')
+			}
+		}
+
+		// console.log(this.Rhyme.inputState);
 	}
 
 	getLineCount() {
