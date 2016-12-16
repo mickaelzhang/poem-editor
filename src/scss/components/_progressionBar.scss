@@ -8,6 +8,11 @@
 	// background-size: contain;
 	// background-position: bottom left;
 	// background-repeat: no-repeat;
+	//
+	&--hide {
+		opacity: 0;
+		pointer-events: none;
+	}
 
 	&__container {
 		padding: 0 40px 60px;

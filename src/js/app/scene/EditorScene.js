@@ -3,6 +3,10 @@ import Stanzas from '../Stanzas.js'
 export default class EditorScene {
 	constructor(target = '.editorScene', themeChoice, rhymeChoice = 'AABB', verseChoice = 8) {
 
+		this.ua = navigator.userAgent;
+		this.isMobile = /IEMobile|Windows Phone|Lumia/i.test(this.ua) ? 'w' : /iPhone|iP[oa]d/.test(this.ua) ? 'i' : /Android/.test(this.ua) ? 'a' : /BlackBerry|PlayBook|BB10/.test(this.ua) ? 'b' : /Mobile Safari/.test(this.ua) ? 's' : /webOS|Mobile|Tablet|Opera Mini|\bCrMo\/|Opera Mobi/i.test(this.ua) ? 1 : 0;
+		this.isTablet = /Tablet|iPad/i.test(this.ua);
+
 		// console.log('START: EditorScene');
 		this.themeChoice = themeChoice
 		this.rhymeChoice = rhymeChoice
@@ -15,6 +19,7 @@ export default class EditorScene {
 		this.input = this.stanzasList.querySelectorAll('.editorScene__lineInput')
 
 		this.moreButton = this.editor.querySelector('.editorScene__moreStanzasButton')
+		this.progressBar = document.querySelector('.progressionBar')
 
 		this.lineCount = this.input.length
 		// State //
@@ -27,7 +32,6 @@ export default class EditorScene {
 		this.initStanzasObject()
 		this.addEventOnNewElem()
 		this.applyTransformOnEditor(0)
-
 	}
 
 	animationTextCloud() {
@@ -67,10 +71,18 @@ export default class EditorScene {
 			_.setFocusState(this)
 			const ind = _.getIndexOf(this)
 			_.applyTransformOnEditor(ind)
+
+			if (_.isMobile || _.isTablet) {
+				_.progressBar.classList.add('progressionBar--hide')
+			}
 		})
 		this.input[ind].addEventListener('blur', function() {
 			_.isFocused = false
 			_.unsetFocusState()
+
+			if (_.isMobile || _.isTablet) {
+				_.progressBar.classList.remove('progressionBar--hide')
+			}
 		})
 
 		this.input[ind].addEventListener('keydown', function(evt) {
