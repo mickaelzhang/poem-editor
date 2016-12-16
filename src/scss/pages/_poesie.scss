@@ -1,0 +1,27 @@
+.poesie {
+	background-color: #488595;
+	&__img{
+		padding:50px;
+	}
+
+	&__content{
+		width: 100%;
+		display: block;
+		line-height: 40px;
+		font-size: 32px;
+		margin-top: 30vh;
+		transform: translateY(-50%);
+		display: flex;
+		justify-content: center;
+		color:#fff;
+	}
+
+	&__contentButton{
+		text-align: center;
+		margin-left: 300px;
+	}
+
+	.primaryButton{
+		text-align: center;
+	}
+}

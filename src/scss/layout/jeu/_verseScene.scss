@@ -1,0 +1,63 @@
+.verseScene {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	&__container {
+		width: 100%;
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+
+	&__verseList {
+		display: flex;
+		flex-flow: column;
+		justify-content: space-between;
+		font-size: 20px;
+		letter-spacing: 1px;
+
+		margin-bottom: 100px;
+
+		@include breakpoint(small) {
+			flex-direction: row;
+			font-size: 15px;
+		};
+	}
+
+	&__content {
+		text-align: center;
+		display: flex;
+	    flex-direction: column;
+		color: $blue-spectra;
+	}
+
+	&__contentTitle {
+		font-weight: bold;
+		font-size: 30px;
+		margin-bottom: 40px;
+	}
+
+	&__contentDetail {
+		font-size: 20px;
+		font-weight: lighter;
+		font-style: italic;
+
+		margin-bottom: 16px;
+	}
+
+	&__example {
+		font-size: 22px;
+		padding-bottom: 30px;
+		display: none;
+
+		span::before {
+			content: '|';
+			color: $orange-buttercup;
+		}
+
+		&--selected {
+			display: block;
+		}
+	}
+}

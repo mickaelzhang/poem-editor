@@ -1,0 +1,39 @@
+$breakpoints: (
+   small: 480px,
+   medium: 768px,
+   large: 1024px,
+   x-large: 1480px
+);
+
+@mixin breakpoint($media) {
+    @each $breakpoint-name, $pixel in $breakpoints {
+        @if $media == $breakpoint-name {
+            @media (min-width: #{$pixel}) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin cloud($top,$left,$animCloud,$timeAnimation) {
+	position: absolute;
+	top:$top;
+	left:$left;
+	animation:$animCloud $timeAnimation ease infinite;
+}
+
+@mixin containerFullscreen {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	overflow:hidden;
+}
+
+@mixin arrowNext {
+	position: absolute;
+	top:50%;
+	right: 0;
+	width: 50px;
+	height: 50px;
+	animation:moveArrowLeft 5s ease infinite;
+}

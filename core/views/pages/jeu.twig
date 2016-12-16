@@ -1,0 +1,16 @@
+{% extends "templates/default.twig" %}
+
+{% block bodyClass "jeu" %}
+
+{% block content %}
+	<div class="jeu__content">
+		<div class="jeu__sceneList">
+			{% include 'layout/jeu/themeScene.twig' with {'class':'jeu__sceneItem'} %}
+			{% include 'layout/jeu/rhymeScene.twig' with {'class':'jeu__sceneItem'} %}
+			{% include 'layout/jeu/verseScene.twig' with {'class':'jeu__sceneItem'} %}
+			{% include 'layout/jeu/editorScene.twig' with {'class':'jeu__sceneItem'} %}
+		</div>
+		{% include 'components/nextButton.twig' %}
+		{% include 'components/progressionBar.twig' with {'class':'jeu__navBar'} %}
+	</div>
+{% endblock %}

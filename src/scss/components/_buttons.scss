@@ -1,0 +1,106 @@
+%buttonTemplate {
+	text-decoration: none;
+	transition: all 0.2s ease-out;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.primaryButton {
+	@extend %buttonTemplate;
+	color: $white;
+	font-size: 24px;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: $orange-yellow-orange;
+	padding: 16px 36px;
+	border-radius: 60px;
+	box-shadow: 0 0 16px 0 rgba($black, 0.15);
+}
+
+.secondaryButton {
+	@extend %buttonTemplate;
+	color: $orange-yellow-orange;
+	font-size: 24px;
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: $white;
+	padding: 16px 36px;
+	border-radius: 60px;
+	box-shadow: 0 0 16px 0 rgba($black, 0.15);
+
+	&--selected {
+		color: $white;
+		background-color: $orange-yellow-orange;
+	}
+}
+
+.sceneButton {
+	@extend %buttonTemplate;
+	position: absolute;
+	background: url('../img/renard1.png') no-repeat;
+	width: 65px;
+	height: 90px;
+	transition: 0.7s ease;
+	left:5%;
+	bottom:10%;
+
+}
+
+.nextButton {
+	@extend %buttonTemplate;
+	background-color: $orange-yellow-orange-minopa;
+	pointer-events: none;
+	transition: opacity 0.4s ease-out;
+	width: 60px;
+	height: 60px;
+	border-radius: 50px;
+
+	&__arrow {
+		background: url('../img/arrow_white.png') no-repeat;
+		width: 30px;
+		height:30px;
+		padding-top: 50%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&--unblocked {
+		background-color: $orange-yellow-orange;
+		pointer-events: auto;
+	}
+
+	&__hide {
+		display: none;
+	}
+
+	&__pulsate {
+		border: 5px solid $orange-yellow-orange;
+		border-radius: 50%;
+		height: 70px;
+		width: 70px;
+		position: absolute;
+		top: -5px;
+		left: -5px;
+		animation: pulsate 1s ease-out;
+		animation-iteration-count: infinite;
+		opacity: 0.0;
+	}
+
+	&__pulsate:before {
+		content: "";
+		display: block;
+		border: 2px solid $orange-yellow-orange;
+		border-radius: 50%;
+		height: 65px;
+		width: 65px;
+		position: absolute;
+		left: -5px;
+		top: -5px;
+		animation: pulsate 1s ease-out;
+		animation-iteration-count: infinite;
+		animation-delay: 0.1s;
+		opacity: 0.0;
+	}
+}

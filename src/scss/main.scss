@@ -1,0 +1,30 @@
+// Functions and mixins
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/animation';
+
+// Contain global styles
+@import 'base/typography';
+@import 'base/color';
+@import 'base/normalize';
+@import 'base/variable';
+@import 'base/theme';
+
+// Self-contained component
+@import 'components/buttons';
+@import 'components/progressionBar';
+
+// Layout (eg. header, footer, nav)
+@import 'layout/header';
+@import 'layout/footer';
+
+@import 'layout/jeu/themeScene';
+@import 'layout/jeu/rhymeScene';
+@import 'layout/jeu/verseScene';
+@import 'layout/jeu/editorScene';
+
+// For specific pages
+@import 'pages/home';
+@import 'pages/jeu';
+@import 'pages/poesie';
+@import 'pages/end';

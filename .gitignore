@@ -1,0 +1,5 @@
+/vendor/
+/cache/
+/node_modules/
+/public/dist/
+.DS_Store

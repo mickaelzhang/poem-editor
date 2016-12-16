@@ -1,0 +1,58 @@
+.jeu {
+	background-color: $blue-jagged-ice;
+	display: relative;
+
+	&__content {
+		height: 100vh;
+		width: 100vw;
+		overflow-x: hidden;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__sceneList {
+		height: 80vh;
+		width: 10000px;
+		display: flex;
+		flex: row;
+		transition-property: transform;
+		transition-timing-function: ease-out;
+
+		position: relative;
+		z-index: 20;
+	}
+
+	.progressionBar {
+		z-index: 100;
+	}
+
+	&__sceneItem {
+		position: relative;
+		width: 100vw;
+	}
+
+	&__title {
+		font-size: 36px;
+		color: $blue-blue-dianne;
+
+		position: absolute;
+		z-index: 110;
+		top: 40px;
+		left: 0;
+		right: 0;
+		display: block;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 40px;
+	}
+
+	.nextButton {
+		position: absolute;
+		z-index: 100;
+		right: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}

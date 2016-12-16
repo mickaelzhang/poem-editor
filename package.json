@@ -1,0 +1,34 @@
+{
+  "name": "Maitre Renard",
+  "version": "1.0.0",
+  "description": "Project done during a project period",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mickael Zhang <mickael.zhg@gmail.Com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-changed": "^1.3.2",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.0.3",
+    "gulp-load-plugins": "^1.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "jshint": "^2.9.3",
+    "require-dir": "^0.3.0"
+  },
+  "dependencies": {
+    "browser-sync": "^2.18.2",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
