@@ -97,11 +97,12 @@ export default class SceneManager {
 					this.sceneObject[nextSlideInd] = new VerseScene('.verseScene')
 					break;
 				case 3:
-					this.sceneObject[nextSlideInd] = new EditorScene('.editorScene',
-					this.sceneObject[0].themeSlug,
-					this.sceneObject[1].rhymeSlug,
-					this.sceneObject[2].verseSlug
-				)
+					this.sceneObject[nextSlideInd] = new EditorScene(
+						'.editorScene',
+						this.sceneObject[0].themeSlug,
+						this.sceneObject[1].rhymeSlug,
+						this.sceneObject[2].verseSlug
+					)
 					break;
 			}
 		}
