@@ -41,21 +41,19 @@ export default class EditorScene {
 		let cloud2 = document.querySelector('.editorScene__cloud2');
 		let cloud3 = document.querySelector('.editorScene__cloud3');
 		let cloud4 = document.querySelector('.editorScene__cloud4');
-		let cloud5 = document.querySelector('.editorScene__cloud5');
 		let arrayNature = ["Saisons","Animaux","Fleurs","Verdure","Légumes","Fruits","Plage","Forêt","Montagne","Arbre"];
 
-		let arrayEcole = ["Saisons","Animaux","Fleurs","Verdure","Légumes","Fruits","Plage","Forêt","Montagne","Arbre"];
+		let arrayEcole = ["Cartable","Maîtresse","Stylo","Craie","Tableaux","Devoirs","Copie","Bureaux","Ecriture"];
 
-		let arrayCiel = ["Saisons","Animaux","Fleurs","Verdure","Légumes","Fruits","Plage","Forêt","Montagne","Arbre"];
+		let arrayCiel = ["Nuage","Soleil","Oiseaux","Espace","Avions","Fusée","Orage","Bleu","Pluie","Neige"];
 
-		let arrayTerre = ["Saisons","Animaux","Frères","Verdure","Légumes","Fruits","Plage","Forêt","Montagne","Arbre"];
+		let arrayTerre = ["Vers","Herbe","Forêt","Jardin","Arbre","Fleur","Terreau","Taupe","Monde","Agriculture"];
 
 		let arrayFamille = ["Papa","Maman","Frères","Soeurs","Enfants","Bébé","Grands-parents","Maison","Oncle","Tante"];
 
-		let arrayNoel = ["Saisons","Animaux","Fleurs","Verdure","Légumes","Fruits","Plage","Forêt","Montagne","Arbre"];
-		let arrayAutomne = ["Saisons","Animaux","Fleurs","Verdure","Légumes","Fruits","Plage","Forêt","Montagne","Arbre"];
+		let arrayNoel = ["Fête","Cadeaux","La joie","Chocolat","Père Noël","Pain d'épice","Sapin","Bûche","La neige"];
 
-
+		let arrayAutomne = ["Feuille","Rouge","Couleurs","Froidure","Echarpe","Halloween","Rhume","Chocolat chaud","Gateaux"];
 
 		if (themeChoice == "nature") {
 			let randomArrayNature = arrayNature[Math.floor(Math.random() * arrayNature.length)];
@@ -67,11 +65,32 @@ export default class EditorScene {
 			let randomArrayNature4 = arrayNature[Math.floor(Math.random() * arrayNature.length)];
 			cloud4.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayNature4 +'</p>');
 		} else if (themeChoice == "ecole") {
-
+			let randomArrayEcole = arrayEcole[Math.floor(Math.random() * arrayEcole.length)];
+			cloud1.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayEcole +'</p>');
+			let randomArrayEcole2 = arrayEcole[Math.floor(Math.random() * arrayEcole.length)];
+			cloud2.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayEcole2 +'</p>');
+			let randomArrayEcole3 = arrayEcole[Math.floor(Math.random() * arrayEcole.length)];
+			cloud3.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayEcole3 +'</p>');
+			let randomArrayEcole4 = arrayEcole[Math.floor(Math.random() * arrayEcole.length)];
+			cloud4.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayEcole4 +'</p>');
 		} else if (themeChoice == "ciel") {
-
+			let randomArrayCiel = arrayCiel[Math.floor(Math.random() * arrayCiel.length)];
+			cloud1.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayCiel +'</p>');
+			let randomArrayCiel2 = arrayCiel[Math.floor(Math.random() * arrayCiel.length)];
+			cloud2.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayCiel2 +'</p>');
+			let randomArrayCiel3 = arrayCiel[Math.floor(Math.random() * arrayCiel.length)];
+			cloud3.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayCiel3 +'</p>');
+			let randomArrayCiel4 = arrayCiel[Math.floor(Math.random() * arrayCiel.length)];
+			cloud4.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayCiel4 +'</p>');
 		} else if (themeChoice == "terre") {
-
+			let randomArrayTerre = arrayTerre[Math.floor(Math.random() * arrayTerre.length)];
+			cloud1.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayTerre +'</p>');
+			let randomArrayTerre2 = arrayTerre[Math.floor(Math.random() * arrayTerre.length)];
+			cloud2.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayTerre2 +'</p>');
+			let randomArrayTerre3 = arrayTerre[Math.floor(Math.random() * arrayTerre.length)];
+			cloud3.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayTerre3 +'</p>');
+			let randomArrayTerre4 = arrayTerre[Math.floor(Math.random() * arrayTerre.length)];
+			cloud4.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayTerre4 +'</p>');
 		} else if (themeChoice == "famille") {
 			let randomArrayFamille = arrayFamille[Math.floor(Math.random() * arrayFamille.length)];
 			cloud1.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayFamille +'</p>');
@@ -82,13 +101,41 @@ export default class EditorScene {
 			let randomArrayFamille4 = arrayFamille[Math.floor(Math.random() * arrayFamille.length)];
 			cloud4.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayFamille4 +'</p>');
 		} else if (themeChoice == "noel") {
-
+			let randomArrayNoel = arrayNoel[Math.floor(Math.random() * arrayNoel.length)];
+			cloud1.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayNoel +'</p>');
+			let randomArrayNoel2 = arrayNoel[Math.floor(Math.random() * arrayNoel.length)];
+			cloud2.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayNoel2 +'</p>');
+			let randomArrayNoel3 = arrayNoel[Math.floor(Math.random() * arrayNoel.length)];
+			cloud3.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayNoel3 +'</p>');
+			let randomArrayNoel4 = arrayNoel[Math.floor(Math.random() * arrayNoel.length)];
+			cloud4.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayNoel4 +'</p>');
 		} else if (themeChoice == "automne") {
-
+			let randomArrayAutomne = arrayAutomne[Math.floor(Math.random() * arrayAutomne.length)];
+			cloud1.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayAutomne +'</p>');
+			let randomArrayAutomne2 = arrayAutomne[Math.floor(Math.random() * arrayAutomne.length)];
+			cloud2.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayAutomne2 +'</p>');
+			let randomArrayAutomne3 = arrayAutomne[Math.floor(Math.random() * arrayAutomne.length)];
+			cloud3.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayAutomne3 +'</p>');
+			let randomArrayAutomne4 = arrayAutomne[Math.floor(Math.random() * arrayAutomne.length)];
+			cloud4.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayAutomne4 +'</p>');
 		} else if (themeChoice == "vacance") {
-
+			let randomArrayAutomne = arrayVacance[Math.floor(Math.random() * arrayVacance.length)];
+			cloud1.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayVacance +'</p>');
+			let randomArrayVacance2 = arrayVacance[Math.floor(Math.random() * arrayVacance.length)];
+			cloud2.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayVacance2 +'</p>');
+			let randomArrayVacance3 = arrayVacance[Math.floor(Math.random() * arrayVacance.length)];
+			cloud3.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayVacance3 +'</p>');
+			let randomArrayVacance4 = arrayVacance[Math.floor(Math.random() * arrayVacance.length)];
+			cloud4.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayVacance4 +'</p>');
 		} else if (themeChoice == "animaux") {
-
+			let randomArrayAnimaux = arrayAnimaux[Math.floor(Math.random() * arrayAnimaux.length)];
+			cloud1.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayAnimaux +'</p>');
+			let randomArrayAnimaux2 = arrayAnimaux[Math.floor(Math.random() * arrayAnimaux.length)];
+			cloud2.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayAnimaux2 +'</p>');
+			let randomArrayAnimaux3 = arrayAnimaux[Math.floor(Math.random() * arrayAnimaux.length)];
+			cloud3.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayAnimaux3 +'</p>');
+			let randomArrayAnimaux4 = arrayAnimaux[Math.floor(Math.random() * arrayAnimaux.length)];
+			cloud4.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayAnimaux4 +'</p>');
 		}
 	}
 
