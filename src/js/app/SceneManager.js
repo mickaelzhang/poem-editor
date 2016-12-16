@@ -32,7 +32,12 @@ export default class SceneManager {
 
 		window.addEventListener('keyup', function() {
 			let ind = _.Slider.currentSceneIndex
-			_.updateNextButtonState(ind)
+			console.log('currentSceneIndex: '+ind);
+			console.log('currentSceneIndex: '+ind);
+			setTimeout(function() {
+				_.updateNextButtonState(ind)
+				console.log('updateNextButtonState');
+			}, 200)
 		})
 
 		// Event on next scene button
@@ -79,7 +84,8 @@ export default class SceneManager {
 	 * Update button state to visible or invisible
 	 */
 	updateNextButtonState(ind) {
-		// console.log(ind);
+		console.log(this.sceneObject[ind]);
+		console.log('nextStatus: '+this.sceneObject[ind].nextStatus);
 		// console.log('nextStatus: '+this.sceneObject[ind].nextStatus);
 		if (this.sceneObject[ind].nextStatus) {
 			// Display button

@@ -47,6 +47,9 @@ export default class EditorScene {
 			_.keyEvents(evt)
 		})
 
+		this.input[ind].addEventListener('keyup', function(evt) {
+			_.checkEditor()
+		})
 		return this
 	}
 
@@ -70,8 +73,30 @@ export default class EditorScene {
 				.focusOnNewElem()
 			}
 		}
+	}
 
-		this.nextStatus = this.stanzas[0].custom.Rhyme.rhymeIsValid
+	checkEditor() {
+		if (this.lineCount === 4) {
+			if (this.checkSyllableCount()) {
+				console.log('checkSyllableCount ok');
+				console.log('checkEditor: rhymeIsValid : ' + this.stanzas[0].custom.Rhyme.rhymeIsValid);
+				this.nextStatus = this.stanzas[0].custom.Rhyme.rhymeIsValid
+
+				return
+			}
+		}
+
+		this.nextStatus = false
+	}
+
+	checkSyllableCount() {
+		for (var i = 0; i < this.stanzas[0].custom.input.length; i++) {
+			if (this.stanzas[0].custom.input[i].Syllable.count != this.verseChoice) {
+				return false
+			}
+		}
+
+		return true
 	}
 
 	applyTransformOnEditor(index) {
