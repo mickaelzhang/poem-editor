@@ -38,11 +38,34 @@ export default class EditorScene {
 		let themeChoice = this.themeChoice;
 		console.log(themeChoice);
 		let cloud1 = document.querySelector('.editorScene__cloud1');
-		let arrayNature = ["Saisons","Animaux","Fleurs","Verdure","Légumes","Fruits","Plage","Forêt","Montagne"];
-		let randomArrayNature = arrayNature[Math.floor(Math.random() * arrayNature.length)];
+		let cloud2 = document.querySelector('.editorScene__cloud2');
+		let cloud3 = document.querySelector('.editorScene__cloud3');
+		let cloud4 = document.querySelector('.editorScene__cloud4');
+		let cloud5 = document.querySelector('.editorScene__cloud5');
+		let arrayNature = ["Saisons","Animaux","Fleurs","Verdure","Légumes","Fruits","Plage","Forêt","Montagne","Arbre"];
+
+		let arrayEcole = ["Saisons","Animaux","Fleurs","Verdure","Légumes","Fruits","Plage","Forêt","Montagne","Arbre"];
+
+		let arrayCiel = ["Saisons","Animaux","Fleurs","Verdure","Légumes","Fruits","Plage","Forêt","Montagne","Arbre"];
+
+		let arrayTerre = ["Saisons","Animaux","Frères","Verdure","Légumes","Fruits","Plage","Forêt","Montagne","Arbre"];
+
+		let arrayFamille = ["Papa","Maman","Frères","Soeurs","Enfants","Bébé","Grands-parents","Maison","Oncle","Tante"];
+
+		let arrayNoel = ["Saisons","Animaux","Fleurs","Verdure","Légumes","Fruits","Plage","Forêt","Montagne","Arbre"];
+		let arrayAutomne = ["Saisons","Animaux","Fleurs","Verdure","Légumes","Fruits","Plage","Forêt","Montagne","Arbre"];
+
+
 
 		if (themeChoice == "nature") {
-		cloud1.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayNature +'</p>');
+			let randomArrayNature = arrayNature[Math.floor(Math.random() * arrayNature.length)];
+			cloud1.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayNature +'</p>');
+			let randomArrayNature2 = arrayNature[Math.floor(Math.random() * arrayNature.length)];
+			cloud2.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayNature2 +'</p>');
+			let randomArrayNature3 = arrayNature[Math.floor(Math.random() * arrayNature.length)];
+			cloud3.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayNature3 +'</p>');
+			let randomArrayNature4 = arrayNature[Math.floor(Math.random() * arrayNature.length)];
+			cloud4.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayNature4 +'</p>');
 		} else if (themeChoice == "ecole") {
 
 		} else if (themeChoice == "ciel") {
@@ -50,7 +73,14 @@ export default class EditorScene {
 		} else if (themeChoice == "terre") {
 
 		} else if (themeChoice == "famille") {
-
+			let randomArrayFamille = arrayFamille[Math.floor(Math.random() * arrayFamille.length)];
+			cloud1.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayFamille +'</p>');
+			let randomArrayFamille2 = arrayFamille[Math.floor(Math.random() * arrayFamille.length)];
+			cloud2.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayFamille2 +'</p>');
+			let randomArrayFamille3 = arrayFamille[Math.floor(Math.random() * arrayFamille.length)];
+			cloud3.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayFamille3 +'</p>');
+			let randomArrayFamille4 = arrayFamille[Math.floor(Math.random() * arrayFamille.length)];
+			cloud4.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayFamille4 +'</p>');
 		} else if (themeChoice == "noel") {
 
 		} else if (themeChoice == "automne") {
