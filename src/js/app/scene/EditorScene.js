@@ -2,12 +2,12 @@ import Stanzas from '../Stanzas.js'
 
 export default class EditorScene {
 	constructor(target = '.editorScene', themeChoice, rhymeChoice = 'AABB', verseChoice = 8) {
+
 		// console.log('START: EditorScene');
 		this.themeChoice = themeChoice
 		this.rhymeChoice = rhymeChoice
 		this.verseChoice = verseChoice
 
-// console.log(this.themeChoice);
 		this.editor = document.querySelector(target)
 		this.stanzasList = this.editor.querySelector('.editorScene__stanzasList')
 		this.stanzas = this.stanzasList.querySelectorAll('.editorScene__stanzas')
@@ -33,24 +33,30 @@ export default class EditorScene {
 	animationTextCloud() {
 		let themeChoice = this.themeChoice;
 		console.log(themeChoice);
+		let cloud1 = document.querySelector('.editorScene__cloud1');
+		console.log(cloud1);
+		let arrayNature = ["Saisons","Animaux","Fleurs","Verdure","Légumes","Fruits","Plage","Forêt","Montagne"];
+		let randomArrayNature = arrayNature[Math.floor(Math.random() * arrayNature.length)];
+		console.log(randomArrayNature);
 
-		if (themeChoice == "NATURE") {
+		if (themeChoice == "nature") {
+		cloud1.insertAdjacentHTML('beforeend', '<p>Saison</p>');
+		console.log('rrr');
+		} else if (themeChoice == "ecole") {
 
-		} else if (themeChoice == "ÉCOLE") {
+		} else if (themeChoice == "ciel") {
 
-		} else if (themeChoice == "CIEL") {
+		} else if (themeChoice == "terre") {
 
-		} else if (themeChoice == "TERRE") {
+		} else if (themeChoice == "famille") {
 
-		} else if (themeChoice == "FAMILLE") {
+		} else if (themeChoice == "noel") {
 
-		} else if (themeChoice == "NOËL") {
+		} else if (themeChoice == "automne") {
 
-		} else if (themeChoice == "AUTOMNE") {
+		} else if (themeChoice == "vacance") {
 
-		} else if (themeChoice == "VACANCES") {
-
-		} else if (themeChoice == "ANIMAUX") {
+		} else if (themeChoice == "animaux") {
 
 		}
 	}

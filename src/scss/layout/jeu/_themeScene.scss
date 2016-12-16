@@ -49,7 +49,7 @@
 		@include cloud(15%,5%,moveCloudTheme,70s);
 	}
 	&__cloud2 {
-		@include cloud(60%,40%,moveCloudTheme,70s);
+		@include cloud(50%,50%,moveCloudTheme,70s);
 	}
 	&__cloud3 {
 		@include cloud(35%,8%,moveCloudTheme,70s);

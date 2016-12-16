@@ -14,7 +14,7 @@ export default class ThemeScene {
 	}
 
 	initEvents() {
-		const _ = this
+		let _ = this
 
 		for (var i = 0; i < this.themeCloud.length; i++) {
 			this.themeCloud[i].addEventListener('click', function() {
@@ -61,7 +61,7 @@ export default class ThemeScene {
 		this.themeSign[i].classList.remove('st34')
 		this.theme.style = "display:none"
 		this.setNextStatus(true)
-		let currentThemeSign = this.themeSign[i].innerHTML;
-		let themeChoice = new EditorScene(currentThemeSign)
+		// let currentThemeSign = this.themeSign[i].innerHTML;
+		// let themeChoice = new EditorScene(currentThemeSign)
 	}
 }
