@@ -21,7 +21,6 @@ export default class Rhyme {
 		this.inputLastRhyme[index] =  processedString
 
 		this.rhymeIsValid = this.checkRhyme()
-		console.log('Donc: '+this.rhymeIsValid);
 
 	}
 
@@ -35,10 +34,6 @@ export default class Rhyme {
 				this.rhymeStatus[i] = this.compareLineInput(this.inputLastRhyme[firstLine], this.inputLastRhyme[secondLine])
 			}
 		}
-
-		console.log('Rime A: '+this.rhymeStatus[0]);
-		console.log('Rime B: '+this.rhymeStatus[1]);
-
 
 		return this.rhymeStatus[0] && this.rhymeStatus[1]
 	}

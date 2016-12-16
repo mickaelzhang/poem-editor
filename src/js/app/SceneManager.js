@@ -53,11 +53,8 @@ export default class SceneManager {
 
 		window.addEventListener('keyup', function() {
 			let ind = _.Slider.currentSceneIndex
-			console.log('currentSceneIndex: '+ind);
-			console.log('currentSceneIndex: '+ind);
 			setTimeout(function() {
 				_.updateNextButtonState(ind)
-				console.log('updateNextButtonState');
 			}, 200)
 		})
 
@@ -105,9 +102,6 @@ export default class SceneManager {
 	 * Update button state to visible or invisible
 	 */
 	updateNextButtonState(ind) {
-		console.log(this.sceneObject[ind]);
-		console.log('nextStatus: '+this.sceneObject[ind].nextStatus);
-		// console.log('nextStatus: '+this.sceneObject[ind].nextStatus);
 		if (this.sceneObject[ind].nextStatus) {
 			// Display button
 			this.nextButton.classList.add('nextButton--unblocked')

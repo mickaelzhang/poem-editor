@@ -78,8 +78,6 @@ export default class EditorScene {
 	checkEditor() {
 		if (this.lineCount === 4) {
 			if (this.checkSyllableCount()) {
-				console.log('checkSyllableCount ok');
-				console.log('checkEditor: rhymeIsValid : ' + this.stanzas[0].custom.Rhyme.rhymeIsValid);
 				this.nextStatus = this.stanzas[0].custom.Rhyme.rhymeIsValid
 
 				return
