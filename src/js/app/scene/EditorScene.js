@@ -34,14 +34,11 @@ export default class EditorScene {
 		let themeChoice = this.themeChoice;
 		console.log(themeChoice);
 		let cloud1 = document.querySelector('.editorScene__cloud1');
-		console.log(cloud1);
 		let arrayNature = ["Saisons","Animaux","Fleurs","Verdure","Légumes","Fruits","Plage","Forêt","Montagne"];
 		let randomArrayNature = arrayNature[Math.floor(Math.random() * arrayNature.length)];
-		console.log(randomArrayNature);
 
 		if (themeChoice == "nature") {
-		cloud1.insertAdjacentHTML('beforeend', '<p>Saison</p>');
-		console.log('rrr');
+		cloud1.insertAdjacentHTML('afterbegin', '<p class="editorScene__cloud--text">'+ randomArrayNature +'</p>');
 		} else if (themeChoice == "ecole") {
 
 		} else if (themeChoice == "ciel") {

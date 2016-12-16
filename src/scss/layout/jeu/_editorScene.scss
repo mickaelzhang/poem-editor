@@ -33,7 +33,6 @@
 	&__line {
 		position: relative;
 		margin-top: 16px;
-
 		transform: scale(0.8);
 		transition: all 0.3s ease-out;
 
@@ -49,7 +48,6 @@
 		top: 0;
 		bottom: 0;
 		width: 60px;
-
 		text-align: center;
 		font-size: 24px;
 		vertical-align: middle;
@@ -61,7 +59,6 @@
 			background-size: contain;
 			background-position: center;
 			background-repeat: no-repeat;
-
 			color: transparent;
 		}
 
@@ -70,7 +67,6 @@
 			background-size: contain;
 			background-position: center;
 			background-repeat: no-repeat;
-
 			color: transparent;
 		}
 	}
@@ -81,7 +77,6 @@
 		right: 0;
 		transform: translateY(-50%);
 		width: 60px;
-
 		text-align: center;
 		font-size: 20px;
 		font-weight: lighter;
@@ -91,18 +86,13 @@
 		display: block;
 		outline: none;
 		border: none;
-
-		box-shadow: 0px 0px 16px 0px rgba($black, 0.15);
-
+		box-shadow: 0 0 16px 0 rgba($black, 0.15);
 		width: 100%;
 		font-size: 24px;
 		padding: 20px 60px;
-
 		transition: all 0.2s ease-out;
 
-		&--selected {
-
-		}
+		&--selected {}
 	}
 
 	&__buttonContainer {
@@ -116,15 +106,27 @@
 		z-index: 1;
 	}
 
+	&__cloud {
+		&--text {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
 	&__cloud1 {
 		@include cloud(5%,5%,moveCloudEditor,80s);
 	}
+
 	&__cloud2 {
 		@include cloud(20%,20%,moveCloudEditor,80s);
 	}
+
 	&__cloud3 {
 		@include cloud(25%,12%,moveCloudEditor,60s);
 	}
+
 	&__cloud4 {
 		@include cloud(10%,5%,moveCloudEditor,60s);
 	}
