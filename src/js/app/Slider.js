@@ -59,11 +59,11 @@ export default class Slider {
 			ind = this.sliderItem.length - 1
 		}
 
-		if (ind === 3) {
-			this.navBar.style.zIndex = '2'
-		} else {
-			this.navBar.style.zIndex = '5'
-		}
+		// if (ind === 3) {
+		// 	this.navBar.style.zIndex = '2'
+		// } else {
+		// 	this.navBar.style.zIndex = '5'
+		// }
 
 		this.applyTransition(ind)
 	}
