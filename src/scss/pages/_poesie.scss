@@ -1,4 +1,5 @@
 .poesie {
+	background-color: #488595;
 	&__img{
 		padding:50px;
 	}
@@ -12,6 +13,7 @@
 		transform: translateY(-50%);
 		display: flex;
 		justify-content: center;
+		color:#fff;
 	}
 
 	&__contentButton{
