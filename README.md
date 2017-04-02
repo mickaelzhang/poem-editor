@@ -21,10 +21,13 @@ In order to recompile the sources, you will need :
 In order to start the project, you must clone and install all dependencies first.
 
 ```
-$ git clone https://github.com/mickaelzhang/poem-editor.git
-$ cd poem-editor
-$ yarn
+git clone https://github.com/mickaelzhang/poem-editor.git
+cd poem-editor
+yarn install
+composer install
 ```
+
+You then need to start a local server with tool such as MAMP to see it live.
 
 ## Convention
 ### General

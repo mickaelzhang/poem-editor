@@ -1,10 +1,10 @@
 {
-  "name": "Maitre Renard",
+  "name": "maitre-renard",
   "version": "1.0.0",
   "description": "Project done during a project period",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+		"start": "gulp"
   },
   "author": "Mickael Zhang <mickael.zhg@gmail.Com>",
   "license": "MIT",
